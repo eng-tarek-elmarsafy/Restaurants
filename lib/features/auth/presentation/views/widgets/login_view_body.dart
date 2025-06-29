@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:restaurants/core/function/height.dart';
 import 'package:restaurants/core/function/validator_hone_umber.dart';
@@ -52,8 +54,12 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               height(16),
               CustomTextFormField(
                 hintText: 'رقم التلفون  ',
+                textInputType: TextInputType.numberWithOptions(),
                 validator: (value) {
                   return validatorPhoneNumber(value);
+                },
+                onSaved: (value) {
+                  phoneNumber = value!;
                 },
               ),
               height(16),
@@ -62,6 +68,8 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
+                    log(name);
+                    log(phoneNumber);
                   } else {
                     autovalidateMode = AutovalidateMode.always;
                   }
