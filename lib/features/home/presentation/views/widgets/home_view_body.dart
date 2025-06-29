@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:restaurants/constrains.dart';
 import 'package:restaurants/core/function/height.dart';
-import 'package:restaurants/core/function/width.dart';
-import 'package:restaurants/core/style/app_style.dart';
+import 'package:restaurants/features/home/presentation/views/widgets/restaurnt_item.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -12,55 +10,7 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: kBorderRadius),
-      child: Column(
-        children: [
-          height(16),
-          Row(
-            children: [
-              GestureDetector(
-                onTap: () {},
-                child: Container(
-                  width: 100,
-                  height: 70,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(kBorderRadius / 2),
-                    border: Border.all(color: kSecondaryColor),
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(kBorderRadius / 2),
-                    child: Image.network(
-                      'https://cnn-arabic-images.cnn.io/cloudinary/image/upload/w_1920,c_scale,q_auto/cnnarabic/2019/01/02/images/118714.jpg',
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                ),
-              ),
-              width(8),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('دلع كرشك', style: AppStyle.subtitleStyle),
-                  height(4),
-                  Text('اشهي انواع اللحوم', style: AppStyle.smallTextStyle),
-                  height(4),
-                  RatingBarIndicator(
-                    rating: 3.3,
-                    itemBuilder:
-                        (contxt, index) =>
-                            Icon(Icons.star, color: kSecondaryColor),
-                    itemCount: 5,
-                    itemSize: 15,
-                    direction: Axis.horizontal,
-                  ),
-                ],
-              ),
-              Spacer(),
-              Icon(Icons.arrow_forward_ios_outlined, color: kSecondaryColor),
-            ],
-          ),
-        ],
-      ),
+      child: Column(children: [height(16), const RestsurntItem()]),
     );
   }
 }
-              

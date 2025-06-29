@@ -24,7 +24,7 @@ abstract class AppStyle {
   );
 
   static final TextStyle smallTextStyle = TextStyle(
-    fontSize: 13,
+    fontSize: 12,
     fontWeight: FontWeight.normal,
     color: kNeutralColor,
     fontFamily: 'Cairo',
