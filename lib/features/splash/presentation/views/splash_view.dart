@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurants/features/splash/presentation/views/widgets/splash_view_body.dart';
 
 class SplashView extends StatelessWidget {
   static const String id = 'splash_view';
@@ -6,6 +7,6 @@ class SplashView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(body: SplashViewBody());
   }
 }

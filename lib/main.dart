@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurants/constrains.dart';
 import 'package:restaurants/core/helper/on_generate_route_function.dart';
 import 'package:restaurants/features/splash/presentation/views/splash_view.dart';
 
@@ -14,6 +15,14 @@ class Restaurants extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        scaffoldBackgroundColor: kPrimaryColor,
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            backgroundColor: WidgetStateProperty.all(kNeutralColor),
+          ),
+        ),
+      ),
       initialRoute: SplashView.id,
       onGenerateRoute: onGenerateRoute,
     );
