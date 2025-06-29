@@ -12,12 +12,12 @@ class SplashViewBody extends StatefulWidget {
 }
 
 class _SplashViewBodyState extends State<SplashViewBody> {
-  double _scale = 2.0; 
+  double _scale = 2.0;
 
   @override
   void initState() {
     super.initState();
-    
+
     Future.delayed(Duration(milliseconds: 400), () {
       setState(() {
         _scale = 1.0;

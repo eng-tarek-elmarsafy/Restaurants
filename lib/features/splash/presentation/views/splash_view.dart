@@ -1,9 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:restaurants/features/auth/presentation/views/login_view.dart';
 import 'package:restaurants/features/splash/presentation/views/widgets/splash_view_body.dart';
 
-class SplashView extends StatelessWidget {
+class SplashView extends StatefulWidget {
   static const String id = 'splash_view';
   const SplashView({super.key});
+
+  @override
+  State<SplashView> createState() => _SplashViewState();
+}
+
+class _SplashViewState extends State<SplashView> {
+  @override
+  void initState() {
+    Future.delayed(Duration(seconds: 3), () {
+      if (!mounted) return;
+      Navigator.pushReplacementNamed(context, LoginView.id);
+    });
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
