@@ -1,1 +1,6 @@
-{}
+{
+  "@@locale": "en",
+  "appTitle": "Restaurants",
+  "name": "Name",
+  "phone": "Phone Number"
+}

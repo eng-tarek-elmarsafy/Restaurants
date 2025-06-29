@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/style/app_style.dart';
-import 'package:restaurants/core/style/assets.dart';
+import 'package:restaurants/core/widgets/logo_app.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -33,26 +30,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
         duration: const Duration(milliseconds: 800),
         curve: Curves.easeOut,
         builder: (context, value, child) {
-          return Transform.scale(
-            scale: value,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text('مطاعم', style: AppStyle.titleStyle),
-                // const SizedBox(width: 30),
-                SizedBox(
-                  width: 30,
-                  child: SvgPicture.asset(
-                    Assets.imagesImagesLogo,
-                    colorFilter: const ColorFilter.mode(
-                      kNeutralColor,
-                      BlendMode.srcIn,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          );
+          return Transform.scale(scale: value, child: LogoApp());
         },
       ),
     );

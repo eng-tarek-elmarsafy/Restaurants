@@ -28,7 +28,7 @@ class CustomTextFormField extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
         suffixIcon: suffixIcon,
-        hintStyle: AppStyle.smallTextStyle,
+        hintStyle: AppStyle.smallTextStyle.copyWith(color: kPrimaryColor),
         filled: true,
         fillColor: kNeutralColor,
         border: _outlineInputBorder(),
@@ -39,7 +39,7 @@ class CustomTextFormField extends StatelessWidget {
 
   OutlineInputBorder _outlineInputBorder() {
     return const OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(4)),
+      borderRadius: BorderRadius.all(Radius.circular(kBorderRadius / 2)),
       borderSide: BorderSide(color: kSecondaryColor, width: 1),
     );
   }
