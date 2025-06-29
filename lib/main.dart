@@ -17,7 +17,7 @@ class Restaurants extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      locale: Locale('ar'),
+      locale: const Locale('ar'),
       localizationsDelegates: [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
