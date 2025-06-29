@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:restaurants/features/auth/presentation/views/login_view.dart';
+import 'package:restaurants/features/home/presentation/views/home_view.dart';
 import 'package:restaurants/features/splash/presentation/views/splash_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings setting) {
@@ -8,6 +9,8 @@ Route<dynamic> onGenerateRoute(RouteSettings setting) {
       return MaterialPageRoute(builder: (context) => const SplashView());
     case LoginView.id:
       return MaterialPageRoute(builder: (context) => const LoginView());
+    case HomeView.id:
+      return MaterialPageRoute(builder: (context) => const HomeView());
 
     default:
       return MaterialPageRoute(

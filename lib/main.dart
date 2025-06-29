@@ -26,6 +26,7 @@ class Restaurants extends StatelessWidget {
       ],
       supportedLocales: S.delegate.supportedLocales,
       theme: ThemeData(
+        appBarTheme: AppBarTheme(backgroundColor: kPrimaryColor),
         scaffoldBackgroundColor: kPrimaryColor,
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(
