@@ -6,9 +6,7 @@ import 'package:restaurants/core/function/width.dart';
 import 'package:restaurants/core/style/app_style.dart';
 
 class RestsurntItem extends StatelessWidget {
-  const RestsurntItem({
-    super.key,
-  });
+  const RestsurntItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,25 +34,24 @@ class RestsurntItem extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('دلع كرشك', style: AppStyle.subtitleStyle),
+            const Text('دلع كرشك', style: AppStyle.subtitleStyle),
             height(4),
-            Text('اشهي انواع اللحوم', style: AppStyle.smallTextStyle),
+            const Text('اشهي انواع اللحوم', style: AppStyle.smallTextStyle),
             height(4),
             RatingBarIndicator(
               rating: 3.3,
               itemBuilder:
                   (contxt, index) =>
-                      Icon(Icons.star, color: kSecondaryColor),
+                      const Icon(Icons.star, color: kSecondaryColor),
               itemCount: 5,
               itemSize: 15,
               direction: Axis.horizontal,
             ),
           ],
         ),
-        Spacer(),
-        Icon(Icons.arrow_forward_ios_outlined, color: kSecondaryColor),
+        const Spacer(),
+        const Icon(Icons.arrow_forward_ios_outlined, color: kSecondaryColor),
       ],
     );
   }
 }
-              

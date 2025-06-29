@@ -4,12 +4,12 @@ import 'package:restaurants/core/widgets/logo_app.dart';
 
 AppBar buildAppBar() {
   return AppBar(
-    title: LogoApp(),
+    title: const LogoApp(),
     centerTitle: true,
     automaticallyImplyLeading: false,
     leading: IconButton(
       onPressed: () {},
-      icon: Icon(Icons.arrow_back_ios, color: kSecondaryColor),
+      icon: const Icon(Icons.arrow_back_ios, color: kSecondaryColor),
     ),
   );
 }

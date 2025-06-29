@@ -18,7 +18,7 @@ class Restaurants extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       locale: const Locale('ar'),
-      localizationsDelegates: [
+      localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
@@ -26,7 +26,7 @@ class Restaurants extends StatelessWidget {
       ],
       supportedLocales: S.delegate.supportedLocales,
       theme: ThemeData(
-        appBarTheme: AppBarTheme(backgroundColor: kPrimaryColor),
+        appBarTheme: const AppBarTheme(backgroundColor: kPrimaryColor),
         scaffoldBackgroundColor: kPrimaryColor,
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(

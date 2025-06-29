@@ -41,7 +41,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
           child: Column(
             children: [
               height(150),
-              SizedBox(height: 50, child: LogoApp()),
+              const SizedBox(height: 50, child: LogoApp()),
               height(100),
               CustomTextFormField(
                 hintText: 'الاسم',
@@ -55,7 +55,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               height(16),
               CustomTextFormField(
                 hintText: 'رقم التلفون  ',
-                textInputType: TextInputType.numberWithOptions(),
+                textInputType: const TextInputType.numberWithOptions(),
                 validator: (value) {
                   return validatorPhoneNumber(value);
                 },

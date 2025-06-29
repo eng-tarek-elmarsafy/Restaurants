@@ -15,7 +15,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   void initState() {
     super.initState();
 
-    Future.delayed(Duration(milliseconds: 400), () {
+    Future.delayed(const Duration(milliseconds: 400), () {
       setState(() {
         _scale = 1.0;
       });
@@ -30,7 +30,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
         duration: const Duration(milliseconds: 800),
         curve: Curves.easeOut,
         builder: (context, value, child) {
-          return Transform.scale(scale: value, child: LogoApp());
+          return Transform.scale(scale: value, child: const LogoApp());
         },
       ),
     );
