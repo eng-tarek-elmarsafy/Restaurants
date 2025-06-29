@@ -7,7 +7,10 @@ class SplashViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text('مطاعم', style: AppStyle.titleStyle),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [Text('مطاعم', style: AppStyle.titleStyle)],
+      ),
     );
   }
 }
