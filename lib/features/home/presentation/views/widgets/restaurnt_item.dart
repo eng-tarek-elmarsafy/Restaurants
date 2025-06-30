@@ -4,6 +4,7 @@ import 'package:restaurants/constrains.dart';
 import 'package:restaurants/core/function/height.dart';
 import 'package:restaurants/core/function/width.dart';
 import 'package:restaurants/core/style/app_style.dart';
+import 'package:restaurants/features/restaurant_details/presentation/views/restaurnt_details_view.dart';
 
 class RestsurntItem extends StatelessWidget {
   const RestsurntItem({super.key});
@@ -13,7 +14,9 @@ class RestsurntItem extends StatelessWidget {
     return Row(
       children: [
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, RestaurntDetailsView.id);
+          },
           child: Container(
             width: 100,
             height: 70,

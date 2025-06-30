@@ -1,0 +1,34 @@
+import 'package:flutter/material.dart';
+import 'package:restaurants/features/restaurant_details/presentation/views/widgets/item_tab_bar.dart';
+
+class MenuTabsBar extends StatefulWidget {
+  const MenuTabsBar({super.key});
+
+  @override
+  State<MenuTabsBar> createState() => _MenuTabsBarState();
+}
+
+class _MenuTabsBarState extends State<MenuTabsBar> {
+  int crentIndex = 0;
+  List<String> tabs = ['القائمة', 'التقييمات', 'المعلومات'];
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children:
+          tabs.asMap().entries.map((e) {
+            var index = e.key;
+            var r = e.value;
+            return GestureDetector(
+              onTap: () {
+                setState(() {
+                  crentIndex = index;
+                });
+              },
+              child: ItemTabBar(isActev: crentIndex == index, title: r),
+            );
+          }).toList(),
+    );
+  }
+}
+
