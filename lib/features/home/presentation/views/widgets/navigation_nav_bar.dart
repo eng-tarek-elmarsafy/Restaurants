@@ -5,8 +5,8 @@ import 'package:restaurants/core/style/app_style.dart';
 import 'package:restaurants/features/home/entities/icon_item_entity.dart';
 
 class NavigationNavBar extends StatefulWidget {
-  const NavigationNavBar({super.key});
-
+  const NavigationNavBar({super.key, required this.onTabChange});
+  final ValueChanged<int> onTabChange;
   @override
   State<NavigationNavBar> createState() => _NavigationNavBarState();
 }
@@ -22,6 +22,9 @@ class _NavigationNavBarState extends State<NavigationNavBar> {
   @override
   Widget build(BuildContext context) {
     return GNav(
+      onTabChange: (value) {
+        widget.onTabChange(value);
+      },
       tabs:
           iconItemList.map((e) {
             return iconItem(e);

@@ -8,6 +8,7 @@ import 'package:restaurants/core/widgets/custom_button.dart';
 import 'package:restaurants/core/widgets/custom_text_form_field.dart';
 import 'package:restaurants/core/widgets/logo_app.dart';
 import 'package:restaurants/features/home/presentation/views/home_view.dart';
+import 'package:restaurants/features/main/presentation/views/main_view.dart';
 
 class LoginViewBody extends StatefulWidget {
   const LoginViewBody({super.key});
@@ -67,7 +68,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               CustomButton(
                 title: 'تسجيل الدخول',
                 onPressed: () {
-                  Navigator.pushNamed(context, HomeView.id);
+                  Navigator.pushNamed(context, MainView.id);
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
                     log(name);
