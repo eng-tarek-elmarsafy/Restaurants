@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurants/core/function/build_app_bar.dart';
 import 'package:restaurants/features/home/presentation/views/home_view.dart';
 import 'package:restaurants/features/home/presentation/views/widgets/navigation_nav_bar.dart';
 
@@ -15,6 +16,7 @@ class _MainViewState extends State<MainView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: buildAppBar(context),
       body: IndexedStack(
         index: _selectedIndex,
         children: const [
