@@ -1,7 +1,7 @@
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 abstract class AuthEmailServices {
-  Future<AuthResponse> signUpWithEmail(
+  Future<User> signUpWithEmail(
     String email,
     String password,
     String numberPhone,

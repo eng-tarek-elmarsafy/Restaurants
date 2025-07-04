@@ -18,14 +18,16 @@ class AuthRepoImpl extends AuthRepo {
     String password,
   ) async {
     try {
-      final result = await authServices.signUpWithEmail(
+      final user = await authServices.signUpWithEmail(
         email,
         password,
         phoneNumber,
         name,
       );
-      return right(UserModel.fromResponse(result));
-    } on Exception catch (e) {
+      return right(UserModel.fromUser(user));
+    } on EmailConfirmationPendingFailure catch (e) {
+      return left(EmailConfirmationPendingFailure(message: e.message));
+    } catch (e) {
       return left(ServerFailure(message: e.toString()));
     }
   }

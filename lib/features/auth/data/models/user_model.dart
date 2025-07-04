@@ -5,20 +5,18 @@ class UserModel extends UserEntity {
   UserModel({
     required super.id,
     required super.email,
-    required super.isEmailVerified,
     super.image,
     super.numberPhone,
     super.userName,
   });
 
-  factory UserModel.fromResponse(AuthResponse respons) {
+  factory UserModel.fromUser(User user) {
     return UserModel(
-      id: respons.user!.id,
-      email: respons.user!.email!,
-      isEmailVerified: respons.session != null,
-      userName: respons.user!.userMetadata?['userName'],
-      numberPhone: respons.user!.userMetadata?['numberPhone'],
-      image: respons.user!.userMetadata?['image'],
+      id: user.id,
+      email: user.email!,
+      userName: user.userMetadata?['userName'],
+      numberPhone: user.userMetadata?['numberPhone'],
+      image: user.userMetadata?['image'],
     );
   }
 }
