@@ -1,15 +1,7 @@
+import 'package:restaurants/core/services/auth_services.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-abstract class SupabaseAuthEmailServices {
-  Future<AuthResponse> signUpWithEmail(
-    String email,
-    String password,
-    String numberPhone,
-    String userName,
-  );
-}
-
-class SupabaseAuthEmailServicesImpl implements SupabaseAuthEmailServices {
+class SupabaseAuthEmailServicesImpl implements AuthEmailServices {
   final supabase = Supabase.instance.client;
 
   @override
