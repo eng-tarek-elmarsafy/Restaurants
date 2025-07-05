@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:restaurants/core/services/supabase/supabase_auth_services_impl.dart';
-import 'package:restaurants/features/auth/data/repo/auth_repo_impl.dart';
+import 'package:restaurants/core/helper/get_it_setup.dart';
+import 'package:restaurants/features/auth/domain/repo/auth_repo.dart';
+import 'package:restaurants/features/auth/presentation/manager/sign_in_cubit/sign_in_cubit.dart';
 import 'package:restaurants/features/auth/presentation/manager/sign_up_cubit/sign_up_cubit.dart';
+import 'package:restaurants/features/auth/presentation/views/sign_in_view.dart';
 import 'package:restaurants/features/auth/presentation/views/sign_up_view.dart';
 import 'package:restaurants/features/main/presentation/views/main_view.dart';
 import 'package:restaurants/features/restaurant_details/presentation/views/restaurnt_details_view.dart';
@@ -16,15 +18,20 @@ Route<dynamic> onGenerateRoute(RouteSettings setting) {
       return MaterialPageRoute(
         builder:
             (context) => BlocProvider(
-              create:
-                  (context) => SignUpCubit(
-                    AuthRepoImpl(authServices: SupabaseAuthEmailServicesImpl()),
-                  ),
+              create: (context) => SignUpCubit(getIt.get<AuthRepo>()),
               child: const SignUpView(),
             ),
       );
     case MainView.id:
       return MaterialPageRoute(builder: (context) => const MainView());
+    case SignInView.id:
+      return MaterialPageRoute(
+        builder:
+            (context) => BlocProvider(
+              create: (context) => SignInCubit(getIt.get<AuthRepo>()),
+              child: const SignInView(),
+            ),
+      );
     case RestaurntDetailsView.id:
       return MaterialPageRoute(
         builder: (context) => const RestaurntDetailsView(),

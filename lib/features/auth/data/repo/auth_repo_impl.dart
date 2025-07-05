@@ -8,7 +8,7 @@ import 'package:restaurants/features/auth/domain/repo/auth_repo.dart';
 class AuthRepoImpl extends AuthRepo {
   AuthRepoImpl({required this.authServices});
 
-  final AuthEmailServices authServices;
+  final AuthServices authServices;
 
   @override
   Future<Either<Failure, UserEntity>> signUpWithEmail(

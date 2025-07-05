@@ -32,7 +32,7 @@ class _FakeUser_0 extends _i1.SmartFake implements _i2.User {
 /// A class which mocks [AuthEmailServices].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockAuthEmailServices extends _i1.Mock implements _i3.AuthEmailServices {
+class MockAuthEmailServices extends _i1.Mock implements _i3.AuthServices {
   MockAuthEmailServices() {
     _i1.throwOnMissingStub(this);
   }

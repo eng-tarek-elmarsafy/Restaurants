@@ -2,7 +2,7 @@ import 'package:restaurants/core/failure/failure.dart';
 import 'package:restaurants/core/services/auth_services.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-class SupabaseAuthEmailServicesImpl implements AuthEmailServices {
+class SupabaseAuthServicesImpl implements AuthServices {
   final supabase = Supabase.instance.client;
 
   @override
