@@ -12,31 +12,36 @@ class SupabaseAuthEmailServicesImpl implements AuthEmailServices {
     String numberPhone,
     String userName,
   ) async {
-    AuthResponse respons = await supabase.auth.signUp(
+    AuthResponse response = await supabase.auth.signUp(
       email: email,
       password: password,
       data: {'numberPhone': numberPhone, 'userName': userName},
     );
-    if (respons.session == null) {
+    if (response.session == null) {
       throw EmailConfirmationPendingFailure(
         message: ' من فضلك فعّل البريد الإلكتروني من الرابط اللي وصلك',
       );
     }
-    return respons.user!;
+    return response.user!;
   }
 
   @override
   Future<User> signInWithEmail(String email, String password) async {
-    final respons = await supabase.auth.signInWithPassword(
+    final response = await supabase.auth.signInWithPassword(
       password: password,
       email: email,
     );
 
-    if (respons.session == null) {
+    if (response.session == null) {
       throw EmailConfirmationPendingFailure(
         message: 'فشل تسجيل الدخول أو الإيميل لسه متأكدش',
       );
     }
-    return respons.user!;
+    return response.user!;
+  }
+
+  @override
+  Future<void> forgotPassword(String email) async {
+    await supabase.auth.resetPasswordForEmail(email);
   }
 }

@@ -8,4 +8,6 @@ abstract class AuthEmailServices {
     String userName,
   );
   Future<User> signInWithEmail(String email, String password);
+
+  Future<void> forgotPassword(String email);
 }
