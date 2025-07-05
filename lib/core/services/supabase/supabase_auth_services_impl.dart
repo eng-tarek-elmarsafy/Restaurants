@@ -24,4 +24,19 @@ class SupabaseAuthEmailServicesImpl implements AuthEmailServices {
     }
     return respons.user!;
   }
+
+  @override
+  Future<User> signInWithEmail(String email, String password) async {
+    final respons = await supabase.auth.signInWithPassword(
+      password: password,
+      email: email,
+    );
+
+    if (respons.session == null) {
+      throw EmailConfirmationPendingFailure(
+        message: 'فشل تسجيل الدخول أو الإيميل لسه متأكدش',
+      );
+    }
+    return respons.user!;
+  }
 }

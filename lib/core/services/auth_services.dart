@@ -7,4 +7,5 @@ abstract class AuthEmailServices {
     String numberPhone,
     String userName,
   );
+  Future<User> signInWithEmail(String email, String password);
 }

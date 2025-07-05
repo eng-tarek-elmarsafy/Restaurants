@@ -31,4 +31,20 @@ class AuthRepoImpl extends AuthRepo {
       return left(ServerFailure(message: e.toString()));
     }
   }
+
+  @override
+  Future<Either<Failure, UserEntity>> signInWithEmail(
+    String password,
+    String email,
+  ) async {
+    try {
+      final user = await authServices.signInWithEmail(email, password);
+
+      return right(UserModel.fromUser(user));
+    } on EmailConfirmationPendingFailure catch (e) {
+      return left(EmailConfirmationPendingFailure(message: e.message));
+    } catch (e) {
+      return left(ServerFailure(message: e.toString()));
+    }
+  }
 }

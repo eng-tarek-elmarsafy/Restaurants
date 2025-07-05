@@ -9,4 +9,9 @@ abstract class AuthRepo {
     String phoneNumber,
     String password,
   );
+
+  Future<Either<Failure, UserEntity>> signInWithEmail(
+    String password,
+    String email,
+  );
 }
