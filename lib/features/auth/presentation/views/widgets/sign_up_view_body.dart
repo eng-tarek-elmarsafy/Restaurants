@@ -110,10 +110,15 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
               ),
               const SizedBox(height: 16),
 
-              const Align(
-                child: RichTextWithAction(
-                  normalText: 'تمتلك حساب بالفعل؟',
-                  actionText: ' تسجيل دخول',
+              Align(
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: const RichTextWithAction(
+                    normalText: 'تمتلك حساب بالفعل؟',
+                    actionText: ' تسجيل دخول',
+                  ),
                 ),
               ),
             ],

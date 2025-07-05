@@ -6,6 +6,6 @@ class SignUpView extends StatelessWidget {
   static const String id = 'sin_up_view';
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: SignUpBlocCons());
+    return const Scaffold(body: SignUpBlocConsumer());
   }
 }

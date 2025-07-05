@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:restaurants/core/services/auth_services.dart';
 import 'package:restaurants/core/services/supabase/supabase_auth_services_impl.dart';
 import 'package:restaurants/features/auth/data/repo/auth_repo_impl.dart';
 import 'package:restaurants/features/auth/presentation/manager/sign_up_cubit/sign_up_cubit.dart';
