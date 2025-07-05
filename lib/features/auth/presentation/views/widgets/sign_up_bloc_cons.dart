@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:restaurants/core/style/app_style.dart';
 import 'package:restaurants/features/auth/presentation/manager/sign_up_cubit/sign_up_cubit.dart';
 import 'package:restaurants/features/auth/presentation/views/widgets/sign_up_view_body.dart';
@@ -10,6 +11,8 @@ class SignUpBlocConsumer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool inAsyncCall = false;
+
     return BlocConsumer<SignUpCubit, SignUpState>(
       listener: (context, state) {
         if (state is SignUpFailure) {
@@ -20,18 +23,17 @@ class SignUpBlocConsumer extends StatelessWidget {
           );
         }
         if (state is SignUpLoading) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Lodaing', style: AppStyle.titleStyle),
-            ),
-          );
+          inAsyncCall = true;
         }
         if (state is SignUpSuccess) {
           Navigator.pushNamed(context, MainView.id);
         }
       },
       builder: (context, state) {
-        return const SignUpViewBody();
+        return ModalProgressHUD(
+          inAsyncCall: inAsyncCall,
+          child: const SignUpViewBody(),
+        );
       },
     );
   }
