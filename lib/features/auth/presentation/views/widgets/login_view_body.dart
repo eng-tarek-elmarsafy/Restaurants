@@ -2,8 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:restaurants/core/function/height.dart';
-import 'package:restaurants/core/function/validator_hone_umber.dart';
-import 'package:restaurants/core/function/validator_name.dart';
+import 'package:restaurants/core/function/validator.dart';
 import 'package:restaurants/core/widgets/custom_button.dart';
 import 'package:restaurants/core/widgets/custom_text_form_field.dart';
 import 'package:restaurants/core/widgets/logo_app.dart';
