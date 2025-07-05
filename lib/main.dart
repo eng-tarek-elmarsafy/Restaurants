@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:restaurants/constrains.dart';
+import 'package:restaurants/core/helper/get_it_setup.dart';
 import 'package:restaurants/core/helper/on_generate_route_function.dart';
 import 'package:restaurants/core/services/supabase/supabase_initializing.dart';
 import 'package:restaurants/features/splash/presentation/views/splash_view.dart';
@@ -10,7 +11,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await SupabaseInitializing.initializing();
-
+  setup();
   runApp(const Restaurants());
 }
 

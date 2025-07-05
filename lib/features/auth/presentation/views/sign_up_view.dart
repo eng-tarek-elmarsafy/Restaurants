@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/features/auth/presentation/views/widgets/sign_up_bloc_cons.dart';
+import 'package:restaurants/features/auth/presentation/views/widgets/sign_up_bloc_consumer.dart';
 
 class SignUpView extends StatelessWidget {
   const SignUpView({super.key});

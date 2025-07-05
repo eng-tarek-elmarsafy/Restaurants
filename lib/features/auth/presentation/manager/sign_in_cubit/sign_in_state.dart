@@ -5,16 +5,16 @@ sealed class SignInState {}
 
 final class SignInInitial extends SignInState {}
 
-final class SignUpLoading extends SignInState {}
+final class SignInLoading extends SignInState {}
 
-final class SignUpSuccess extends SignInState {
-  SignUpSuccess({required this.userEntity});
+final class SignInSuccess extends SignInState {
+  SignInSuccess({required this.userEntity});
 
   final UserEntity userEntity;
 }
 
-final class SignUpFailure extends SignInState {
-  SignUpFailure({required this.errorMessage});
+final class SignInFailure extends SignInState {
+  SignInFailure({required this.errorMessage});
 
   final String errorMessage;
 }
