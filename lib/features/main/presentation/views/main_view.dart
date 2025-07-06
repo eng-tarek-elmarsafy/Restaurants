@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:restaurants/core/function/build_app_bar.dart';
+import 'package:restaurants/features/cart/presentation/views/cart_view.dart';
 import 'package:restaurants/features/home/presentation/views/home_view.dart';
 import 'package:restaurants/features/home/presentation/views/widgets/navigation_nav_bar.dart';
 
@@ -16,15 +17,10 @@ class _MainViewState extends State<MainView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(context),
+      appBar: buildAppBar(context, isGoBack: false),
       body: IndexedStack(
         index: _selectedIndex,
-        children: const [
-          HomeView(),
-          Placeholder(),
-          Placeholder(),
-          Placeholder(),
-        ],
+        children: const [HomeView(), Placeholder(), CartView(), Placeholder()],
       ),
       bottomNavigationBar: NavigationNavBar(
         onTabChange: (int value) {

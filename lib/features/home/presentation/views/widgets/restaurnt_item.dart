@@ -4,6 +4,7 @@ import 'package:restaurants/constrains.dart';
 import 'package:restaurants/core/function/height.dart';
 import 'package:restaurants/core/function/width.dart';
 import 'package:restaurants/core/style/app_style.dart';
+import 'package:restaurants/features/home/presentation/views/widgets/favorite_icon.dart';
 import 'package:restaurants/features/restaurant_details/presentation/views/restaurnt_details_view.dart';
 
 class RestsurntItem extends StatelessWidget {
@@ -11,13 +12,13 @@ class RestsurntItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        GestureDetector(
-          onTap: () {
+    return GestureDetector(
+      onTap: () {
             Navigator.pushNamed(context, RestaurntDetailsView.id);
           },
-          child: Container(
+      child: Row(
+        children: [
+          Container(
             width: 100,
             height: 70,
             decoration: BoxDecoration(
@@ -32,29 +33,29 @@ class RestsurntItem extends StatelessWidget {
               ),
             ),
           ),
-        ),
-        width(8),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text('دلع كرشك', style: AppStyle.subtitleStyle),
-            height(4),
-            const Text('اشهي انواع اللحوم', style: AppStyle.smallTextStyle),
-            height(4),
-            RatingBarIndicator(
-              rating: 3.3,
-              itemBuilder:
-                  (contxt, index) =>
-                      const Icon(Icons.star, color: kSecondaryColor),
-              itemCount: 5,
-              itemSize: 15,
-              direction: Axis.horizontal,
-            ),
-          ],
-        ),
-        const Spacer(),
-        const Icon(Icons.arrow_forward_ios_outlined, color: kSecondaryColor),
-      ],
+          width(8),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text('دلع كرشك', style: AppStyle.subtitleStyle),
+              height(4),
+              const Text('اشهي انواع اللحوم', style: AppStyle.smallTextStyle),
+              height(4),
+              RatingBarIndicator(
+                rating: 3.3,
+                itemBuilder:
+                    (contxt, index) =>
+                        const Icon(Icons.star, color: kSecondaryColor),
+                itemCount: 5,
+                itemSize: 15,
+                direction: Axis.horizontal,
+              ),
+            ],
+          ),
+          const Spacer(),
+          const FavoriteIcon(),
+        ],
+      ),
     );
   }
 }
