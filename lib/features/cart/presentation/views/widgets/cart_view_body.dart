@@ -15,11 +15,6 @@ class CartViewBody extends StatelessWidget {
           SliverToBoxAdapter(
             child: Column(
               children: [
-                // const Padding(
-                //   padding: EdgeInsets.symmetric(horizontal: 16),
-                //   child: CustomAppBar(titlel: 'السلة', backIconVisibilty: true),
-                // ),
-                // const SizedBox(height: 16),
                 Container(
                   color: Colors.amber,
                   width: double.infinity,

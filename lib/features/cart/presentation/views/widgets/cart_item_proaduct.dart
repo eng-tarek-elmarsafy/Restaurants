@@ -15,13 +15,15 @@ class CartItemProaduct extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Row(
           children: [
-            Container(
+            SizedBox(
               width: 90,
               height: 95,
-              color: Colors.blue,
-              child: Image.network(
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpEpu_AdjtZfYuRMby9oqhPElQglmsVl22Gg&s',
-                fit: BoxFit.fill,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(4),
+                child: Image.network(
+                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpEpu_AdjtZfYuRMby9oqhPElQglmsVl22Gg&s',
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
             Expanded(
@@ -77,7 +79,7 @@ class CartItemProaduct extends StatelessWidget {
                         const Spacer(),
                         Text(
                           '60 جنيه ',
-                          style: AppStyle.smallTextStyle.copyWith(
+                          style: AppStyle.subtitleStyle.copyWith(
                             color: kSecondaryColor,
                           ),
                         ),
