@@ -10,32 +10,53 @@ class CartViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: CustomScrollView(
-        slivers: [
-          SliverToBoxAdapter(
-            child: Column(
-              children: [
-                Container(
-                  color: Colors.amber,
-                  width: double.infinity,
-                  child: Center(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
-                      child: Text(
-                        'لديك 3 منتجات في سله التسوق',
-                        style: AppStyle.buttonTextStyle.copyWith(
-                          color: kPrimaryColor,
+      child: Stack(
+        children: [
+          CustomScrollView(
+            slivers: [
+              SliverToBoxAdapter(
+                child: Column(
+                  children: [
+                    Container(
+                      color: Colors.amber,
+                      width: double.infinity,
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: Text(
+                            'لديك 3 منتجات في سله التسوق',
+                            style: AppStyle.buttonTextStyle.copyWith(
+                              color: kPrimaryColor,
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
-              ],
+              ),
+              const SliverToBoxAdapter(child: CustomDivider()),
+              const CartItemProaductLisView(),
+              const SliverToBoxAdapter(child: CustomDivider()),
+            ],
+          ),
+          Positioned(
+            bottom: 1.5,
+            right: 5,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: kSecondaryColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+              onPressed: () {},
+              child: Text(
+                'تأكيد الطلب',
+                style: AppStyle.buttonTextStyle.copyWith(color: kPrimaryColor),
+              ),
             ),
           ),
-          const SliverToBoxAdapter(child: CustomDivider()),
-          const CartItemProaductLisView(),
-          const SliverToBoxAdapter(child: CustomDivider()),
         ],
       ),
     );
