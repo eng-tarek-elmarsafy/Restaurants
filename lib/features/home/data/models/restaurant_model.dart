@@ -24,7 +24,7 @@ class RestaurantModel {
     required this.address,
     required this.phone,
     required this.category,
-    required this.rating,
+    this.rating = '0',
     required this.openTime,
     required this.closeTime,
     required this.deliveryFee,
@@ -62,14 +62,14 @@ class RestaurantModel {
       id: data['id'],
       name: data['name'],
       description: data['description'],
-      imageUrl: data['imageUrl'],
+      imageUrl: data['image_url'],
       address: data['address'],
       phone: data['phone'],
       category: data['category'],
-      rating: data['rating'],
-      openTime: data['openTime'],
-      closeTime: data['closeTime'],
-      deliveryFee: data['deliveryFee'],
+      // rating: data['rating'],
+      openTime: data['open_time'],
+      closeTime: data['close_time'],
+      deliveryFee: data['delivery_fee'],
     );
   }
 }
