@@ -1,3 +1,3 @@
 abstract class BackendEndpoint {
-  static String getData = 'restaurants';
+  static String getRestaurants = 'restaurants';
 }
