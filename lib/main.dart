@@ -14,7 +14,7 @@ void main() async {
 
   await SupabaseInitializing.initializing();
   setup();
-  await DataStorServicesImpl().getData(BackendEndpoint.getData);
+  // await DataStorServicesImpl().getData(BackendEndpoint.getData);
   runApp(const Restaurants());
 }
 
