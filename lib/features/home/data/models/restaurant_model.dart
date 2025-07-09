@@ -29,6 +29,21 @@ class RestaurantModel {
     required this.closeTime,
     required this.deliveryFee,
   });
+  static RestaurantEntity toEntity(RestaurantModel model) {
+    return RestaurantEntity(
+      id: model.id,
+      name: model.name,
+      description: model.description,
+      imageUrl: model.imageUrl,
+      address: model.address,
+      phone: model.phone,
+      category: model.category,
+      rating: model.rating,
+      openTime: model.openTime,
+      closeTime: model.closeTime,
+      deliveryFee: model.deliveryFee,
+    );
+  }
 
   final String id;
   final String name;
@@ -42,7 +57,7 @@ class RestaurantModel {
   final String closeTime;
   final String deliveryFee;
 
-  RestaurantModel toJson(Map<String, dynamic> data) {
+  static RestaurantModel fromJson(Map<String, dynamic> data) {
     return RestaurantModel(
       id: data['id'],
       name: data['name'],
