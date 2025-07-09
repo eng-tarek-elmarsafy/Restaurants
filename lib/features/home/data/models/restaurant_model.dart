@@ -6,7 +6,7 @@ class RestaurantModel {
       id: entity.id,
       name: entity.name,
       description: entity.description,
-      imageUrl: entity.imageUrl,
+      imageUrl: entity.imageUrl!,
       address: entity.address,
       phone: entity.phone,
       category: entity.category,

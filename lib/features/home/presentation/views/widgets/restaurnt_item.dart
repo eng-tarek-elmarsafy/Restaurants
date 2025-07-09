@@ -4,18 +4,19 @@ import 'package:restaurants/constrains.dart';
 import 'package:restaurants/core/function/height.dart';
 import 'package:restaurants/core/function/width.dart';
 import 'package:restaurants/core/style/app_style.dart';
+import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
 import 'package:restaurants/features/home/presentation/views/widgets/favorite_icon.dart';
 import 'package:restaurants/features/restaurant_details/presentation/views/restaurnt_details_view.dart';
 
 class RestsurntItem extends StatelessWidget {
-  const RestsurntItem({super.key});
-
+  const RestsurntItem({super.key, required this.restaurant});
+   final RestaurantEntity restaurant;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-            Navigator.pushNamed(context, RestaurntDetailsView.id);
-          },
+        Navigator.pushNamed(context, RestaurntDetailsView.id);
+      },
       child: Row(
         children: [
           Container(

@@ -16,7 +16,7 @@ class RestaurantEntity {
   final String id;
   final String name;
   final String description;
-  final String imageUrl;
+  final String? imageUrl;
   final String address;
   final String phone;
   final String category;
