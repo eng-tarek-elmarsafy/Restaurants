@@ -10,7 +10,7 @@ import 'package:restaurants/features/restaurant_details/presentation/views/resta
 
 class RestsurntItem extends StatelessWidget {
   const RestsurntItem({super.key, required this.restaurant});
-   final RestaurantEntity restaurant;
+  final RestaurantEntity restaurant;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -28,22 +28,22 @@ class RestsurntItem extends StatelessWidget {
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(kBorderRadius / 2),
-              child: Image.network(
-                'https://cnn-arabic-images.cnn.io/cloudinary/image/upload/w_1920,c_scale,q_auto/cnnarabic/2019/01/02/images/118714.jpg',
-                fit: BoxFit.fill,
-              ),
+              child:
+                  restaurant.imageUrl != null
+                      ? Image.network(restaurant.imageUrl!, fit: BoxFit.fill)
+                      : const SizedBox(),
             ),
           ),
           width(8),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text('دلع كرشك', style: AppStyle.subtitleStyle),
+              Text(restaurant.name, style: AppStyle.subtitleStyle),
               height(4),
-              const Text('اشهي انواع اللحوم', style: AppStyle.smallTextStyle),
+              Text(restaurant.description, style: AppStyle.smallTextStyle),
               height(4),
               RatingBarIndicator(
-                rating: 3.3,
+                rating: double.parse(restaurant.rating),
                 itemBuilder:
                     (contxt, index) =>
                         const Icon(Icons.star, color: kSecondaryColor),
