@@ -22,7 +22,12 @@ class RestsurntItem extends StatelessWidget {
           Container(
             width: 100,
             height: 70,
+
             decoration: BoxDecoration(
+              color:
+                  restaurant.imageUrl != null
+                      ? Colors.transparent
+                      : Colors.white,
               borderRadius: BorderRadius.circular(kBorderRadius / 2),
               border: Border.all(color: kSecondaryColor),
             ),

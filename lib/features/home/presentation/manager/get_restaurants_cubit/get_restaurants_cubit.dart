@@ -14,7 +14,6 @@ class GetRestaurantsCubit extends Cubit<GetRestaurantsState> {
   Future<void> getRestaurants() async {
     emit(GetRestaurantsLoading());
     final result = await homeRepo.getData(BackendEndpoint.getRestaurants);
-
     result.fold(
       (failure) => emit(GetRestaurantsFailuer(err: failure.message)),
       (success) => emit(GetRestaurantsSuccess(restaurants: success)),

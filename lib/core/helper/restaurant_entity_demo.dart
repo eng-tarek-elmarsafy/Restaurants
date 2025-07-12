@@ -1,6 +1,7 @@
 import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
 
-List<RestaurantEntity> restaurantEntityDemo = [RestaurantEntity(
+List<RestaurantEntity> restaurantEntityDemo = [
+  RestaurantEntity(
     id: '1',
     name: 'Demo Restaurant',
     description: 'staurant description.',
@@ -12,7 +13,8 @@ List<RestaurantEntity> restaurantEntityDemo = [RestaurantEntity(
     openTime: '10:00 AM',
     closeTime: '10:00 PM',
     deliveryFee: 'Free',
-  ),RestaurantEntity(
+  ),
+  RestaurantEntity(
     id: '1',
     name: 'Demo Restaurant',
     description: 'staurant description.',
@@ -24,7 +26,8 @@ List<RestaurantEntity> restaurantEntityDemo = [RestaurantEntity(
     openTime: '10:00 AM',
     closeTime: '10:00 PM',
     deliveryFee: 'Free',
-  ),RestaurantEntity(
+  ),
+  RestaurantEntity(
     id: '1',
     name: 'Demo Restaurant',
     description: 'staurant description.',
@@ -36,7 +39,8 @@ List<RestaurantEntity> restaurantEntityDemo = [RestaurantEntity(
     openTime: '10:00 AM',
     closeTime: '10:00 PM',
     deliveryFee: 'Free',
-  ),RestaurantEntity(
+  ),
+  RestaurantEntity(
     id: '1',
     name: 'Demo Restaurant',
     description: 'staurant description.',
@@ -48,7 +52,8 @@ List<RestaurantEntity> restaurantEntityDemo = [RestaurantEntity(
     openTime: '10:00 AM',
     closeTime: '10:00 PM',
     deliveryFee: 'Free',
-  ),RestaurantEntity(
+  ),
+  RestaurantEntity(
     id: '1',
     name: 'Demo Restaurant',
     description: 'staurant description.',
@@ -60,7 +65,8 @@ List<RestaurantEntity> restaurantEntityDemo = [RestaurantEntity(
     openTime: '10:00 AM',
     closeTime: '10:00 PM',
     deliveryFee: 'Free',
-  ),RestaurantEntity(
+  ),
+  RestaurantEntity(
     id: '1',
     name: 'Demo Restaurant',
     description: 'staurant description.',
@@ -72,4 +78,70 @@ List<RestaurantEntity> restaurantEntityDemo = [RestaurantEntity(
     openTime: '10:00 AM',
     closeTime: '10:00 PM',
     deliveryFee: 'Free',
-  )];
+  ),
+  RestaurantEntity(
+    id: '1',
+    name: 'Demo Restaurant',
+    description: 'staurant description.',
+    imageUrl: null,
+    rating: '4.5',
+    address: '123 Demo Street',
+    phone: '123-456-7890',
+    category: 'Demo Category',
+    openTime: '10:00 AM',
+    closeTime: '10:00 PM',
+    deliveryFee: 'Free',
+  ),
+  RestaurantEntity(
+    id: '1',
+    name: 'Demo Restaurant',
+    description: 'staurant description.',
+    imageUrl: null,
+    rating: '4.5',
+    address: '123 Demo Street',
+    phone: '123-456-7890',
+    category: 'Demo Category',
+    openTime: '10:00 AM',
+    closeTime: '10:00 PM',
+    deliveryFee: 'Free',
+  ),
+  RestaurantEntity(
+    id: '1',
+    name: 'Demo Restaurant',
+    description: 'staurant description.',
+    imageUrl: null,
+    rating: '4.5',
+    address: '123 Demo Street',
+    phone: '123-456-7890',
+    category: 'Demo Category',
+    openTime: '10:00 AM',
+    closeTime: '10:00 PM',
+    deliveryFee: 'Free',
+  ),
+  RestaurantEntity(
+    id: '1',
+    name: 'Demo Restaurant',
+    description: 'staurant description.',
+    imageUrl: null,
+    rating: '4.5',
+    address: '123 Demo Street',
+    phone: '123-456-7890',
+    category: 'Demo Category',
+    openTime: '10:00 AM',
+    closeTime: '10:00 PM',
+    deliveryFee: 'Free',
+  ),
+  RestaurantEntity(
+    id: '1',
+    name: 'Demo Restaurant',
+    description: 'staurant description.',
+    imageUrl: null,
+    rating: '4.5',
+    address: '123 Demo Street',
+    phone: '123-456-7890',
+    category: 'Demo Category',
+    openTime: '10:00 AM',
+    closeTime: '10:00 PM',
+    deliveryFee: 'Free',
+  ),
+];
