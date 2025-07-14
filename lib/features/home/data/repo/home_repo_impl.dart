@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:restaurants/core/failure/failure.dart';
-import 'package:restaurants/core/services/data_stor_services.dart';
+import 'package:restaurants/core/services/stor_services.dart';
 import 'package:restaurants/features/home/data/models/restaurant_model.dart';
 import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
 import 'package:restaurants/features/home/domain/repo/home_repo.dart';
@@ -9,7 +9,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 class HomeRepoImpl implements HomeRepo {
   HomeRepoImpl({required this.services});
 
-  final DataStorServices services;
+  final StorServices services;
   @override
   Future<Either<Failure, List<RestaurantEntity>>> getData(String path) async {
     try {

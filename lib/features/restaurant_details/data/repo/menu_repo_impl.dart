@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:restaurants/core/failure/failure.dart';
 import 'package:restaurants/core/helper/backend_endpoint.dart';
-import 'package:restaurants/core/services/data_stor_services.dart';
+import 'package:restaurants/core/services/stor_services.dart';
 import 'package:restaurants/features/restaurant_details/data/models/meun_model.dart';
 import 'package:restaurants/features/restaurant_details/domain/entites/meun_entity.dart';
 import 'package:restaurants/features/restaurant_details/domain/repo/menu_repo.dart';
@@ -10,7 +10,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 class MeunRepoImpl extends MeunRepo {
   MeunRepoImpl({required this.services});
 
-  final DataStorServices services;
+  final StorServices services;
 
   @override
   Future<Either<Failure, List<MenuItemEntity>>> getMeunRestaurant(

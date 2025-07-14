@@ -1,4 +1,4 @@
-import 'package:restaurants/core/services/data_stor_services.dart';
+import 'package:restaurants/core/services/stor_services.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 // class DataStorServicesImpl implements DataStorServices {
@@ -24,7 +24,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 //   }
 // }
 
-class DataStorServicesImpl implements DataStorServices {
+class StorServicesImpl implements StorServices {
   final supabase = Supabase.instance.client;
 
   @override
@@ -46,4 +46,3 @@ class DataStorServicesImpl implements DataStorServices {
     return response;
   }
 }
-

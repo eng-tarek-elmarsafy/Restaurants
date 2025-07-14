@@ -1,6 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:restaurants/core/services/auth_services.dart';
-import 'package:restaurants/core/services/data_stor_services.dart';
+import 'package:restaurants/core/services/stor_services.dart';
 import 'package:restaurants/core/services/supabase/data_stor_services_impl.dart';
 import 'package:restaurants/core/services/supabase/supabase_auth_services_impl.dart';
 import 'package:restaurants/features/auth/data/repo/auth_repo_impl.dart';
@@ -19,13 +19,13 @@ void setup() {
     AuthRepoImpl(authServices: getIt.get<AuthServices>()),
   );
 
-  getIt.registerSingleton<DataStorServices>(DataStorServicesImpl());
+  getIt.registerSingleton<StorServices>(StorServicesImpl());
 
   getIt.registerSingleton<HomeRepo>(
-    HomeRepoImpl(services: getIt.get<DataStorServices>()),
+    HomeRepoImpl(services: getIt.get<StorServices>()),
   );
 
   getIt.registerSingleton<MeunRepo>(
-    MeunRepoImpl(services: getIt.get<DataStorServices>()),
+    MeunRepoImpl(services: getIt.get<StorServices>()),
   );
 }
