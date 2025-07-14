@@ -17,7 +17,11 @@ class RestsurntItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, RestaurntDetailsView.id);
+        Navigator.pushNamed(
+          context,
+          RestaurntDetailsView.id,
+          arguments: restaurant,
+        );
         context.read<GetMenuCubit>().getMenu(restaurant.id);
       },
       child: Row(

@@ -70,7 +70,7 @@ class _SignUpViewBodyState extends State<SignInViewBody> {
               const SizedBox(height: 16),
 
               CustomButton(
-                title: 'إنشاء حساب جديد',
+                title: 'تسجيل دخول',
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
