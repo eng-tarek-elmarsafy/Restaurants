@@ -4,4 +4,5 @@ abstract interface class StorServices {
     String? column,
     String? restrctions,
   ]);
+  Future<void> addData(String path, Map<String, dynamic> data);
 }

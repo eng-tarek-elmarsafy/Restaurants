@@ -1,29 +1,6 @@
 import 'package:restaurants/core/services/stor_services.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-// class DataStorServicesImpl implements DataStorServices {
-//   var supabase = Supabase.instance.client;
-
-//   @override
-//   Future<List<Map<String, dynamic>>> getData(
-//     String path, [
-//     String? column,
-//     String? restrctions,
-//   ]) async {
-//     List<Map<String, dynamic>> respons = [{}];
-//     var requst = supabase.from(path);
-
-//     if (column == null) {
-//       respons = await requst.select();
-//     }
-//     if (column != null) {
-//       respons = await requst.select(column).eq(column, restrctions!);
-//     }
-
-//     return respons;
-//   }
-// }
-
 class StorServicesImpl implements StorServices {
   final supabase = Supabase.instance.client;
 
@@ -44,5 +21,10 @@ class StorServicesImpl implements StorServices {
     }
 
     return response;
+  }
+
+  @override
+  Future<void> addData(String path, Map<String, dynamic> data) async {
+    await supabase.from(path).insert(data);
   }
 }

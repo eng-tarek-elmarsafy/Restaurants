@@ -11,7 +11,7 @@ class RetingModel {
       comment: data['comment'],
     );
   }
-  factory RetingModel.fromEntity(RetingEntity entity) {
+  factory RetingModel.fromEntity(RatingEntity entity) {
     return RetingModel(
       id: entity.id,
       createdIt: entity.createdIt,

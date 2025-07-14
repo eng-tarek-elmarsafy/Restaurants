@@ -1,5 +1,5 @@
-class RetingEntity {
-  RetingEntity({
+class RatingEntity {
+  RatingEntity({
     required this.id,
     required this.createdIt,
     required this.restaurantId,
