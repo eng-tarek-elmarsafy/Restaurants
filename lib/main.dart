@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:restaurants/constrains.dart';
 import 'package:restaurants/core/helper/get_it_setup.dart';
 import 'package:restaurants/core/helper/on_generate_route_function.dart';
 import 'package:restaurants/core/services/supabase/supabase_initializing.dart';
+import 'package:restaurants/features/auth/domain/repo/auth_repo.dart';
+import 'package:restaurants/features/auth/presentation/manager/sign_in_cubit/sign_in_cubit.dart';
+import 'package:restaurants/features/auth/presentation/manager/sign_up_cubit/sign_up_cubit.dart';
+import 'package:restaurants/features/home/domain/repo/home_repo.dart';
+import 'package:restaurants/features/home/presentation/manager/get_restaurants_cubit/get_restaurants_cubit.dart';
+import 'package:restaurants/features/restaurant_details/domain/repo/menu_repo.dart';
+import 'package:restaurants/features/restaurant_details/presentation/manager/get_meun_cubit/get_menu_cubit.dart';
 import 'package:restaurants/features/splash/presentation/views/splash_view.dart';
 import 'package:restaurants/generated/l10n.dart';
 
@@ -21,27 +29,37 @@ class Restaurants extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      locale: const Locale('ar'),
-      localizationsDelegates: const [
-        S.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => SignInCubit(getIt.get<AuthRepo>())),
+        BlocProvider(create: (context) => SignUpCubit(getIt.get<AuthRepo>())),
+        BlocProvider(
+          create: (context) => GetRestaurantsCubit(getIt.get<HomeRepo>()),
+        ),
+        BlocProvider(create: (context) => GetMenuCubit(getIt.get<MeunRepo>())),
       ],
-      supportedLocales: S.delegate.supportedLocales,
-      theme: ThemeData(
-        appBarTheme: const AppBarTheme(backgroundColor: kPrimaryColor),
-        scaffoldBackgroundColor: kPrimaryColor,
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ButtonStyle(
-            backgroundColor: WidgetStateProperty.all(kNeutralColor),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        locale: const Locale('ar'),
+        localizationsDelegates: const [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: S.delegate.supportedLocales,
+        theme: ThemeData(
+          appBarTheme: const AppBarTheme(backgroundColor: kPrimaryColor),
+          scaffoldBackgroundColor: kPrimaryColor,
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ButtonStyle(
+              backgroundColor: WidgetStateProperty.all(kNeutralColor),
+            ),
           ),
         ),
+        initialRoute: SplashView.id,
+        onGenerateRoute: onGenerateRoute,
       ),
-      initialRoute: SplashView.id,
-      onGenerateRoute: onGenerateRoute,
     );
   }
 }

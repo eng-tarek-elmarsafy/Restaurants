@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:restaurants/constrains.dart';
 import 'package:restaurants/core/function/height.dart';
 import 'package:restaurants/core/style/app_style.dart';
+import 'package:restaurants/features/restaurant_details/domain/entites/meun_entity.dart';
 
 class FoodItem extends StatelessWidget {
-  const FoodItem({super.key});
+  const FoodItem({super.key, required this.menu});
+  final MenuItemEntity menu;
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        
         borderRadius: BorderRadius.all(Radius.circular(kBorderRadius / 2)),
       ),
       child: Stack(
@@ -23,10 +24,7 @@ class FoodItem extends StatelessWidget {
                     topLeft: Radius.circular(kBorderRadius / 2),
                     topRight: Radius.circular(kBorderRadius / 2),
                   ),
-                  child: Image.network(
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ5zIPxj3-qnowxrEAVECr6YsxVdiXDVW_-w&s',
-                    fit: BoxFit.fill,
-                  ),
+                  child: Image.network(menu.imageUrl, fit: BoxFit.fill),
                 ),
               ),
 
@@ -34,25 +32,25 @@ class FoodItem extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 8),
                 child: Column(
                   children: [
-                    const Align(
+                    Align(
                       alignment: Alignment.centerRight,
-                      child: Text('فراخ مشويه', style: AppStyle.subtitleStyle),
+                      child: Text(menu.category, style: AppStyle.subtitleStyle),
                     ),
                     const SizedBox(height: 4),
                     Row(
                       children: [
-                        const Text.rich(
+                        Text.rich(
                           TextSpan(
                             children: [
                               TextSpan(
-                                text: '${30}جنية',
+                                text: '${menu.price}جنية',
                                 style: AppStyle.smallTextStyle,
                               ),
-                              TextSpan(
+                              const TextSpan(
                                 text: ' / ',
                                 style: AppStyle.smallTextStyle,
                               ),
-                              TextSpan(
+                              const TextSpan(
                                 text: 'الكيلو',
                                 style: AppStyle.smallTextStyle,
                               ),

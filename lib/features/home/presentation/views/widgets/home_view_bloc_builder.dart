@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:restaurants/core/helper/restaurant_entity_demo.dart';
@@ -15,6 +17,7 @@ class HomeViewBlocBuilder extends StatelessWidget {
         if (state is GetRestaurantsSuccess) {
           return HomeViewBody(restaurants: state.restaurants);
         } else if (state is GetRestaurantsFailuer) {
+          log(state.err);
           return Center(child: Text(state.err));
         } else {
           return Skeletonizer(

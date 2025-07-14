@@ -9,8 +9,8 @@ class RestaurntDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const RestaurntDetailsBody(),
       appBar: buildAppBar(context),
+      body: const RestaurntDetailsBody(),
     );
   }
 }
