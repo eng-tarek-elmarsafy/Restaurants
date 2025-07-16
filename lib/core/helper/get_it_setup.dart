@@ -17,11 +17,14 @@ final getIt = GetIt.instance;
 void setup() {
   getIt.registerSingleton<AuthServices>(SupabaseAuthServicesImpl());
 
-  getIt.registerSingleton<AuthRepo>(
-    AuthRepoImpl(authServices: getIt.get<AuthServices>()),
-  );
-
   getIt.registerSingleton<StorServices>(StorServicesImpl());
+
+  getIt.registerSingleton<AuthRepo>(
+    AuthRepoImpl(
+      getIt.get<StorServices>(),
+      authServices: getIt.get<AuthServices>(),
+    ),
+  );
 
   getIt.registerSingleton<HomeRepo>(
     HomeRepoImpl(services: getIt.get<StorServices>()),

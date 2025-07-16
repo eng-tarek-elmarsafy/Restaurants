@@ -1,8 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:restaurants/core/failure/failure.dart';
+import 'package:restaurants/core/services/stor_services.dart';
+import 'package:restaurants/core/services/supabase/data_stor_services_impl.dart';
 import 'package:restaurants/features/auth/data/repo/auth_repo_impl.dart';
-import 'package:restaurants/features/auth/domain/entities/user_entity.dart';
+import 'package:restaurants/features/auth/domain/entities/create_user_entity.dart';
 
 import '../../../../mocks/mocks.mocks.dart';
 
@@ -14,7 +16,7 @@ void main() {
   setUp(() {
     mockAuthService = MockAuthEmailServices();
     mockUser = MockUser();
-    authRepo = AuthRepoImpl(authServices: mockAuthService);
+    authRepo = AuthRepoImpl(StorServicesImpl(), authServices: mockAuthService);
   });
 
   test('should return UserEntity when sign up succeeds', () async {
@@ -42,7 +44,7 @@ void main() {
     // Assert
     expect(result.isRight(), true);
     final user = result.getOrElse(() => throw Exception());
-    expect(user, isA<UserEntity>());
+    expect(user, isA<CreateUserEntity>());
     expect(user.id, '123');
     expect(user.email, 'test@example.com');
     expect(user.userName, 'hanafi');

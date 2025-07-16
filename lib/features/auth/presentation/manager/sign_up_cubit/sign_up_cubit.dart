@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:restaurants/core/helper/backend_endpoint.dart';
+import 'package:restaurants/features/auth/domain/entities/create_user_entity.dart';
 import 'package:restaurants/features/auth/domain/entities/user_entity.dart';
 import 'package:restaurants/features/auth/domain/repo/auth_repo.dart';
 
@@ -26,7 +28,17 @@ class SignUpCubit extends Cubit<SignUpState> {
 
     result.fold(
       (failure) => emit(SignUpFailure(errorMessage: failure.message)),
-      (success) => emit(SignUpSuccess(userEntity: success)),
+      (success) async {
+        final result = await authRepo.addUser(
+          BackendEndpoint.addUser,
+          UserEntity(fullName: name, phon: phoneNumber, id: success.id),
+        );
+        result.fold(
+          (failuer) => emit(SignUpFailure(errorMessage: failuer.message)),
+          (r) => emit(SignUpSuccess(userEntity: success)),
+        );
+        // emit(SignUpSuccess(userEntity: success));
+      },
     );
   }
 }

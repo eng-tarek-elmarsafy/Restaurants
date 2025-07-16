@@ -1,22 +1,39 @@
 import 'package:restaurants/features/auth/domain/entities/user_entity.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 class UserModel extends UserEntity {
+  factory UserModel.fromEntity(UserEntity entit) {
+    return UserModel(
+      fullName: entit.fullName,
+      phon: entit.phon,
+      id: entit.id,
+      address: entit.address,
+      avtarUrl: entit.avtarUrl,
+    );
+  }
   UserModel({
-    required super.id,
-    required super.email,
-    super.image,
-    super.numberPhone,
-    super.userName,
+    super.id,
+    required super.fullName,
+    required super.phon,
+    super.avtarUrl,
+    super.address,
   });
 
-  factory UserModel.fromUser(User user) {
+  factory UserModel.fromJson(Map<String, dynamic> data) {
     return UserModel(
-      id: user.id,
-      email: user.email!,
-      userName: user.userMetadata?['userName'],
-      numberPhone: user.userMetadata?['numberPhone'],
-      image: user.userMetadata?['image'],
+      fullName: data['full_name'],
+      phon: data['phon'],
+      id: data['id'],
+      address: data['address'],
+      avtarUrl: data['avtar_url'],
     );
+  }
+  toJson() {
+    return {
+      'full_name': fullName,
+      'phone': phon,
+      'id': id,
+      'address': address,
+      'avatar_url': avtarUrl,
+    };
   }
 }
