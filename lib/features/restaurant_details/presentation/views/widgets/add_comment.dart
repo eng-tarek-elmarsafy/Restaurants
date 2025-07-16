@@ -53,7 +53,7 @@ class _AddCommentState extends State<AddComment> {
                     },
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'hgghhgh';
+                        return 'اكتب شيء';
                       }
                       return null;
                     },
@@ -69,6 +69,9 @@ class _AddCommentState extends State<AddComment> {
                               comment: comment,
                             ),
                           );
+                          setState(() {
+                            isActve = false;
+                          });
                         } else {
                           autovalidateMode = AutovalidateMode.always;
                         }
