@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:restaurants/core/helper/backend_endpoint.dart';
@@ -15,9 +17,9 @@ class RatingCubit extends Cubit<RatingState> {
       BackendEndpoint.ratingPath,
       entity,
     );
-    result.fold(
-      (failure) => emit(RatingFailure(err: failure.message)),
-      (success) => emit(RatingSuccess(entity: null)),
-    );
+    result.fold((failure) {
+      log(failure.message);
+      emit(RatingFailure(err: failure.message));
+    }, (success) => emit(RatingSuccess(entity: null)));
   }
 }

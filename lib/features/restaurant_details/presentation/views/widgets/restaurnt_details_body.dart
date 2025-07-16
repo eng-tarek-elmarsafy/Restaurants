@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:restaurants/constrains.dart';
 import 'package:restaurants/core/function/height.dart';
 import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
+import 'package:restaurants/features/restaurant_details/presentation/views/rating_view.dart';
 import 'package:restaurants/features/restaurant_details/presentation/views/restaurant_info.dart';
 import 'package:restaurants/features/restaurant_details/presentation/views/widgets/menu_tabs_bar.dart';
 import 'package:restaurants/features/restaurant_details/presentation/views/widgets/meun_bloc_builder.dart';
@@ -33,7 +34,7 @@ class _RestaurntDetailsBodyState extends State<RestaurntDetailsBody> {
             index: carnitIndex,
             children: [
               const MeunBlocBuilder(),
-              const Placeholder(),
+              RatingView(restaurant: widget.restaurant),
               RestaurantInfo(restaurant: widget.restaurant),
             ],
           ),

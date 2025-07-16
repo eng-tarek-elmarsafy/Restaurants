@@ -8,7 +8,9 @@ import 'package:restaurants/features/auth/domain/repo/auth_repo.dart';
 import 'package:restaurants/features/home/data/repo/home_repo_impl.dart';
 import 'package:restaurants/features/home/domain/repo/home_repo.dart';
 import 'package:restaurants/features/restaurant_details/data/repo/menu_repo_impl.dart';
+import 'package:restaurants/features/restaurant_details/data/repo/rating_repo_impl.dart';
 import 'package:restaurants/features/restaurant_details/domain/repo/menu_repo.dart';
+import 'package:restaurants/features/restaurant_details/domain/repo/reting_repo.dart';
 
 final getIt = GetIt.instance;
 
@@ -27,5 +29,8 @@ void setup() {
 
   getIt.registerSingleton<MeunRepo>(
     MeunRepoImpl(services: getIt.get<StorServices>()),
+  );
+  getIt.registerSingleton<RatingRepo>(
+    RatingRepoImpl(services: getIt.get<StorServices>()),
   );
 }

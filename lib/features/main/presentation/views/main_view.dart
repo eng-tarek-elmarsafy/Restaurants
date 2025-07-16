@@ -20,7 +20,11 @@ class _MainViewState extends State<MainView> {
       appBar: buildAppBar(context, isGoBack: false),
       body: IndexedStack(
         index: _selectedIndex,
-        children: const [HomeView(), Placeholder(), CartView(), Placeholder()],
+        children: const [
+          HomeView(),
+          // Placeholder(), CartView(),
+          Placeholder(),
+        ],
       ),
       bottomNavigationBar: NavigationNavBar(
         onTabChange: (int value) {
