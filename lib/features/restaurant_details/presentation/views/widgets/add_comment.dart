@@ -8,7 +8,6 @@ class AddComment extends StatelessWidget {
   const AddComment({super.key, required this.restaurant});
   final RestaurantEntity restaurant;
   @override
-  @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 700),
@@ -21,7 +20,8 @@ class AddComment extends StatelessWidget {
           showModalBottomSheet(
             isScrollControlled: true,
             context: context,
-            builder: (context) => const ModalBottomSheetBody(),
+            builder:
+                (context) =>  ModalBottomSheetBody(restaurant: restaurant),
           );
         },
         icon: const Padding(
