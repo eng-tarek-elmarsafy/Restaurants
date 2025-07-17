@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:restaurants/core/helper/backend_endpoint.dart';
 import 'package:restaurants/features/restaurant_details/domain/entites/rating_entity.dart';
-import 'package:restaurants/features/restaurant_details/domain/repo/reting_repo.dart';
+import 'package:restaurants/features/restaurant_details/domain/repo/rating_repo.dart';
 
 part 'rating_state.dart';
 

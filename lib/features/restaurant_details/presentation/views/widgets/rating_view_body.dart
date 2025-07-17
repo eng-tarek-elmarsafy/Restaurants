@@ -42,7 +42,11 @@ class RatingViewBody extends StatelessWidget {
             );
           },
         ),
-        AddComment(restaurant: restaurant),
+        Positioned(
+          bottom: 40,
+          right: 20,
+          child: AddComment(restaurant: restaurant),
+        ),
       ],
     );
   }

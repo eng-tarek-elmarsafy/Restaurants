@@ -10,7 +10,7 @@ import 'package:restaurants/features/home/domain/repo/home_repo.dart';
 import 'package:restaurants/features/restaurant_details/data/repo/menu_repo_impl.dart';
 import 'package:restaurants/features/restaurant_details/data/repo/rating_repo_impl.dart';
 import 'package:restaurants/features/restaurant_details/domain/repo/menu_repo.dart';
-import 'package:restaurants/features/restaurant_details/domain/repo/reting_repo.dart';
+import 'package:restaurants/features/restaurant_details/domain/repo/rating_repo.dart';
 
 final getIt = GetIt.instance;
 
