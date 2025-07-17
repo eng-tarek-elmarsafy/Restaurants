@@ -1,17 +1,21 @@
 class RatingEntity {
   RatingEntity({
     this.id,
-    this.createdIt,
+    this.createdAt,
+    required this.name,
     required this.restaurantId,
-    required this.userId,
     required this.reting,
     required this.comment,
+    required this.userId,
+    this.imageUrl,
   });
 
   final String? id;
-  final String? createdIt;
+  final String? createdAt;
   final String restaurantId;
-  final String userId;
   final double reting;
   final String comment;
+  final String name;
+  final String userId;
+  final String? imageUrl;
 }

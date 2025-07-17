@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
-import 'package:restaurants/features/restaurant_details/domain/entites/reting_entity.dart';
+import 'package:restaurants/features/restaurant_details/domain/entites/rating_entity.dart';
 import 'package:restaurants/features/restaurant_details/presentation/manager/rating_cubit/rating_cubit.dart';
 import 'package:restaurants/features/restaurant_details/presentation/views/widgets/rating_view_body.dart';
 

@@ -1,6 +1,9 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:restaurants/constrains.dart';
+import 'package:restaurants/core/style/app_style.dart';
 import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
-import 'package:restaurants/features/restaurant_details/domain/entites/reting_entity.dart';
+import 'package:restaurants/features/restaurant_details/domain/entites/rating_entity.dart';
+import 'package:restaurants/features/restaurant_details/presentation/views/widgets/add_comment.dart';
 
 class RatingViewBody extends StatelessWidget {
   const RatingViewBody({
@@ -17,9 +20,29 @@ class RatingViewBody extends StatelessWidget {
         ListView.builder(
           itemCount: listOfRating.length,
           itemBuilder: (context, index) {
-            return Text(listOfRating[index].comment);
+            return Row(
+              children: [
+                const CircleAvatar(
+                  radius: 30,
+                  backgroundColor: kSecondaryColor,
+                  child: Center(
+                    child: Icon(
+                      Icons.account_circle_rounded,
+                      size: 60,
+                      color: kPrimaryColor,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 10),
+                Text(
+                  listOfRating[index].comment,
+                  style: AppStyle.buttonTextStyle,
+                ),
+              ],
+            );
           },
         ),
+        AddComment(restaurant: restaurant),
       ],
     );
   }

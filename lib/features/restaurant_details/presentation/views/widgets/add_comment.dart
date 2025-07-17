@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:restaurants/constrains.dart';
 import 'package:restaurants/core/widgets/custom_text_form_field.dart';
 import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
-import 'package:restaurants/features/restaurant_details/domain/entites/reting_entity.dart';
+import 'package:restaurants/features/restaurant_details/domain/entites/rating_entity.dart';
 import 'package:restaurants/features/restaurant_details/presentation/manager/rating_cubit/rating_cubit.dart';
 
 class AddComment extends StatefulWidget {
@@ -67,6 +67,8 @@ class _AddCommentState extends State<AddComment> {
                               userId: widget.restaurant.id,
                               reting: 4.0,
                               comment: comment,
+                              name: '',
+                              imageUrl: '',
                             ),
                           );
                           setState(() {

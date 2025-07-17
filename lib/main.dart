@@ -1,9 +1,12 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:restaurants/constrains.dart';
 import 'package:restaurants/core/helper/get_it_setup.dart';
 import 'package:restaurants/core/helper/on_generate_route_function.dart';
+import 'package:restaurants/core/services/shared_preferences.dart';
 import 'package:restaurants/core/services/supabase/supabase_initializing.dart';
 import 'package:restaurants/features/auth/domain/repo/auth_repo.dart';
 import 'package:restaurants/features/auth/presentation/manager/sign_in_cubit/sign_in_cubit.dart';
@@ -19,7 +22,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await SupabaseInitializing.initializing();
+  await Prefs.inti();
   setup();
+  log(Prefs.getBool(kIsSignIn).toString());
+  log(Prefs.getString(kEmail).toString());
   // await DataStorServicesImpl().getData(BackendEndpoint.getData);
   runApp(const Restaurants());
 }

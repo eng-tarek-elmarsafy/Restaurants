@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:restaurants/constrains.dart';
+import 'package:restaurants/core/services/shared_preferences.dart';
 import 'package:restaurants/features/auth/presentation/views/sign_in_view.dart';
+import 'package:restaurants/features/main/presentation/views/main_view.dart';
 import 'package:restaurants/features/splash/presentation/views/widgets/splash_view_body.dart';
 
 class SplashView extends StatefulWidget {
@@ -15,7 +18,11 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     Future.delayed(const Duration(seconds: 3), () {
       if (!mounted) return;
-      Navigator.pushReplacementNamed(context, SignInView.id);
+      if (Prefs.getBool(kIsSignIn)) {
+        Navigator.pushReplacementNamed(context, MainView.id);
+      } else {
+        Navigator.pushReplacementNamed(context, SignInView.id);
+      }
     });
 
     super.initState();
