@@ -17,9 +17,26 @@ class RatingRepoImpl extends RatingRepo {
     RatingEntity entity,
   ) async {
     try {
-      await services.addData(path, RetingModel.fromEntity(entity).toJson());
+      await services.addData(path, RatingModel.fromEntity(entity).toJson());
 
       return right(null);
+    } on PostgrestException catch (e) {
+      return left(ServerFailure(message: e.message));
+    } catch (e) {
+      return left(ServerFailure(message: e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<RatingEntity>>> getRating(String path) async {
+    try {
+      final respons = await services.getData(path);
+
+      final listOfRating =
+          respons
+              .map<RatingEntity>((e) => RatingModel.fromJson(e).toEntity())
+              .toList();
+      return right(listOfRating);
     } on PostgrestException catch (e) {
       return left(ServerFailure(message: e.message));
     } catch (e) {

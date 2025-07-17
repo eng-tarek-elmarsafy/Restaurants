@@ -3,5 +3,6 @@ import 'package:restaurants/core/failure/failure.dart';
 import 'package:restaurants/features/restaurant_details/domain/entites/reting_entity.dart';
 
 abstract class RatingRepo {
-  Future<Either<Failure, void>> addRating(String path,RatingEntity entity);
+  Future<Either<Failure, void>> addRating(String path, RatingEntity entity);
+  Future<Either<Failure, List<RatingEntity>>> getRating(String path);
 }

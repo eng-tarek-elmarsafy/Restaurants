@@ -1,7 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:restaurants/core/failure/failure.dart';
-import 'package:restaurants/core/services/stor_services.dart';
 import 'package:restaurants/core/services/supabase/data_stor_services_impl.dart';
 import 'package:restaurants/features/auth/data/repo/auth_repo_impl.dart';
 import 'package:restaurants/features/auth/domain/entities/create_user_entity.dart';

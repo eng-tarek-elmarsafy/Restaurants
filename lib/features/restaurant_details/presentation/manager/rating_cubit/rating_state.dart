@@ -16,5 +16,5 @@ final class RatingFailure extends RatingState {
 final class RatingSuccess extends RatingState {
   RatingSuccess({required this.entity});
 
-  final RatingEntity? entity;
+  final List<RatingEntity>? entity;
 }

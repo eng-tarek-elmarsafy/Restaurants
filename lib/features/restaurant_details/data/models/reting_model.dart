@@ -1,18 +1,18 @@
 import 'package:restaurants/features/restaurant_details/domain/entites/reting_entity.dart';
 
-class RetingModel {
-  factory RetingModel.fromJson(Map<String, dynamic> data) {
-    return RetingModel(
+class RatingModel {
+  factory RatingModel.fromJson(Map<String, dynamic> data) {
+    return RatingModel(
       id: data['id'],
-      createdIt: data['created_it'],
+      createdIt: data['created_at'],
       restaurantId: data['restaurant_id'],
       userId: data['user_id'],
-      reting: data['reting'],
+      reting: (data['rating'] as num).toDouble(),
       comment: data['comment'],
     );
   }
-  factory RetingModel.fromEntity(RatingEntity entity) {
-    return RetingModel(
+  factory RatingModel.fromEntity(RatingEntity entity) {
+    return RatingModel(
       id: entity.id,
       createdIt: entity.createdIt,
       restaurantId: entity.restaurantId,
@@ -21,7 +21,7 @@ class RetingModel {
       comment: entity.comment,
     );
   }
-  RetingModel({
+  RatingModel({
     this.id,
     this.createdIt,
     required this.restaurantId,
@@ -44,5 +44,14 @@ class RetingModel {
       'rating': reting,
       'comment': comment,
     };
+  }
+
+  toEntity() {
+    return RatingEntity(
+      restaurantId: restaurantId,
+      userId: userId,
+      reting: reting,
+      comment: comment,
+    );
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:restaurants/core/function/build_app_bar.dart';
-import 'package:restaurants/features/cart/presentation/views/cart_view.dart';
 import 'package:restaurants/features/home/presentation/views/home_view.dart';
 import 'package:restaurants/features/home/presentation/views/widgets/navigation_nav_bar.dart';
 
