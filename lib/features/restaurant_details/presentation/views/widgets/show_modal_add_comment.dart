@@ -8,7 +8,7 @@ import 'package:restaurants/core/widgets/custom_rating.dart';
 import 'package:restaurants/core/widgets/custom_text_form_field.dart';
 import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
 import 'package:restaurants/features/restaurant_details/domain/entites/rating_entity.dart';
-import 'package:restaurants/features/restaurant_details/presentation/manager/rating_cubit/rating_cubit.dart';
+import 'package:restaurants/features/restaurant_details/presentation/manager/add_rating_cubit/add_rating_cubit.dart';
 import 'package:restaurants/features/restaurant_details/presentation/views/widgets/show_modal_top.dart';
 
 class ShowModalAddComment extends StatefulWidget {
@@ -20,49 +20,81 @@ class ShowModalAddComment extends StatefulWidget {
 }
 
 class _ShowModalAddCommentState extends State<ShowModalAddComment> {
-  double retingValue = 0;
+  late GlobalKey<FormState> formKey;
+  late AutovalidateMode autovalidateMode;
+
+  double retingValue = 3.0;
   late String comment;
+
+  @override
+  void initState() {
+    formKey = GlobalKey();
+    autovalidateMode = AutovalidateMode.disabled;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        const SizedBox(height: 5),
-        const ShowModalTop(),
-        const SizedBox(height: 20),
-        Text(widget.restaurant.name, style: AppStyle.titleStyle),
-        const SizedBox(height: 40),
-        CustomRating(
-          onRatingUpdate: (double rating) {
-            retingValue = rating;
-          },
+    return Form(
+      key: formKey,
+      autovalidateMode: autovalidateMode,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const SizedBox(height: 5),
+            const ShowModalTop(),
+            const SizedBox(height: 20),
+            Text(widget.restaurant.name, style: AppStyle.titleStyle),
+            const SizedBox(height: 40),
+            CustomRating(
+              onRatingUpdate: (double rating) {
+                retingValue = rating;
+              },
+            ),
+            const SizedBox(height: 20),
+            CustomTextFormField(
+              maxLines: 5,
+              hintText: 'اكتب تعليقك',
+              onSaved: (value) {
+                comment = value!;
+              },
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return 'اكتب تعليق';
+                }
+                return null;
+              },
+            ),
+            const SizedBox(height: 20),
+            CustomButton(
+              title: 'اضافة',
+              onPressed: () {
+                if (formKey.currentState!.validate()) {
+                  formKey.currentState!.save();
+                  context.read<AddRatingCubit>().addReting(
+                    RatingEntity(
+                      name: Prefs.getString(kUserName),
+                      restaurantId: widget.restaurant.id,
+                      reting: retingValue,
+                      comment: comment,
+                      userId: Prefs.getString(kUserId),
+                    ),
+                  );
+                  autovalidateMode = AutovalidateMode.disabled;
+                  
+                } else {
+                  autovalidateMode = AutovalidateMode.always;
+                }
+
+                // Navigator.pop(context);
+              },
+            ),
+            const SizedBox(height: 40),
+          ],
         ),
-        const SizedBox(height: 20),
-        CustomTextFormField(
-          maxLines: 5,
-          hintText: 'اكتب تعليقك',
-          onSaved: (value) {
-            comment = value!;
-          },
-        ),
-        const SizedBox(height: 20),
-        CustomButton(
-          title: 'اضافة',
-          onPressed: () {
-            context.read<RatingCubit>().addReting(
-              RatingEntity(
-                name: Prefs.getString(kUserName),
-                restaurantId: widget.restaurant.id,
-                reting: retingValue,
-                comment: comment,
-                userId: Prefs.getString(kUserId),
-              ),
-            );
-            Navigator.pop(context);
-          },
-        ),
-        const SizedBox(height: 40),
-      ],
+      ),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:restaurants/core/failure/failure.dart';
+import 'package:restaurants/core/helper/backend_endpoint.dart';
 import 'package:restaurants/core/services/stor_services.dart';
 import 'package:restaurants/features/restaurant_details/data/models/reting_model.dart';
 import 'package:restaurants/features/restaurant_details/domain/entites/rating_entity.dart';
@@ -28,9 +29,16 @@ class RatingRepoImpl extends RatingRepo {
   }
 
   @override
-  Future<Either<Failure, List<RatingEntity>>> getRating(String path) async {
+  Future<Either<Failure, List<RatingEntity>>> getRating(
+    String path,
+    String restaurantId,
+  ) async {
     try {
-      final respons = await services.getData(path);
+      final respons = await services.getData(
+        path,
+        BackendEndpoint.ratingRestaurantIdColumn,
+        restaurantId,
+      );
 
       final listOfRating =
           respons

@@ -2,7 +2,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
 import 'package:restaurants/features/restaurant_details/domain/entites/rating_entity.dart';
-import 'package:restaurants/features/restaurant_details/presentation/manager/rating_cubit/rating_cubit.dart';
+import 'package:restaurants/features/restaurant_details/presentation/manager/get_rating_cubit/get_rating_cubit.dart';
+import 'package:restaurants/features/restaurant_details/presentation/manager/get_rating_cubit/get_rating_state.dart';
 import 'package:restaurants/features/restaurant_details/presentation/views/widgets/rating_view_body.dart';
 
 class RatingViewBlocConsumer extends StatefulWidget {
@@ -18,17 +19,16 @@ class _RatingViewBlocConsumerState extends State<RatingViewBlocConsumer> {
 
   @override
   void initState() {
-    context.read<RatingCubit>().getRating();
-
+    context.read<GetRatingCubit>().getRating(widget.restaurant.id);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<RatingCubit, RatingState>(
+    return BlocConsumer<GetRatingCubit, GetRatingState>(
       listener: (context, state) {
-        if (state is RatingSuccess) {
-          listOfRating = state.entity != null ? state.entity! : listOfRating;
+        if (state is GetRatingSuccess) {
+          listOfRating = state.entity;
         }
       },
       builder: (context, state) {

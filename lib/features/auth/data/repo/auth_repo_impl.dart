@@ -36,8 +36,8 @@ class AuthRepoImpl extends AuthRepo {
       Prefs.setString(kEmail, email);
       Prefs.setString(kUserName, name);
       Prefs.setString(kUserId, user.id);
-      Prefs.setString(kUserId, phoneNumber);
-      Prefs.setBool(kIsSignIn,true);
+      Prefs.setString(kUserphone, phoneNumber);
+      Prefs.setBool(kIsSignIn, true);
       return right(CreateUserModel.fromUser(user));
     } on EmailConfirmationPendingFailure catch (e) {
       return left(EmailConfirmationPendingFailure(message: e.message));

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/style/app_style.dart';
 import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
 import 'package:restaurants/features/restaurant_details/domain/entites/rating_entity.dart';
 import 'package:restaurants/features/restaurant_details/presentation/views/widgets/add_comment.dart';
+import 'package:restaurants/features/restaurant_details/presentation/views/widgets/rating_item.dart';
 
 class RatingViewBody extends StatelessWidget {
   const RatingViewBody({
@@ -17,31 +16,19 @@ class RatingViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        ListView.builder(
-          itemCount: listOfRating.length,
-          itemBuilder: (context, index) {
-            return Row(
-              children: [
-                const CircleAvatar(
-                  radius: 30,
-                  backgroundColor: kSecondaryColor,
-                  child: Center(
-                    child: Icon(
-                      Icons.account_circle_rounded,
-                      size: 60,
-                      color: kPrimaryColor,
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 10),
-                Text(
-                  listOfRating[index].comment,
-                  style: AppStyle.buttonTextStyle,
-                ),
-              ],
-            );
-          },
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: ListView.separated(
+            itemCount: listOfRating.length,
+            itemBuilder: (context, index) {
+              return RatingItem(rating: listOfRating.reversed.toList()[index]);
+            },
+            separatorBuilder: (BuildContext context, int index) {
+              return const SizedBox(height: 20);
+            },
+          ),
         ),
+
         Positioned(
           bottom: 40,
           right: 20,

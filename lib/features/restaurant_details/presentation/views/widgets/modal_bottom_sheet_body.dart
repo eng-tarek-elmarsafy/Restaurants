@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:restaurants/constrains.dart';
 import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
-import 'package:restaurants/features/restaurant_details/presentation/views/widgets/show_modal_add_comment.dart';
+import 'package:restaurants/features/restaurant_details/presentation/views/widgets/show_modal_add_comment_bloc_consumer.dart';
 
 class ModalBottomSheetBody extends StatelessWidget {
   const ModalBottomSheetBody({super.key, required this.restaurant});
@@ -14,13 +14,7 @@ class ModalBottomSheetBody extends StatelessWidget {
       ),
       child: Container(
         decoration: boxDecoration(),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-
-          child: SingleChildScrollView(
-            child: ShowModalAddComment(restaurant: restaurant),
-          ),
-        ),
+        child: ShowModalAddCommentBlocConsumer(restaurant: restaurant),
       ),
     );
   }

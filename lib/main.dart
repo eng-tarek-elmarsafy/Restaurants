@@ -14,7 +14,9 @@ import 'package:restaurants/features/auth/presentation/manager/sign_up_cubit/sig
 import 'package:restaurants/features/home/domain/repo/home_repo.dart';
 import 'package:restaurants/features/home/presentation/manager/get_restaurants_cubit/get_restaurants_cubit.dart';
 import 'package:restaurants/features/restaurant_details/domain/repo/menu_repo.dart';
+import 'package:restaurants/features/restaurant_details/domain/repo/rating_repo.dart';
 import 'package:restaurants/features/restaurant_details/presentation/manager/get_meun_cubit/get_menu_cubit.dart';
+import 'package:restaurants/features/restaurant_details/presentation/manager/get_rating_cubit/get_rating_cubit.dart';
 import 'package:restaurants/features/splash/presentation/views/splash_view.dart';
 import 'package:restaurants/generated/l10n.dart';
 
@@ -25,7 +27,7 @@ void main() async {
   await Prefs.inti();
   setup();
   log(Prefs.getBool(kIsSignIn).toString());
-  log(Prefs.getString(kEmail).toString());
+  log(Prefs.getString(kUserId).toString());
   // await DataStorServicesImpl().getData(BackendEndpoint.getData);
   runApp(const Restaurants());
 }
@@ -43,6 +45,9 @@ class Restaurants extends StatelessWidget {
           create: (context) => GetRestaurantsCubit(getIt.get<HomeRepo>()),
         ),
         BlocProvider(create: (context) => GetMenuCubit(getIt.get<MeunRepo>())),
+        BlocProvider(
+          create: (context) => GetRatingCubit(getIt.get<RatingRepo>()),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

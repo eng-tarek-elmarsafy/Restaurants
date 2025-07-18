@@ -4,5 +4,6 @@ import 'package:restaurants/features/restaurant_details/domain/entites/rating_en
 
 abstract class RatingRepo {
   Future<Either<Failure, void>> addRating(String path, RatingEntity entity);
-  Future<Either<Failure, List<RatingEntity>>> getRating(String path);
+  Future<Either<Failure, List<RatingEntity>>> getRating(String path,
+      String restaurantId);
 }

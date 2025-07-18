@@ -11,7 +11,7 @@ class CustomTextFormField extends StatelessWidget {
     this.onSaved,
     this.validator,
     this.obscureText = false,
-    this.maxLines,
+    this.maxLines = 1,
   });
   final TextInputType? textInputType;
   final String hintText;
