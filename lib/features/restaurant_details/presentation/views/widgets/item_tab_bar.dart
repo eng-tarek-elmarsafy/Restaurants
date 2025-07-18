@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/function/height.dart';
 import 'package:restaurants/core/style/app_style.dart';
 
 class ItemTabBar extends StatelessWidget {
@@ -13,7 +12,7 @@ class ItemTabBar extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(title, style: AppStyle.buttonTextStyle),
-        height(10),
+        const SizedBox(height: 10),
         Container(
           width: 60,
           height: 3.5,

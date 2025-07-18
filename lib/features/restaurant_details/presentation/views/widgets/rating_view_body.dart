@@ -21,7 +21,14 @@ class RatingViewBody extends StatelessWidget {
           child: ListView.separated(
             itemCount: listOfRating.length,
             itemBuilder: (context, index) {
-              return RatingItem(rating: listOfRating.reversed.toList()[index]);
+              return Padding(
+                padding: EdgeInsets.only(
+                  bottom: index == listOfRating.length - 1 ? 90 : 0,
+                ),
+                child: RatingItem(
+                  rating: listOfRating.reversed.toList()[index],
+                ),
+              );
             },
             separatorBuilder: (BuildContext context, int index) {
               return const SizedBox(height: 20);

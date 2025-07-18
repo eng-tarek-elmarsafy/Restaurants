@@ -7,15 +7,18 @@ class MenuRestaurant extends StatelessWidget {
   final List<MenuItemEntity> meuns;
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      itemCount: meuns.length,
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        mainAxisSpacing: 8,
-        crossAxisSpacing: 16,
-        childAspectRatio: 163 / 214,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: GridView.builder(
+        itemCount: meuns.length,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: 8,
+          crossAxisSpacing: 16,
+          childAspectRatio: 163 / 214,
+        ),
+        itemBuilder: (context, index) => FoodItem(menu: meuns[index]),
       ),
-      itemBuilder: (context, index) => FoodItem(menu: meuns[index]),
     );
   }
 }

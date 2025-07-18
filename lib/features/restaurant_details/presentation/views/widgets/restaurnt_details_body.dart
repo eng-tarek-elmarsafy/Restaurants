@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/function/height.dart';
 import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
 import 'package:restaurants/features/restaurant_details/presentation/views/rating_view.dart';
 import 'package:restaurants/features/restaurant_details/presentation/views/restaurant_info.dart';
@@ -28,7 +27,7 @@ class _RestaurntDetailsBodyState extends State<RestaurntDetailsBody> {
           },
         ),
         const Divider(color: kNeutralColor, height: 0),
-        height(16),
+        const SizedBox(height: 16),
         Flexible(
           child: IndexedStack(
             index: carnitIndex,

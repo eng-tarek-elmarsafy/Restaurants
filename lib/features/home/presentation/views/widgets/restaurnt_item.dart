@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/function/height.dart';
-import 'package:restaurants/core/function/width.dart';
 import 'package:restaurants/core/style/app_style.dart';
 import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
 import 'package:restaurants/features/home/presentation/views/widgets/favorite_icon.dart';
@@ -46,14 +44,22 @@ class RestsurntItem extends StatelessWidget {
                       : const SizedBox(),
             ),
           ),
-          width(8),
+          const SizedBox(width: 8),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(restaurant.name, style: AppStyle.subtitleStyle),
-              height(4),
-              Text(restaurant.description, style: AppStyle.smallTextStyle),
-              height(4),
+
+              const SizedBox(height: 4),
+              SizedBox(
+                width: MediaQuery.of(context).size.width - 160,
+                child: Text(
+                  restaurant.description,
+                  style: AppStyle.smallTextStyle,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+              const SizedBox(height: 4),
               RatingBarIndicator(
                 rating: double.parse(restaurant.rating),
                 itemBuilder:
@@ -66,7 +72,7 @@ class RestsurntItem extends StatelessWidget {
             ],
           ),
           const Spacer(),
-          const FavoriteIcon(),
+          // const FavoriteIcon(),
         ],
       ),
     );

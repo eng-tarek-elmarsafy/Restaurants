@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/function/height.dart';
 import 'package:restaurants/core/style/app_style.dart';
 import 'package:restaurants/features/restaurant_details/domain/entites/meun_entity.dart';
 
@@ -11,6 +10,7 @@ class FoodItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
+        // color: Colors.greenAccent,
         borderRadius: BorderRadius.all(Radius.circular(kBorderRadius / 2)),
       ),
       child: Column(
@@ -32,7 +32,11 @@ class FoodItem extends StatelessWidget {
               children: [
                 Align(
                   alignment: Alignment.centerRight,
-                  child: Text(menu.category, style: AppStyle.subtitleStyle),
+                  child: Text(
+                    menu.name,
+                    style: AppStyle.subtitleStyle,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
                 const SizedBox(height: 4),
                 Row(
@@ -78,7 +82,7 @@ class FoodItem extends StatelessWidget {
               ],
             ),
           ),
-          height(4),
+          const SizedBox(height: 4),
         ],
       ),
     );
