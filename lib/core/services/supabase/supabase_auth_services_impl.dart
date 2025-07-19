@@ -44,4 +44,9 @@ class SupabaseAuthServicesImpl implements AuthServices {
   Future<void> forgotPassword(String email) async {
     await supabase.auth.resetPasswordForEmail(email);
   }
+
+  @override
+  Future<void> updateUserData(Map<String, dynamic> dataUser) {
+    return supabase.auth.updateUser(UserAttributes(data: dataUser));
+  }
 }
