@@ -36,7 +36,7 @@ class _ShowModalAddCommentBlocConsumerState
       },
       builder: (context, state) {
         return SizedBox(
-          height: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.width + 70,
           child: ModalProgressHUD(
             inAsyncCall: isLoading,
             child: SingleChildScrollView(

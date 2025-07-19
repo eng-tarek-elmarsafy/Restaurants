@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:restaurants/constrains.dart';
 import 'package:restaurants/core/style/app_style.dart';
+import 'package:restaurants/core/widgets/user_avatar.dart';
 import 'package:restaurants/features/restaurant_details/domain/entites/rating_entity.dart';
 
 class AvatarAndRating extends StatelessWidget {
@@ -13,17 +14,7 @@ class AvatarAndRating extends StatelessWidget {
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        const CircleAvatar(
-          radius: 30,
-          backgroundColor: kSecondaryColor,
-          child: Center(
-            child: Icon(
-              Icons.account_circle_rounded,
-              size: 60,
-              color: kPrimaryColor,
-            ),
-          ),
-        ),
+        const UserAvatar(),
         Positioned(
           bottom: -3,
           left: -13,

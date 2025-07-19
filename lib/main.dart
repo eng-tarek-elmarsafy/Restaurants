@@ -8,6 +8,7 @@ import 'package:restaurants/core/helper/get_it_setup.dart';
 import 'package:restaurants/core/helper/on_generate_route_function.dart';
 import 'package:restaurants/core/services/shared_preferences.dart';
 import 'package:restaurants/core/services/supabase/supabase_initializing.dart';
+import 'package:restaurants/core/style/app_style.dart';
 import 'package:restaurants/features/auth/domain/repo/auth_repo.dart';
 import 'package:restaurants/features/auth/presentation/manager/sign_in_cubit/sign_in_cubit.dart';
 import 'package:restaurants/features/auth/presentation/manager/sign_up_cubit/sign_up_cubit.dart';

@@ -30,3 +30,5 @@ abstract class AppStyle {
     fontFamily: 'Cairo',
   );
 }
+
+int x = 5;
