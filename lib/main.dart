@@ -6,6 +6,7 @@ import 'package:restaurants/core/helper/get_it_setup.dart';
 import 'package:restaurants/core/helper/on_generate_route_function.dart';
 import 'package:restaurants/core/services/shared_preferences.dart';
 import 'package:restaurants/core/services/supabase/supabase_initializing.dart';
+import 'package:restaurants/core/services/supabase/upload_file_impl.dart';
 import 'package:restaurants/features/acconut/domain/repo/account_repo.dart';
 import 'package:restaurants/features/acconut/presentation/manager/update_user_data_cubit/update_user_data_cubit.dart';
 import 'package:restaurants/features/auth/domain/repo/auth_repo.dart';
@@ -49,7 +50,11 @@ class Restaurants extends StatelessWidget {
           create: (context) => GetRatingCubit(getIt.get<RatingRepo>()),
         ),
         BlocProvider(
-          create: (context) => UpdateUserDataCubit(getIt.get<AccountRepo>()),
+          create:
+              (context) => UpdateUserDataCubit(
+                getIt.get<AccountRepo>(),
+                getIt.get<UploadFile>(),
+              ),
         ),
       ],
       child: MaterialApp(

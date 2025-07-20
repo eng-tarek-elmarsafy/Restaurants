@@ -4,5 +4,6 @@ abstract class BackendEndpoint {
   static String getMenu = 'restaurant_id';
   static String ratingPath = 'ratings';
   static String addUser = 'users';
+  static String uploadFile = 'images';
   static String ratingRestaurantIdColumn = 'restaurant_id';
 }
