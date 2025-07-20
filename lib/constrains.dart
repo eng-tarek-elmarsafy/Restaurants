@@ -9,6 +9,7 @@ const String kSupabaseAnonKey =
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5nemtocGpjdHBqdGptY2Z1aXJpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1MzY1ODQsImV4cCI6MjA2NzExMjU4NH0.aX_D9E2l-Z0tw9o6AUsSRa9yQVgLGg7OrsayIt_jTRM';
 const String kUserName = 'userName';
 const String kEmail = 'email';
-const String kUserId = 'userId';
-const String kUserphone = 'userphone';
+const String kUserId = 'sub';
+const String kUserphone = 'numberPhone';
 const String kIsSignIn = 'isSignIn';
+const String kImageProfile = 'imageProfile';

@@ -1,11 +1,9 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:restaurants/constrains.dart';
+import 'package:restaurants/core/function/custom_editShow_modal_bottom_sheet.dart';
 import 'package:restaurants/core/services/shared_preferences.dart';
 import 'package:restaurants/core/style/app_style.dart';
 import 'package:restaurants/core/widgets/user_avatar.dart';
-import 'package:restaurants/features/acconut/presentation/views/widgets/show_modal_bottom_sheet_edit_body.dart';
 
 class AccountBody extends StatelessWidget {
   const AccountBody({super.key});
@@ -22,17 +20,19 @@ class AccountBody extends StatelessWidget {
           // mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(Prefs.getString(kUserphone), style: AppStyle.subtitleStyle),
             IconButton(
               onPressed: () {
-                showModalBottomSheet(
-                  isScrollControlled: true,
-                  context: context,
-                  builder: (context) => const ShowModalBottomSheetEditBody(),
+                customEditShowModalBottomSheet(
+                  context,
+                  title: 'تعديل رقم الجوال',
+                  action: kUserphone,
                 );
               },
               icon: const Icon(Icons.edit_outlined, color: kSecondaryColor),
             ),
+            Text(Prefs.getString(kUserphone), style: AppStyle.subtitleStyle),
+
+            const SizedBox(width: 25),
           ],
         ),
 

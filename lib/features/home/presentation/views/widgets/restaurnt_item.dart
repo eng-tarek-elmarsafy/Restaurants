@@ -4,7 +4,6 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:restaurants/constrains.dart';
 import 'package:restaurants/core/style/app_style.dart';
 import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
-import 'package:restaurants/features/home/presentation/views/widgets/favorite_icon.dart';
 import 'package:restaurants/features/restaurant_details/presentation/manager/get_meun_cubit/get_menu_cubit.dart';
 import 'package:restaurants/features/restaurant_details/presentation/views/restaurnt_details_view.dart';
 

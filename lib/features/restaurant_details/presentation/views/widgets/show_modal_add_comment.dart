@@ -3,13 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:restaurants/constrains.dart';
 import 'package:restaurants/core/services/shared_preferences.dart';
 import 'package:restaurants/core/style/app_style.dart';
+import 'package:restaurants/core/widgets/close_show_modal_bottom.dart';
 import 'package:restaurants/core/widgets/custom_button.dart';
 import 'package:restaurants/core/widgets/custom_rating.dart';
 import 'package:restaurants/core/widgets/custom_text_form_field.dart';
 import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
 import 'package:restaurants/features/restaurant_details/domain/entites/rating_entity.dart';
 import 'package:restaurants/features/restaurant_details/presentation/manager/add_rating_cubit/add_rating_cubit.dart';
-import 'package:restaurants/features/restaurant_details/presentation/views/widgets/show_modal_top.dart';
 
 class ShowModalAddComment extends StatefulWidget {
   const ShowModalAddComment({super.key, required this.restaurant});
@@ -43,8 +43,8 @@ class _ShowModalAddCommentState extends State<ShowModalAddComment> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const SizedBox(height: 5),
-            const ShowModalTop(),
+            const SizedBox(height: 10),
+            const CloseShowModalBottom(),
             const SizedBox(height: 20),
             Text(widget.restaurant.name, style: AppStyle.titleStyle),
             const SizedBox(height: 40),
@@ -83,7 +83,6 @@ class _ShowModalAddCommentState extends State<ShowModalAddComment> {
                     ),
                   );
                   autovalidateMode = AutovalidateMode.disabled;
-                  
                 } else {
                   autovalidateMode = AutovalidateMode.always;
                 }

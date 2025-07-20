@@ -1,16 +1,11 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/helper/backend_endpoint.dart';
 import 'package:restaurants/core/helper/get_it_setup.dart';
 import 'package:restaurants/core/helper/on_generate_route_function.dart';
 import 'package:restaurants/core/services/shared_preferences.dart';
-import 'package:restaurants/core/services/supabase/supabase_auth_services_impl.dart';
 import 'package:restaurants/core/services/supabase/supabase_initializing.dart';
-import 'package:restaurants/core/style/app_style.dart';
 import 'package:restaurants/features/acconut/domain/repo/account_repo.dart';
 import 'package:restaurants/features/acconut/presentation/manager/update_user_data_cubit/update_user_data_cubit.dart';
 import 'package:restaurants/features/auth/domain/repo/auth_repo.dart';
