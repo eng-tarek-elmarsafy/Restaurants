@@ -14,7 +14,7 @@ class AvatarAndRating extends StatelessWidget {
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        const UserAvatar(),
+        UserAvatar(imageUrl: rating.imageUrl),
         Positioned(
           bottom: -3,
           left: -13,

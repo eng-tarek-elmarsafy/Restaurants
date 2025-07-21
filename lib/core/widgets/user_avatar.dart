@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/services/shared_preferences.dart';
 
 class UserAvatar extends StatefulWidget {
-  const UserAvatar({super.key, this.radius = 30});
+  const UserAvatar({super.key, this.radius = 30, this.imageUrl});
   final double? radius;
-
+  final String? imageUrl;
   @override
   State<UserAvatar> createState() => _UserAvatarState();
 }
@@ -15,15 +14,12 @@ class _UserAvatarState extends State<UserAvatar> {
   Widget build(BuildContext context) {
     return CircleAvatar(
       radius: widget.radius,
-      backgroundColor:
-          Prefs.getString(kImageProfile) != null ? null : kSecondaryColor,
+      backgroundColor: widget.imageUrl != null ? null : kSecondaryColor,
 
       backgroundImage:
-          Prefs.getString(kImageProfile) != null
-              ? NetworkImage(Prefs.getString(kImageProfile))
-              : null,
+          widget.imageUrl != null ? NetworkImage(widget.imageUrl!) : null,
       child:
-          Prefs.getString(kImageProfile) != null
+          widget.imageUrl != null
               ? const SizedBox.shrink()
               : Center(
                 child: Icon(

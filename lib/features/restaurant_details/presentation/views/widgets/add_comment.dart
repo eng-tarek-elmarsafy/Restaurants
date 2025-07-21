@@ -31,9 +31,12 @@ class AddComment extends StatelessWidget {
                 ),
           );
         },
-        icon: const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10),
-          child: Text('اضافة تقييم', style: AppStyle.buttonTextStyle),
+        icon: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Text(
+            'اضافة تقييم',
+            style: AppStyle.buttonTextStyle.copyWith(color: kPrimaryColor),
+          ),
         ),
       ),
     );
