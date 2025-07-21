@@ -11,8 +11,6 @@ class SignUpBlocConsumer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool inAsyncCall = false;
-
     return BlocConsumer<SignUpCubit, SignUpState>(
       listener: (context, state) {
         if (state is SignUpFailure) {
@@ -22,16 +20,17 @@ class SignUpBlocConsumer extends StatelessWidget {
             ),
           );
         }
-        if (state is SignUpLoading) {
-          inAsyncCall = true;
-        }
+
         if (state is SignUpSuccess) {
           Navigator.pushNamed(context, MainView.id);
         }
       },
       builder: (context, state) {
+        if (state is SignUpSuccess) {
+          return const SignUpViewBody();
+        }
         return ModalProgressHUD(
-          inAsyncCall: inAsyncCall,
+          inAsyncCall: state is SignUpLoading,
           child: const SignUpViewBody(),
         );
       },

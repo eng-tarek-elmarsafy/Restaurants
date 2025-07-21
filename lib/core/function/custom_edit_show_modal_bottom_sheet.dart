@@ -35,12 +35,14 @@ Future<dynamic> customEditShowModalBottomSheet(
                 height: MediaQuery.of(context).size.height / 3,
                 child: ModalProgressHUD(
                   inAsyncCall: state is UpdateUserDataLoading,
-                  child: ShowModalBottomSheetEditBody(
-                    title: title,
-                    action: action,
-                    onSave: (String value) {
-                      edit = value;
-                    },
+                  child: SingleChildScrollView(
+                    child: ShowModalBottomSheetEditBody(
+                      title: title,
+                      action: action,
+                      onSave: (String value) {
+                        edit = value;
+                      },
+                    ),
                   ),
                 ),
               );

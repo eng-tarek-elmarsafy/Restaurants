@@ -22,4 +22,12 @@ class Prefs {
   static getString(String key) {
     return _instance.get(key);
   }
+
+  static remove(String key) {
+    return _instance.remove(key);
+  }
+
+  static clear() {
+    return _instance.clear();
+  }
 }

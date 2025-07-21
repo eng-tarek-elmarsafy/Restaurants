@@ -14,16 +14,11 @@ class SignInViewBlocConsumer extends StatefulWidget {
 }
 
 class _SignInViewBlocConsumerState extends State<SignInViewBlocConsumer> {
-  bool inAsyncCall = false;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SignInCubit, SignInState>(
       listener: (context, state) {
-        if (state is SignInLoading) {
-          inAsyncCall = true;
-        }
         if (state is SignInFailure) {
-          inAsyncCall = false;
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text(state.errorMessage, style: AppStyle.titleStyle),
@@ -35,8 +30,11 @@ class _SignInViewBlocConsumerState extends State<SignInViewBlocConsumer> {
         }
       },
       builder: (context, state) {
+        if (state is SignInSuccess) {
+          return const SignInViewBody();
+        }
         return ModalProgressHUD(
-          inAsyncCall: inAsyncCall,
+          inAsyncCall: state is SignInLoading,
           child: const SignInViewBody(),
         );
       },

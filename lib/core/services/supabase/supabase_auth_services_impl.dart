@@ -1,3 +1,4 @@
+import 'package:restaurants/constrains.dart';
 import 'package:restaurants/core/failure/failure.dart';
 import 'package:restaurants/core/services/auth_services.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -15,7 +16,7 @@ class SupabaseAuthServicesImpl implements AuthServices {
     AuthResponse response = await supabase.auth.signUp(
       email: email,
       password: password,
-      data: {'numberPhone': numberPhone, 'userName': userName},
+      data: {kUserphone: numberPhone, kUserName: userName},
     );
     if (response.session == null) {
       throw EmailConfirmationPendingFailure(
@@ -48,5 +49,10 @@ class SupabaseAuthServicesImpl implements AuthServices {
   @override
   Future<void> updateUserData(Map<String, dynamic> dataUser) {
     return supabase.auth.updateUser(UserAttributes(data: dataUser));
+  }
+
+  @override
+  Future<void> signOut() {
+    return supabase.auth.signOut();
   }
 }

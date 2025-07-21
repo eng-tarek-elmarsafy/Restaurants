@@ -17,4 +17,5 @@ abstract class AuthRepo {
   );
   Future<Either<Failure, void>> addUser(String path, UserEntity user);
   Future<Either<Failure, UserEntity>> getUser(String path, String uId);
+  Future<Either<Failure, void>> signOut();
 }

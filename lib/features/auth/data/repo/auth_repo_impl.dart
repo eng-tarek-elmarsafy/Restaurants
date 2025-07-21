@@ -54,8 +54,11 @@ class AuthRepoImpl extends AuthRepo {
     try {
       final user = await authServices.signInWithEmail(email, password);
       Prefs.setString(kEmail, user.email!);
-      Prefs.setString(kUserName, user.userMetadata!['userName']);
-      Prefs.setString(kUserphone, user.userMetadata!['numberPhone']);
+      Prefs.setString(kUserName, user.userMetadata![kUserName]);
+      Prefs.setString(kUserphone, user.userMetadata![kUserphone]);
+      if (user.userMetadata![kImageProfile] != null) {
+        Prefs.setString(kImageProfile, user.userMetadata![kImageProfile]);
+      }
       Prefs.setString(kUserId, user.id);
       Prefs.setBool(kIsSignIn, true);
       return right(CreateUserModel.fromUser(user));
@@ -86,6 +89,17 @@ class AuthRepoImpl extends AuthRepo {
       return right(UserModel.fromJson(respons[0]));
     } on PostgrestException catch (e) {
       return left(ServerFailure(message: e.message));
+    } catch (e) {
+      return left(ServerFailure(message: e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> signOut() async {
+    try {
+      await authServices.signOut();
+      Prefs.setBool(kIsSignIn, false);
+      return right(null);
     } catch (e) {
       return left(ServerFailure(message: e.toString()));
     }
