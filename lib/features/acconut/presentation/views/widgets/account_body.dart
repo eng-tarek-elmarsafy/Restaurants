@@ -39,6 +39,18 @@ class _AccountBodyState extends State<AccountBody> {
         ),
 
         Text(Prefs.getString(kEmail), style: AppStyle.subtitleStyle),
+        const SizedBox(height: 10),
+        UserInfoEditTile(
+          action: kAddress,
+          title: 'تعديل العنوان',
+          text: SizedBox(
+            width: MediaQuery.of(context).size.width / 1.5,
+            child: Text(
+              Prefs.getString(kAddress) ?? 'العنوان غير محدد',
+              style: AppStyle.subtitleStyle,
+            ),
+          ),
+        ),
 
         const Spacer(),
         TextButton(

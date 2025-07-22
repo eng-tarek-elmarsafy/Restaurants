@@ -5,6 +5,6 @@ class StoragServicesImpl extends StoragServices {
   final supabase = Supabase.instance.client;
   @override
   Future<void> deleteFile(String path, List<String> imageUrl) async {
-    supabase.storage.from(path).remove(imageUrl);
+    await supabase.storage.from(path).remove(imageUrl);
   }
 }

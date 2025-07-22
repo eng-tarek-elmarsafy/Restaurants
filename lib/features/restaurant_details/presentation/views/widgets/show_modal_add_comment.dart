@@ -79,7 +79,8 @@ class _ShowModalAddCommentState extends State<ShowModalAddComment> {
                       restaurantId: widget.restaurant.id,
                       reting: retingValue,
                       comment: comment,
-                      imageUrl: Prefs.getString(kImageProfile),
+
+                      // imageUrl: Prefs.getString(kImageProfile),
                       userId: Prefs.getString(kUserId),
                     ),
                   );

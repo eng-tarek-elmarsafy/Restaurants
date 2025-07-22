@@ -5,6 +5,7 @@ import 'package:restaurants/constrains.dart';
 import 'package:restaurants/core/helper/get_it_setup.dart';
 import 'package:restaurants/core/helper/on_generate_route_function.dart';
 import 'package:restaurants/core/services/shared_preferences.dart';
+import 'package:restaurants/core/services/supabase/delete_file.dart';
 import 'package:restaurants/core/services/supabase/supabase_initializing.dart';
 import 'package:restaurants/core/services/supabase/upload_file_impl.dart';
 import 'package:restaurants/features/acconut/domain/repo/account_repo.dart';
@@ -54,6 +55,7 @@ class Restaurants extends StatelessWidget {
               (context) => UpdateUserDataCubit(
                 getIt.get<AccountRepo>(),
                 getIt.get<UploadFile>(),
+                getIt.get<DeleteFile>(),
               ),
         ),
       ],

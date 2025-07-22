@@ -13,3 +13,4 @@ const String kUserId = 'sub';
 const String kUserphone = 'numberPhone';
 const String kIsSignIn = 'isSignIn';
 const String kImageProfile = 'imageProfile';
+const String kAddress = 'address';

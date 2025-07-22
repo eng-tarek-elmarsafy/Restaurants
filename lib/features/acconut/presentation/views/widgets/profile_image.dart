@@ -29,34 +29,35 @@ class _ProfileImageState extends State<ProfileImage> {
           );
         }
       },
-      child: Stack(
-        children: [
-          UserAvatar(radius: 50, imageUrl: Prefs.getString(kImageProfile)),
-          Positioned(
-            right: -10,
-            bottom: -10,
-            child: IconButton(
-              onPressed: () async {
-                ImagePicker picker = ImagePicker();
-                final XFile? image = await picker.pickImage(
-                  source: ImageSource.gallery,
-                );
-                if (image != null) {
-                  File imageFile = File(image.path);
-                  // ignore: use_build_context_synchronously
-                  context.read<UpdateUserDataCubit>().updateUserAvatar(
-                    imageFile,
-                  );
-                }
-              },
-              icon: Container(
-                color: kPrimaryColor,
-                child: const Icon(Icons.camera_alt, color: kSecondaryColor),
-              ),
-            ),
-          ),
-        ],
-      ),
+      child: UserAvatar(radius: 50, imageUrl: Prefs.getString(kImageProfile)),
+      // child: Stack(
+      //   children: [
+      //     UserAvatar(radius: 50, imageUrl: Prefs.getString(kImageProfile)),
+      //     Positioned(
+      //       right: -10,
+      //       bottom: -10,
+      //       child: IconButton(
+      //         onPressed: () async {
+      //           ImagePicker picker = ImagePicker();
+      //           final XFile? image = await picker.pickImage(
+      //             source: ImageSource.gallery,
+      //           );
+      //           if (image != null) {
+      //             File imageFile = File(image.path);
+      //             // ignore: use_build_context_synchronously
+      //             context.read<UpdateUserDataCubit>().updateUserAvatar(
+      //               imageFile,
+      //             );
+      //           }
+      //         },
+      //         icon: Container(
+      //           color: kPrimaryColor,
+      //           child: const Icon(Icons.camera_alt, color: kSecondaryColor),
+      //         ),
+      //       ),
+      //     ),
+      //   ],
+      // ),
     );
   }
 }

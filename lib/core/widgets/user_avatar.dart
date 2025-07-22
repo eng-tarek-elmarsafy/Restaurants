@@ -14,20 +14,15 @@ class _UserAvatarState extends State<UserAvatar> {
   Widget build(BuildContext context) {
     return CircleAvatar(
       radius: widget.radius,
-      backgroundColor: widget.imageUrl != null ? null : kSecondaryColor,
+      backgroundColor: kSecondaryColor,
 
-      backgroundImage:
-          widget.imageUrl != null ? NetworkImage(widget.imageUrl!) : null,
-      child:
-          widget.imageUrl != null
-              ? const SizedBox.shrink()
-              : Center(
-                child: Icon(
-                  Icons.account_circle_rounded,
-                  size: widget.radius == null ? 60 : widget.radius! * 2,
-                  color: kPrimaryColor,
-                ),
-              ),
+      child: Center(
+        child: Icon(
+          Icons.account_circle_rounded,
+          size: widget.radius == null ? 60 : widget.radius! * 2,
+          color: kPrimaryColor,
+        ),
+      ),
     );
   }
 }
