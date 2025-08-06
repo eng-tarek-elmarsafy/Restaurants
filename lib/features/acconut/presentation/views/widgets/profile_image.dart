@@ -1,8 +1,5 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:restaurants/constrains.dart';
 import 'package:restaurants/core/services/shared_preferences.dart';
 import 'package:restaurants/core/style/app_style.dart';
