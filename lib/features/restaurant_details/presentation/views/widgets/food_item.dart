@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:restaurants/constrains.dart';
 import 'package:restaurants/core/style/app_style.dart';
+import 'package:restaurants/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
 import 'package:restaurants/features/restaurant_details/domain/entites/meun_entity.dart';
 
 class FoodItem extends StatelessWidget {
@@ -66,13 +68,18 @@ class FoodItem extends StatelessWidget {
                         borderRadius: BorderRadius.circular(16),
                       ),
 
-                      child: const Center(
-                        child: Padding(
-                          padding: EdgeInsets.all(4),
-                          child: Icon(
-                            Icons.add,
-                            color: Color(0xffffffff),
-                            // size: 30,
+                      child: GestureDetector(
+                        onTap: () {
+                          context.read<CartCubit>().addProduct(menu);
+                        },
+                        child: const Center(
+                          child: Padding(
+                            padding: EdgeInsets.all(4),
+                            child: Icon(
+                              Icons.add,
+                              color: Color(0xffffffff),
+                              // size: 30,
+                            ),
                           ),
                         ),
                       ),

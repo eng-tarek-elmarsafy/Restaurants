@@ -1,5 +1,7 @@
-class MenuItemEntity {
-  MenuItemEntity({
+import 'package:equatable/equatable.dart';
+
+class MenuItemEntity extends Equatable {
+  const MenuItemEntity({
     required this.id,
     // required this.restaurntId,
     required this.name,
@@ -16,4 +18,7 @@ class MenuItemEntity {
   final String price;
   final String category;
   final String imageUrl;
+
+  @override
+  List<Object?> get props => [id];
 }

@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:restaurants/constrains.dart';
 import 'package:restaurants/core/style/app_style.dart';
 import 'package:restaurants/core/style/assets.dart';
+import 'package:restaurants/features/cart/domain/entites/car_item_entity.dart';
+import 'package:restaurants/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
+import 'package:restaurants/features/cart/presentation/manager/cart_item_cubit/cart_item_cubit.dart';
 import 'package:restaurants/features/cart/presentation/views/widgets/cart_action_add_or_dele.dart';
 
 class CartItemProaduct extends StatelessWidget {
-  const CartItemProaduct({super.key});
+  const CartItemProaduct({super.key, required this.cartItem});
+  final CartItemEntity cartItem;
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +25,7 @@ class CartItemProaduct extends StatelessWidget {
               height: 95,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(4),
-                child: Image.network(
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpEpu_AdjtZfYuRMby9oqhPElQglmsVl22Gg&s',
-                  fit: BoxFit.fill,
-                ),
+                child: Image.network(cartItem.menu.imageUrl, fit: BoxFit.fill),
               ),
             ),
             Expanded(
@@ -38,32 +40,45 @@ class CartItemProaduct extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        const Text('بطيخ', style: AppStyle.smallTextStyle),
+                        Text(
+                          cartItem.menu.name,
+                          style: AppStyle.smallTextStyle,
+                        ),
                         const Spacer(),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            context.read<CartCubit>().deleteCarItem(cartItem);
+                          },
                           child: SvgPicture.asset(Assets.imagesImagesTrash),
                         ),
                       ],
                     ),
                     Text(
-                      '3 كم',
+                      '${cartItem.calculateTotalPrice()} EGP',
                       style: AppStyle.smallTextStyle.copyWith(
                         color: kSecondaryColor,
                       ),
                     ),
                     Row(
                       children: [
-                        const CartActionAddOrDele(
-                          backGroundColor: kSecondaryColor,
-                          icon: Icons.add,
-                          iconColor: kNeutralColor,
+                        GestureDetector(
+                          onTap: () {
+                            cartItem.increasQuantity();
+                            context.read<CartItemCubit>().updateCartItem(
+                              cartItem,
+                            );
+                          },
+                          child: const CartActionAddOrDele(
+                            backGroundColor: kSecondaryColor,
+                            icon: Icons.add,
+                            iconColor: kNeutralColor,
+                          ),
                         ),
 
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 16),
                           child: Text(
-                            '3',
+                            cartItem.quanitty.toString(),
                             style: AppStyle.titleStyle.copyWith(
                               color: Colors.black,
                               fontSize: 19,
@@ -71,14 +86,22 @@ class CartItemProaduct extends StatelessWidget {
                           ),
                         ),
 
-                        const CartActionAddOrDele(
-                          backGroundColor: kNeutralColor,
-                          icon: Icons.remove,
-                          iconColor: kSecondaryColor,
+                        GestureDetector(
+                          onDoubleTap: () {
+                            cartItem.decreasQuantity();
+                            context.read<CartItemCubit>().updateCartItem(
+                              cartItem,
+                            );
+                          },
+                          child: const CartActionAddOrDele(
+                            backGroundColor: kNeutralColor,
+                            icon: Icons.remove,
+                            iconColor: kSecondaryColor,
+                          ),
                         ),
                         const Spacer(),
                         Text(
-                          '60 جنيه ',
+                          '${cartItem.calculateTotalPrice()} جنيه ',
                           style: AppStyle.subtitleStyle.copyWith(
                             color: kSecondaryColor,
                           ),
