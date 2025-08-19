@@ -76,7 +76,11 @@ class CartViewBody extends StatelessWidget {
                 }
               },
               child: Text(
-                'تأكيد الطلب',
+                context
+                    .read<CartCubit>()
+                    .cartEntity
+                    .calculateTotalPrice()
+                    .toString(),
                 style: AppStyle.buttonTextStyle.copyWith(color: kPrimaryColor),
               ),
             ),

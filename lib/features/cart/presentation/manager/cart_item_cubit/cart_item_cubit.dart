@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:restaurants/features/cart/domain/entites/car_item_entity.dart';
 
 part 'cart_item_state.dart';

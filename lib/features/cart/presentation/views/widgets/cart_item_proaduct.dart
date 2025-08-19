@@ -30,10 +30,7 @@ class CartItemProaduct extends StatelessWidget {
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(
-                  right: 16,
-                  // left: isArabic() ? 0 : 16,
-                ),
+                padding: const EdgeInsets.only(right: 16),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,7 +51,7 @@ class CartItemProaduct extends StatelessWidget {
                       ],
                     ),
                     Text(
-                      '${cartItem.calculateTotalPrice()} EGP',
+                      '${cartItem.menu.price} جنيه',
                       style: AppStyle.smallTextStyle.copyWith(
                         color: kSecondaryColor,
                       ),
@@ -87,11 +84,13 @@ class CartItemProaduct extends StatelessWidget {
                         ),
 
                         GestureDetector(
-                          onDoubleTap: () {
-                            cartItem.decreasQuantity();
-                            context.read<CartItemCubit>().updateCartItem(
-                              cartItem,
-                            );
+                          onTap: () {
+                            if (cartItem.quanitty > 1) {
+                              cartItem.decreasQuantity();
+                              context.read<CartItemCubit>().updateCartItem(
+                                cartItem,
+                              );
+                            }
                           },
                           child: const CartActionAddOrDele(
                             backGroundColor: kNeutralColor,

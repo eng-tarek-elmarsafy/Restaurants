@@ -29,9 +29,6 @@ void main() async {
   await SupabaseInitializing.initializing();
   await Prefs.inti();
   setup();
-  // log(Prefs.getBool(kIsSignIn).toString());
-  // log(Prefs.getString(kUserId).toString());
-  // await DataStorServicesImpl().getData(BackendEndpoint.getData);
   runApp(const Restaurants());
 }
 
