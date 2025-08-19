@@ -23,7 +23,7 @@ class CartEntity {
 
   bool isExis(MenuItemEntity product) {
     for (var carItem in cartItems) {
-      if (carItem.menu == product) {
+      if (carItem.menu.id == product.id) {
         return true;
       }
     }
@@ -32,7 +32,7 @@ class CartEntity {
 
   CartItemEntity getCarItem(MenuItemEntity product) {
     for (var carItem in cartItems) {
-      if (carItem.menu == product) {
+      if (carItem.menu.id == product.id) {
         return carItem;
       }
     }

@@ -3,8 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:restaurants/constrains.dart';
 import 'package:restaurants/core/style/app_style.dart';
 import 'package:restaurants/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
+import 'package:restaurants/features/cart/presentation/manager/cart_item_cubit/cart_item_cubit.dart';
 import 'package:restaurants/features/cart/presentation/views/widgets/cart_item_proaduct_list_view.dart';
 import 'package:restaurants/features/cart/presentation/views/widgets/custom_divider.dart';
+import 'package:restaurants/features/cart/presentation/views/widgets/sure_order_button.dart';
 
 class CartViewBody extends StatelessWidget {
   const CartViewBody({super.key});
@@ -43,9 +45,7 @@ class CartViewBody extends StatelessWidget {
                         ? const SizedBox()
                         : const CustomDivider(),
               ),
-              CartItemProaductLisView(
-                carItems: context.watch<CartCubit>().cartEntity.cartItems,
-              ),
+              const CartItemProaductLisView(),
               SliverToBoxAdapter(
                 child:
                     context.read<CartCubit>().cartEntity.cartItems.isEmpty
@@ -54,41 +54,43 @@ class CartViewBody extends StatelessWidget {
               ),
             ],
           ),
-          Positioned(
-            bottom: 1.5,
-            right: 5,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: kSecondaryColor,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-              ),
-              onPressed: () {
-                if (context.read<CartCubit>().cartEntity.cartItems.isNotEmpty) {
-                  // Navigator.pushNamed(
-                  // context,
-                  // CheckoutView.routeName,
-                  // arguments: context.read<CartCubit>().cartEntity,
-                  // );
-                } else {
-                  // showBar(context, 'لا يوجد منتجات في السلة');
-                }
-              },
-              child: Text(
-                context
-                    .read<CartCubit>()
-                    .cartEntity
-                    .calculateTotalPrice()
-                    .toString(),
-                style: AppStyle.buttonTextStyle.copyWith(color: kPrimaryColor),
-              ),
-            ),
-          ),
+          const Positioned(bottom: 50, right: 10, child: TotalPrice()),
+          const Positioned(bottom: 1.5, right: 5, child: SureOrderButton()),
         ],
       ),
     );
   }
 }
 
-//${context.watch<CartCubit>().cartEntity.calculateTotalPrice()}
+class TotalPrice extends StatelessWidget {
+  const TotalPrice({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<CartCubit, CartState>(
+      builder: (context, state) {
+        return CircleAvatar(
+          backgroundColor: kSecondaryColor,
+          radius: 30,
+          child: Column(
+            children: [
+              const SizedBox(height: 10),
+              Text(
+                context
+                    .watch<CartCubit>()
+                    .cartEntity
+                    .calculateTotalPrice()
+                    .toString(),
+                style: AppStyle.buttonTextStyle.copyWith(color: kPrimaryColor),
+              ),
+              Text(
+                'الاجمالي',
+                style: AppStyle.smallTextStyle.copyWith(color: kPrimaryColor),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+}

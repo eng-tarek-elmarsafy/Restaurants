@@ -6,7 +6,6 @@ import 'package:restaurants/core/style/app_style.dart';
 import 'package:restaurants/core/style/assets.dart';
 import 'package:restaurants/features/cart/domain/entites/car_item_entity.dart';
 import 'package:restaurants/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
-import 'package:restaurants/features/cart/presentation/manager/cart_item_cubit/cart_item_cubit.dart';
 import 'package:restaurants/features/cart/presentation/views/widgets/cart_action_add_or_dele.dart';
 
 class CartItemProaduct extends StatelessWidget {
@@ -60,10 +59,8 @@ class CartItemProaduct extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            cartItem.increasQuantity();
-                            context.read<CartItemCubit>().updateCartItem(
-                              cartItem,
-                            );
+                            // cartItem.increasQuantity();
+                            context.read<CartCubit>().addProduct(cartItem.menu);
                           },
                           child: const CartActionAddOrDele(
                             backGroundColor: kSecondaryColor,
@@ -86,9 +83,9 @@ class CartItemProaduct extends StatelessWidget {
                         GestureDetector(
                           onTap: () {
                             if (cartItem.quanitty > 1) {
-                              cartItem.decreasQuantity();
-                              context.read<CartItemCubit>().updateCartItem(
-                                cartItem,
+                              // cartItem.decreasQuantity();
+                              context.read<CartCubit>().removeProduct(
+                                cartItem.menu,
                               );
                             }
                           },
