@@ -24,7 +24,12 @@ class FoodItem extends StatelessWidget {
                 topLeft: Radius.circular(kBorderRadius / 2),
                 topRight: Radius.circular(kBorderRadius / 2),
               ),
-              child: Image.network(menu.imageUrl, fit: BoxFit.fill),
+              child: Image.network(
+                menu.imageUrl,
+                width: double.infinity,
+                height: double.infinity,
+                fit: BoxFit.fill,
+              ),
             ),
           ),
 
