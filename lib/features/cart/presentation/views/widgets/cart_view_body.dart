@@ -3,10 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:restaurants/constrains.dart';
 import 'package:restaurants/core/style/app_style.dart';
 import 'package:restaurants/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
-import 'package:restaurants/features/cart/presentation/manager/cart_item_cubit/cart_item_cubit.dart';
 import 'package:restaurants/features/cart/presentation/views/widgets/cart_item_proaduct_list_view.dart';
 import 'package:restaurants/features/cart/presentation/views/widgets/custom_divider.dart';
 import 'package:restaurants/features/cart/presentation/views/widgets/sure_order_button.dart';
+import 'package:restaurants/features/cart/presentation/views/widgets/total_price.dart';
 
 class CartViewBody extends StatelessWidget {
   const CartViewBody({super.key});
@@ -58,39 +58,6 @@ class CartViewBody extends StatelessWidget {
           const Positioned(bottom: 1.5, right: 5, child: SureOrderButton()),
         ],
       ),
-    );
-  }
-}
-
-class TotalPrice extends StatelessWidget {
-  const TotalPrice({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<CartCubit, CartState>(
-      builder: (context, state) {
-        return CircleAvatar(
-          backgroundColor: kSecondaryColor,
-          radius: 30,
-          child: Column(
-            children: [
-              const SizedBox(height: 10),
-              Text(
-                context
-                    .watch<CartCubit>()
-                    .cartEntity
-                    .calculateTotalPrice()
-                    .toString(),
-                style: AppStyle.buttonTextStyle.copyWith(color: kPrimaryColor),
-              ),
-              Text(
-                'الاجمالي',
-                style: AppStyle.smallTextStyle.copyWith(color: kPrimaryColor),
-              ),
-            ],
-          ),
-        );
-      },
     );
   }
 }

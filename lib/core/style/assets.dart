@@ -2,9 +2,13 @@
 class Assets {
   Assets._();
   
+  /// Assets for imagesImagesAppIcon
+  /// assets/images/app_icon.png
+  static const String imagesImagesAppIcon = "assets/images/app_icon.png";
+
   /// Assets for imagesImagesLogo
-  /// assets/images/logo.svg
-  static const String imagesImagesLogo = "assets/images/logo.svg";
+  /// assets/images/logo.png
+  static const String imagesImagesLogo = "assets/images/logo.png";
 
   /// Assets for imagesImagesTrash
   /// assets/images/trash.svg

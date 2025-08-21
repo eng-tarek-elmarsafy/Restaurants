@@ -30,7 +30,10 @@ class _SplashViewBodyState extends State<SplashViewBody> {
         duration: const Duration(milliseconds: 800),
         curve: Curves.easeOut,
         builder: (context, value, child) {
-          return Transform.scale(scale: value, child: const LogoApp());
+          return Transform.scale(
+            scale: value,
+            child: const LogoApp(isSplash: true),
+          );
         },
       ),
     );

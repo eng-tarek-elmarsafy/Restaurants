@@ -23,7 +23,6 @@ class _MainViewState extends State<MainView> {
         index: _selectedIndex,
         children: const [
           HomeView(),
-          // Placeholder(),
           CartView(),
           AccountView(),
         ],
