@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:restaurants/constrains.dart';
 import 'package:restaurants/core/style/app_style.dart';
 import 'package:restaurants/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
+import 'package:restaurants/features/cart/presentation/views/widgets/order_bottom_sheet.dart';
 
 class SureOrderButton extends StatelessWidget {
   const SureOrderButton({super.key});
@@ -16,13 +17,23 @@ class SureOrderButton extends StatelessWidget {
       ),
       onPressed: () {
         if (context.read<CartCubit>().cartEntity.cartItems.isNotEmpty) {
-          // Navigator.pushNamed(
-          // context,
-          // CheckoutView.routeName,
-          // arguments: context.read<CartCubit>().cartEntity,
-          // );
+          showModalBottomSheet(
+            context: context,
+            builder:
+                (context) => Padding(
+                  padding: EdgeInsets.only(
+                    bottom: MediaQuery.of(context).viewInsets.bottom,
+                  ),
+                  child: const OrderBottomSheet(),
+                ),
+          );
         } else {
-          // showBar(context, 'لا يوجد منتجات في السلة');
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              backgroundColor: kSecondaryColor,
+              content: Text('لا يوجد منتجات في سله التسوق'),
+            ),
+          );
         }
       },
       child: Text(

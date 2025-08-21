@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:restaurants/constrains.dart';
 import 'package:restaurants/core/style/app_style.dart';
 
-class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({
+class CustomTextField extends StatelessWidget {
+  const CustomTextField({
     super.key,
     this.textInputType,
     required this.hintText,
@@ -13,7 +13,6 @@ class CustomTextFormField extends StatelessWidget {
     this.obscureText = false,
     this.maxLines = 1,
     this.controller,
-    this.autovalidateMode,
   });
   final TextInputType? textInputType;
   final String hintText;
@@ -23,15 +22,11 @@ class CustomTextFormField extends StatelessWidget {
   final String? Function(String?)? validator;
   final int? maxLines;
   final TextEditingController? controller;
-  final AutovalidateMode? autovalidateMode;
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      autovalidateMode: autovalidateMode,
+    return TextField(
       controller: controller,
       maxLines: maxLines,
-      onSaved: onSaved,
-      validator: validator,
       obscureText: obscureText,
       keyboardType: textInputType,
       decoration: InputDecoration(
@@ -53,4 +48,3 @@ class CustomTextFormField extends StatelessWidget {
     );
   }
 }
-
