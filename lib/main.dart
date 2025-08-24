@@ -13,7 +13,9 @@ import 'package:restaurants/features/acconut/presentation/manager/update_user_da
 import 'package:restaurants/features/auth/domain/repo/auth_repo.dart';
 import 'package:restaurants/features/auth/presentation/manager/sign_in_cubit/sign_in_cubit.dart';
 import 'package:restaurants/features/auth/presentation/manager/sign_up_cubit/sign_up_cubit.dart';
+import 'package:restaurants/features/cart/domain/repo/order_repo.dart';
 import 'package:restaurants/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
+import 'package:restaurants/features/cart/presentation/manager/add_order_cubit/order_cubit.dart';
 import 'package:restaurants/features/home/domain/repo/home_repo.dart';
 import 'package:restaurants/features/home/presentation/manager/get_restaurants_cubit/get_restaurants_cubit.dart';
 import 'package:restaurants/features/restaurant_details/domain/repo/menu_repo.dart';
@@ -57,6 +59,9 @@ class Restaurants extends StatelessWidget {
                 getIt.get<UploadFile>(),
                 getIt.get<DeleteFile>(),
               ),
+        ),
+        BlocProvider(
+          create: (context) => AddOrderCubit(getIt.get<OrderRepo>()),
         ),
       ],
       child: MaterialApp(

@@ -7,6 +7,7 @@ import 'package:restaurants/core/widgets/custom_text_form_field.dart';
 import 'package:restaurants/core/widgets/logo_app.dart';
 import 'package:restaurants/features/cart/domain/entites/ordar_entity.dart';
 import 'package:restaurants/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
+import 'package:restaurants/features/cart/presentation/manager/add_order_cubit/order_cubit.dart';
 import 'package:restaurants/features/cart/presentation/views/widgets/order_actions.dart';
 
 class OrderBottomSheetBody extends StatefulWidget {
@@ -81,7 +82,7 @@ class _OrderBottomSheetBodyState extends State<OrderBottomSheetBody> {
           OrderActions(
             onTap: () {
               if (_formKey.currentState!.validate()) {
-                final ordar = OrdarEntity(
+                final ordar = OrderEntity(
                   userName:
                       _controllerName.text.isEmpty
                           ? Prefs.getString(kUserName)
@@ -102,6 +103,8 @@ class _OrderBottomSheetBodyState extends State<OrderBottomSheetBody> {
                           .calculateTotalPrice(),
                   cartItems: context.read<CartCubit>().cartEntity.cartItems,
                 );
+                Navigator.pop(context);
+                context.read<AddOrderCubit>().addOrder(entity: ordar);
               } else {
                 setState(() {
                   _autovalidateMode = AutovalidateMode.always;

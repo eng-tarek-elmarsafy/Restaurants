@@ -1,10 +1,12 @@
+import 'package:restaurants/constrains.dart';
+import 'package:restaurants/core/services/shared_preferences.dart';
 import 'package:restaurants/features/cart/domain/entites/car_item_entity.dart';
 import 'package:restaurants/features/cart/domain/entites/ordar_entity.dart';
 import 'package:restaurants/features/restaurant_details/domain/entites/meun_entity.dart';
 
-class OrdarModel extends OrdarEntity {
-  factory OrdarModel.fromEntity(OrdarEntity entity) {
-    return OrdarModel(
+class OrderModel extends OrderEntity {
+  factory OrderModel.fromEntity(OrderEntity entity) {
+    return OrderModel(
       userName: entity.userName,
       phoneNumber: entity.phoneNumber,
       address: entity.address,
@@ -13,8 +15,8 @@ class OrdarModel extends OrdarEntity {
       cartItems: entity.cartItems,
     );
   }
-  factory OrdarModel.fromMap(Map<String, dynamic> map) {
-    return OrdarModel(
+  factory OrderModel.fromMap(Map<String, dynamic> map) {
+    return OrderModel(
       id: map['id'],
       userName: map['name'],
       phoneNumber: map['phone'],
@@ -40,7 +42,7 @@ class OrdarModel extends OrdarEntity {
               .toList(),
     );
   }
-  OrdarModel({
+  OrderModel({
     this.id,
     required super.userName,
     required super.phoneNumber,
@@ -53,26 +55,29 @@ class OrdarModel extends OrdarEntity {
 
   Map<String, dynamic> toMap() {
     return {
-      'id': id,
-      'name': userName,
-      'phone': phoneNumber,
-      'address': address,
-      'notes': notes,
-      'cartItems':
-          cartItems
-              .map(
-                (e) => {
-                  'id': e.menu.id,
-                  'name': e.menu.name,
-                  'price': e.menu.price,
-                  'quanitty': e.quanitty,
-                  'totalPrice': e.calculateTotalPrice(),
-                  'imageUrl': e.menu.imageUrl,
-                  'category': e.menu.category,
-                  'description': e.menu.description,
-                },
-              )
-              .toList(),
+      'user_id': Prefs.getString(kUserId),
+      'order': {
+        'id': id,
+        'name': userName,
+        'phone': phoneNumber,
+        'address': address,
+        'notes': notes,
+        'cartItems':
+            cartItems
+                .map(
+                  (e) => {
+                    'id': e.menu.id,
+                    'name': e.menu.name,
+                    'price': e.menu.price,
+                    'quanitty': e.quanitty,
+                    'totalPrice': e.calculateTotalPrice(),
+                    'imageUrl': e.menu.imageUrl,
+                    'category': e.menu.category,
+                    'description': e.menu.description,
+                  },
+                )
+                .toList(),
+      },
     };
   }
 }

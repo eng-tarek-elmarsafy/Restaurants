@@ -13,11 +13,11 @@ class OrderRepoImpl extends OrderRepo {
   final StorServices storServices;
 
   @override
-  Future<Either<ServerFailure, void>> addOrder({OrdarEntity? entity}) async {
+  Future<Either<ServerFailure, void>> addOrder({OrderEntity? entity}) async {
     try {
       await storServices.addData(
         BackendEndpoint.ordersPath,
-        OrdarModel.fromEntity(entity!).toMap(),
+        OrderModel.fromEntity(entity!).toMap(),
       );
       return right(null);
     } on PostgrestException catch (e) {

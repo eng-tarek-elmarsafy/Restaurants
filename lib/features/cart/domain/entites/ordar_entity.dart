@@ -1,7 +1,7 @@
 import 'package:restaurants/features/cart/domain/entites/car_item_entity.dart';
 
-class OrdarEntity {
-  OrdarEntity({
+class OrderEntity {
+  OrderEntity({
     required this.userName,
     required this.phoneNumber,
     required this.address,

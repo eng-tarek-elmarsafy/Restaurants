@@ -12,6 +12,8 @@ import 'package:restaurants/features/acconut/data/repo/account_repo_impl.dart';
 import 'package:restaurants/features/acconut/domain/repo/account_repo.dart';
 import 'package:restaurants/features/auth/data/repo/auth_repo_impl.dart';
 import 'package:restaurants/features/auth/domain/repo/auth_repo.dart';
+import 'package:restaurants/features/cart/data/repo/order_repo_impl.dart';
+import 'package:restaurants/features/cart/domain/repo/order_repo.dart';
 import 'package:restaurants/features/home/data/repo/home_repo_impl.dart';
 import 'package:restaurants/features/home/domain/repo/home_repo.dart';
 import 'package:restaurants/features/restaurant_details/data/repo/menu_repo_impl.dart';
@@ -52,5 +54,8 @@ void setup() {
   );
   getIt.registerSingleton<AccountRepo>(
     AccountRepoImpl(authServices: getIt.get<AuthServices>()),
+  );
+  getIt.registerSingleton<OrderRepo>(
+    OrderRepoImpl(storServices: getIt.get<StorServices>()),
   );
 }
