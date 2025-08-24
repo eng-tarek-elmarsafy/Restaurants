@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:restaurants/core/function/build_app_bar.dart';
 import 'package:restaurants/features/acconut/presentation/views/account_view.dart';
 import 'package:restaurants/features/cart/presentation/views/cart_view.dart';
+import 'package:restaurants/features/history/presentation/views/history_screen.dart';
 import 'package:restaurants/features/home/presentation/views/home_view.dart';
 import 'package:restaurants/features/home/presentation/views/widgets/navigation_nav_bar.dart';
 
@@ -24,6 +25,7 @@ class _MainViewState extends State<MainView> {
         children: const [
           HomeView(),
           CartView(),
+          HistoryScreen(),
           AccountView(),
         ],
       ),

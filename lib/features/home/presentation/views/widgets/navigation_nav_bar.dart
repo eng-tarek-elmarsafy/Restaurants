@@ -14,8 +14,8 @@ class NavigationNavBar extends StatefulWidget {
 class _NavigationNavBarState extends State<NavigationNavBar> {
   List<IconItemEntity> iconItemList = [
     IconItemEntity(icon: Icons.home, title: 'الرئيسيه'),
-    // IconItemEntity(icon: Icons.receipt, title: 'الطلبات'),
     IconItemEntity(icon: Icons.shopping_cart, title: 'السلة'),
+    IconItemEntity(icon: Icons.history_edu_outlined, title: 'الطلبات'),
     IconItemEntity(icon: Icons.account_box_rounded, title: 'الحساب'),
   ];
 
