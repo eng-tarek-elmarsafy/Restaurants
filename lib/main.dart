@@ -16,6 +16,8 @@ import 'package:restaurants/features/auth/presentation/manager/sign_up_cubit/sig
 import 'package:restaurants/features/cart/domain/repo/order_repo.dart';
 import 'package:restaurants/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
 import 'package:restaurants/features/cart/presentation/manager/add_order_cubit/order_cubit.dart';
+import 'package:restaurants/features/history/domain/repo/history_repo.dart';
+import 'package:restaurants/features/history/presentation/manager/get_all_orders_cubit/get_all_orders_cubit.dart';
 import 'package:restaurants/features/home/domain/repo/home_repo.dart';
 import 'package:restaurants/features/home/presentation/manager/get_restaurants_cubit/get_restaurants_cubit.dart';
 import 'package:restaurants/features/restaurant_details/domain/repo/menu_repo.dart';
@@ -62,6 +64,9 @@ class Restaurants extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => AddOrderCubit(getIt.get<OrderRepo>()),
+        ),
+        BlocProvider(
+          create: (context) => GetAllOrdersCubit(getIt.get<HistoryRepo>()),
         ),
       ],
       child: MaterialApp(

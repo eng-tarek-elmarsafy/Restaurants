@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:restaurants/constrains.dart';
 
@@ -24,6 +26,7 @@ class HistoryRepoImpl extends HistoryRepo {
       );
       return right(data.map((e) => HistoryOrdersModile.fromJson(e)).toList());
     } on PostgrestException catch (e) {
+      log(e.message);
       return left(ServerFailure(message: e.message));
     } catch (e) {
       return left(ServerFailure(message: e.toString()));

@@ -8,6 +8,7 @@ class HistoryOrdersEntity {
     required this.phone,
     required this.address,
     required this.notes,
+    required this.totalPrice,
     required this.cartItems,
   });
   final String id;
@@ -16,5 +17,6 @@ class HistoryOrdersEntity {
   final String phone;
   final String address;
   final String notes;
+  final double totalPrice;
   final List<OrderItemEntity> cartItems;
 }

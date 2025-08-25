@@ -62,6 +62,7 @@ class OrderModel extends OrderEntity {
         'phone': phoneNumber,
         'address': address,
         'notes': notes,
+        'totalPrice': totalPrice,
         'cartItems':
             cartItems
                 .map(

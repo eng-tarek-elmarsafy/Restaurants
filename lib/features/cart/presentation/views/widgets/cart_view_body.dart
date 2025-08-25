@@ -9,7 +9,7 @@ import 'package:restaurants/features/cart/presentation/views/widgets/cart_item_p
 import 'package:restaurants/features/cart/presentation/views/widgets/custom_divider.dart';
 import 'package:restaurants/features/cart/presentation/views/widgets/sure_order_button.dart';
 import 'package:restaurants/features/cart/presentation/views/widgets/total_price.dart';
-import 'package:skeletonizer/skeletonizer.dart';
+import 'package:restaurants/features/history/presentation/manager/get_all_orders_cubit/get_all_orders_cubit.dart';
 
 class CartViewBody extends StatelessWidget {
   const CartViewBody({super.key});
@@ -21,6 +21,7 @@ class CartViewBody extends StatelessWidget {
         listener: (context, state) {
           if (state is AddOrderSuccess) {
             context.read<CartCubit>().clearCart();
+            context.read<GetAllOrdersCubit>().getAllOrders();
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(
                 backgroundColor: kSecondaryColor,

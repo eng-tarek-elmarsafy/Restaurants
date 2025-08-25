@@ -11,18 +11,20 @@ class HistoryOrdersModile extends HistoryOrdersEntity {
     required super.address,
     required super.notes,
     required super.cartItems,
+    required super.totalPrice,
   });
 
   factory HistoryOrdersModile.fromJson(Map<String, dynamic> json) {
     return HistoryOrdersModile(
       id: json['id'],
-      date: json['date'],
-      name: json['name'],
-      phone: json['phone'],
-      address: json['address'],
-      notes: json['notes'],
+      date: json['created_at'],
+      name: json['order']['name'],
+      phone: json['order']['phone'],
+      address: json['order']['address'],
+      notes: json['order']['notes'],
+      totalPrice: json['order']['totalPrice'],
       cartItems: List<OrderItemEntity>.from(
-        json['cartItems'].map((e) => OrderItemModile.fromJson(e)),
+        json['order']['cartItems'].map((e) => OrderItemModile.fromJson(e)),
       ),
     );
   }

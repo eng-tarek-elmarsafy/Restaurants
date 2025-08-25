@@ -12,8 +12,8 @@ class OrderItemEntity {
   final String id;
   final String name;
   final String price;
-  final String quanitty;
-  final String totalPrice;
+  final int quanitty;
+  final double totalPrice;
   final String imageUrl;
   final String category;
   final String description;
