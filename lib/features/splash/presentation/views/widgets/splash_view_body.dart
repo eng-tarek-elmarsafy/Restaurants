@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/core/widgets/logo_app.dart';
+import '../../../../../core/widgets/logo_app.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/core/style/app_style.dart';
-import 'package:restaurants/features/history/domain/entity/order_item_entity.dart';
+import '../../../../../core/style/app_style.dart';
+import '../../../domain/entity/order_item_entity.dart';
 
 class CartItemListTile extends StatelessWidget {
   const CartItemListTile({super.key, required this.cartItems});

@@ -2,8 +2,8 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:restaurants/features/restaurant_details/presentation/manager/get_meun_cubit/get_menu_cubit.dart';
-import 'package:restaurants/features/restaurant_details/presentation/views/widgets/menu_restaurant.dart';
+import '../../manager/get_meun_cubit/get_menu_cubit.dart';
+import 'menu_restaurant.dart';
 
 class MeunBlocBuilder extends StatelessWidget {
   const MeunBlocBuilder({super.key});

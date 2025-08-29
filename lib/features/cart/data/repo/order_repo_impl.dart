@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
-import 'package:restaurants/core/failure/failure.dart';
-import 'package:restaurants/core/helper/backend_endpoint.dart';
-import 'package:restaurants/core/services/stor_services.dart';
-import 'package:restaurants/features/cart/data/models/ordar_model.dart';
-import 'package:restaurants/features/cart/domain/entites/ordar_entity.dart';
-import 'package:restaurants/features/cart/domain/repo/order_repo.dart';
+import '../../../../core/failure/failure.dart';
+import '../../../../core/helper/backend_endpoint.dart';
+import '../../../../core/services/stor_services.dart';
+import '../models/ordar_model.dart';
+import '../../domain/entites/ordar_entity.dart';
+import '../../domain/repo/order_repo.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class OrderRepoImpl extends OrderRepo {

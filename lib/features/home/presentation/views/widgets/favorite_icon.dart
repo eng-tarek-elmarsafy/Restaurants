@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/constrains.dart';
+import '../../../../../constrains.dart';
 
 class FavoriteIcon extends StatefulWidget {
   const FavoriteIcon({super.key});

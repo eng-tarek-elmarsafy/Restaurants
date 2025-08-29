@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:restaurants/core/helper/backend_endpoint.dart';
-import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
-import 'package:restaurants/features/home/domain/repo/home_repo.dart';
+import '../../../../../core/helper/backend_endpoint.dart';
+import '../../../domain/entities/restaurant_entity.dart';
+import '../../../domain/repo/home_repo.dart';
 
 part 'get_restaurants_state.dart';
 

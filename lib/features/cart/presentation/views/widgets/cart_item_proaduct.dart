@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/style/app_style.dart';
-import 'package:restaurants/core/style/assets.dart';
-import 'package:restaurants/features/cart/domain/entites/car_item_entity.dart';
-import 'package:restaurants/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
-import 'package:restaurants/features/cart/presentation/views/widgets/cart_action_add_or_dele.dart';
+import '../../../../../constrains.dart';
+import '../../../../../core/style/app_style.dart';
+import '../../../../../core/style/assets.dart';
+import '../../../domain/entites/car_item_entity.dart';
+import '../../manager/cart_cubit/cart_cubit.dart';
+import 'cart_action_add_or_dele.dart';
 
 class CartItemProaduct extends StatelessWidget {
   const CartItemProaduct({super.key, required this.cartItem});

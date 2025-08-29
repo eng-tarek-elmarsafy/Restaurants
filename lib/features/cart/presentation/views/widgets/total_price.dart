@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/style/app_style.dart';
-import 'package:restaurants/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
+import '../../../../../constrains.dart';
+import '../../../../../core/style/app_style.dart';
+import '../../manager/cart_cubit/cart_cubit.dart';
 
 class TotalPrice extends StatelessWidget {
   const TotalPrice({super.key});

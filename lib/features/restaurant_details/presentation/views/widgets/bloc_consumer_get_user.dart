@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/style/app_style.dart';
-import 'package:restaurants/features/restaurant_details/domain/entites/rating_entity.dart';
+import '../../../../../constrains.dart';
+import '../../../../../core/style/app_style.dart';
+import '../../../domain/entites/rating_entity.dart';
 
 class BlocConsumerGetUser extends StatelessWidget {
   const BlocConsumerGetUser({super.key, required this.listOfRating});

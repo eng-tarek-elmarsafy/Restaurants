@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/constrains.dart';
+import '../../constrains.dart';
 
 class EyeIconObscure extends StatefulWidget {
   const EyeIconObscure({super.key, required this.onChange});

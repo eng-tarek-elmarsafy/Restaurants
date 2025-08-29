@@ -1,4 +1,4 @@
-import 'package:restaurants/features/history/domain/entity/order_item_entity.dart';
+import 'order_item_entity.dart';
 
 class HistoryOrdersEntity {
   HistoryOrdersEntity({

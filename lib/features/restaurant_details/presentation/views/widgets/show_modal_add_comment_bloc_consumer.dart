@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
-import 'package:restaurants/features/restaurant_details/presentation/manager/add_rating_cubit/add_rating_cubit.dart';
-import 'package:restaurants/features/restaurant_details/presentation/manager/get_rating_cubit/get_rating_cubit.dart';
-import 'package:restaurants/features/restaurant_details/presentation/views/widgets/show_modal_add_comment.dart';
+import '../../../../home/domain/entities/restaurant_entity.dart';
+import '../../manager/add_rating_cubit/add_rating_cubit.dart';
+import '../../manager/get_rating_cubit/get_rating_cubit.dart';
+import 'show_modal_add_comment.dart';
 
 class ShowModalAddCommentBlocConsumer extends StatefulWidget {
   const ShowModalAddCommentBlocConsumer({super.key, required this.restaurant});

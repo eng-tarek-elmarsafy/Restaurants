@@ -1,10 +1,10 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
-import 'package:restaurants/features/restaurant_details/domain/entites/rating_entity.dart';
-import 'package:restaurants/features/restaurant_details/presentation/manager/get_rating_cubit/get_rating_cubit.dart';
-import 'package:restaurants/features/restaurant_details/presentation/manager/get_rating_cubit/get_rating_state.dart';
-import 'package:restaurants/features/restaurant_details/presentation/views/widgets/rating_view_body.dart';
+import '../../../../home/domain/entities/restaurant_entity.dart';
+import '../../../domain/entites/rating_entity.dart';
+import '../../manager/get_rating_cubit/get_rating_cubit.dart';
+import '../../manager/get_rating_cubit/get_rating_state.dart';
+import 'rating_view_body.dart';
 
 class RatingViewBlocConsumer extends StatefulWidget {
   const RatingViewBlocConsumer({super.key, required this.restaurant});

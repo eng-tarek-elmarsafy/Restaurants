@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:restaurants/features/cart/domain/entites/car_item_entity.dart';
-import 'package:restaurants/features/cart/domain/entites/cart_entity.dart';
-import 'package:restaurants/features/restaurant_details/domain/entites/meun_entity.dart';
+import '../../../domain/entites/car_item_entity.dart';
+import '../../../domain/entites/cart_entity.dart';
+import '../../../../restaurant_details/domain/entites/meun_entity.dart';
 
 part 'cart_state.dart';
 

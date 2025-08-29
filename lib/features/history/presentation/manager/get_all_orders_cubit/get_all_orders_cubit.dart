@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:restaurants/features/history/domain/entity/history_orders_entity.dart';
-import 'package:restaurants/features/history/domain/repo/history_repo.dart';
+import '../../../domain/entity/history_orders_entity.dart';
+import '../../../domain/repo/history_repo.dart';
 
 part 'get_all_orders_state.dart';
 

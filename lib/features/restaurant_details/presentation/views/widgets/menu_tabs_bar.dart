@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/features/restaurant_details/presentation/views/widgets/item_tab_bar.dart';
+import 'item_tab_bar.dart';
 
 class MenuTabsBar extends StatefulWidget {
   const MenuTabsBar({super.key, required this.onChang});

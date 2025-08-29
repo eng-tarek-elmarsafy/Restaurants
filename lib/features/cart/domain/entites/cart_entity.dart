@@ -1,5 +1,5 @@
-import 'package:restaurants/features/cart/domain/entites/car_item_entity.dart';
-import 'package:restaurants/features/restaurant_details/domain/entites/meun_entity.dart';
+import 'car_item_entity.dart';
+import '../../../restaurant_details/domain/entites/meun_entity.dart';
 
 class CartEntity {
   CartEntity(this.cartItems);

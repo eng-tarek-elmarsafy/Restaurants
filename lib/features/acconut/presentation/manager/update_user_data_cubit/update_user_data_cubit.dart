@@ -3,12 +3,12 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/helper/backend_endpoint.dart';
-import 'package:restaurants/core/services/shared_preferences.dart';
-import 'package:restaurants/core/services/supabase/delete_file.dart';
-import 'package:restaurants/core/services/supabase/upload_file_impl.dart';
-import 'package:restaurants/features/acconut/domain/repo/account_repo.dart';
+import '../../../../../constrains.dart';
+import '../../../../../core/helper/backend_endpoint.dart';
+import '../../../../../core/services/shared_preferences.dart';
+import '../../../../../core/services/supabase/delete_file.dart';
+import '../../../../../core/services/supabase/upload_file_impl.dart';
+import '../../../domain/repo/account_repo.dart';
 
 part 'update_user_data_state.dart';
 

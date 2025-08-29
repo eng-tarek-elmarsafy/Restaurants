@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/core/style/app_style.dart';
-import 'package:restaurants/features/restaurant_details/domain/entites/rating_entity.dart';
-import 'package:restaurants/features/restaurant_details/presentation/views/widgets/rating_info.dart';
+import '../../../../../core/style/app_style.dart';
+import '../../../domain/entites/rating_entity.dart';
+import 'rating_info.dart';
 
 class RatingItem extends StatelessWidget {
   const RatingItem({super.key, required this.rating});

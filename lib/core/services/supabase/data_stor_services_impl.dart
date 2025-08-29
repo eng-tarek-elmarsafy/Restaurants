@@ -1,4 +1,4 @@
-import 'package:restaurants/core/services/stor_services.dart';
+import '../stor_services.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class StorServicesImpl implements StorServices {

@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:restaurants/features/auth/domain/entities/create_user_entity.dart';
-import 'package:restaurants/features/auth/domain/repo/auth_repo.dart';
+import '../../../domain/entities/create_user_entity.dart';
+import '../../../domain/repo/auth_repo.dart';
 
 part 'sign_in_state.dart';
 

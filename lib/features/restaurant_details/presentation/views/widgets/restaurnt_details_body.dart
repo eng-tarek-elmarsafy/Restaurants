@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/constrains.dart';
-import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
-import 'package:restaurants/features/restaurant_details/presentation/views/rating_view.dart';
-import 'package:restaurants/features/restaurant_details/presentation/views/restaurant_info.dart';
-import 'package:restaurants/features/restaurant_details/presentation/views/widgets/menu_tabs_bar.dart';
-import 'package:restaurants/features/restaurant_details/presentation/views/widgets/meun_bloc_builder.dart';
+import '../../../../../constrains.dart';
+import '../../../../home/domain/entities/restaurant_entity.dart';
+import '../rating_view.dart';
+import '../restaurant_info.dart';
+import 'menu_tabs_bar.dart';
+import 'meun_bloc_builder.dart';
 
 class RestaurntDetailsBody extends StatefulWidget {
   const RestaurntDetailsBody({super.key, required this.restaurant});

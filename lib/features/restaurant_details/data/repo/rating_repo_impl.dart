@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
-import 'package:restaurants/core/failure/failure.dart';
-import 'package:restaurants/core/helper/backend_endpoint.dart';
-import 'package:restaurants/core/services/stor_services.dart';
-import 'package:restaurants/features/restaurant_details/data/models/reting_model.dart';
-import 'package:restaurants/features/restaurant_details/domain/entites/rating_entity.dart';
-import 'package:restaurants/features/restaurant_details/domain/repo/rating_repo.dart';
+import '../../../../core/failure/failure.dart';
+import '../../../../core/helper/backend_endpoint.dart';
+import '../../../../core/services/stor_services.dart';
+import '../models/reting_model.dart';
+import '../../domain/entites/rating_entity.dart';
+import '../../domain/repo/rating_repo.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class RatingRepoImpl extends RatingRepo {

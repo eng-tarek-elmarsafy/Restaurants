@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/style/app_style.dart';
-import 'package:restaurants/features/home/domain/entities/icon_item_entity.dart';
+import '../../../../../constrains.dart';
+import '../../../../../core/style/app_style.dart';
+import '../../../domain/entities/icon_item_entity.dart';
 
 class NavigationNavBar extends StatefulWidget {
   const NavigationNavBar({super.key, required this.onTabChange});

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import 'package:restaurants/core/style/app_style.dart';
-import 'package:restaurants/features/auth/presentation/manager/sign_in_cubit/sign_in_cubit.dart';
-import 'package:restaurants/features/auth/presentation/views/widgets/sign_in_view_body.dart';
-import 'package:restaurants/features/main/presentation/views/main_view.dart';
+import '../../../../../core/style/app_style.dart';
+import '../../manager/sign_in_cubit/sign_in_cubit.dart';
+import 'sign_in_view_body.dart';
+import '../../../../main/presentation/views/main_view.dart';
 
 class SignInViewBlocConsumer extends StatefulWidget {
   const SignInViewBlocConsumer({super.key});

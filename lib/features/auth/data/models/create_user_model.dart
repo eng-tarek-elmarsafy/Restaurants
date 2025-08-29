@@ -1,4 +1,4 @@
-import 'package:restaurants/features/auth/domain/entities/create_user_entity.dart';
+import '../../domain/entities/create_user_entity.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class CreateUserModel extends CreateUserEntity {

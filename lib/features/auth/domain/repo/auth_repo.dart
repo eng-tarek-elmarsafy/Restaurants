@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:restaurants/core/failure/failure.dart';
-import 'package:restaurants/features/auth/domain/entities/create_user_entity.dart';
-import 'package:restaurants/features/auth/domain/entities/user_entity.dart';
+import '../../../../core/failure/failure.dart';
+import '../entities/create_user_entity.dart';
+import '../entities/user_entity.dart';
 
 abstract class AuthRepo {
   Future<Either<Failure, CreateUserEntity>> signUpWithEmail(

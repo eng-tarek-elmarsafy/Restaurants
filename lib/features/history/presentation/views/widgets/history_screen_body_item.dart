@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/function/get_date.dart';
-import 'package:restaurants/core/style/app_style.dart';
-import 'package:restaurants/features/history/domain/entity/history_orders_entity.dart';
-import 'package:restaurants/features/history/presentation/views/widgets/cart_item_list_tile.dart';
+import '../../../../../constrains.dart';
+import '../../../../../core/function/get_date.dart';
+import '../../../../../core/style/app_style.dart';
+import '../../../domain/entity/history_orders_entity.dart';
+import 'cart_item_list_tile.dart';
 
 class HistoryScreenBodyItem extends StatelessWidget {
   const HistoryScreenBodyItem({super.key, required this.orders});

@@ -1,12 +1,12 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:restaurants/core/style/app_style.dart';
-import 'package:restaurants/core/widgets/custom_button.dart';
-import 'package:restaurants/core/widgets/custom_text_form_field.dart';
-import 'package:restaurants/core/widgets/eye_icon_obscure.dart';
-import 'package:restaurants/features/auth/presentation/manager/sign_in_cubit/sign_in_cubit.dart';
-import 'package:restaurants/features/auth/presentation/views/sign_up_view.dart';
-import 'package:restaurants/features/auth/presentation/views/widgets/rich_text_with_action.dart';
+import '../../../../../core/style/app_style.dart';
+import '../../../../../core/widgets/custom_button.dart';
+import '../../../../../core/widgets/custom_text_form_field.dart';
+import '../../../../../core/widgets/eye_icon_obscure.dart';
+import '../../manager/sign_in_cubit/sign_in_cubit.dart';
+import '../sign_up_view.dart';
+import 'rich_text_with_action.dart';
 
 class SignInViewBody extends StatefulWidget {
   const SignInViewBody({super.key});

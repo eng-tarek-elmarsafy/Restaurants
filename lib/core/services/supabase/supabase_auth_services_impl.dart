@@ -1,6 +1,6 @@
-import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/failure/failure.dart';
-import 'package:restaurants/core/services/auth_services.dart';
+import '../../../constrains.dart';
+import '../../failure/failure.dart';
+import '../auth_services.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SupabaseAuthServicesImpl implements AuthServices {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/style/app_style.dart';
+import '../../constrains.dart';
+import '../style/app_style.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({super.key, required this.title, required this.onPressed});

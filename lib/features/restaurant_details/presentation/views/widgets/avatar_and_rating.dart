@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/style/app_style.dart';
-import 'package:restaurants/core/widgets/user_avatar.dart';
-import 'package:restaurants/features/restaurant_details/domain/entites/rating_entity.dart';
+import '../../../../../constrains.dart';
+import '../../../../../core/style/app_style.dart';
+import '../../../../../core/widgets/user_avatar.dart';
+import '../../../domain/entites/rating_entity.dart';
 
 class AvatarAndRating extends StatelessWidget {
   const AvatarAndRating({super.key, required this.rating});

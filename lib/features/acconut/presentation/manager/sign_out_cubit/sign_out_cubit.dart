@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:restaurants/core/services/shared_preferences.dart';
-import 'package:restaurants/features/auth/domain/repo/auth_repo.dart';
+import '../../../../../core/services/shared_preferences.dart';
+import '../../../../auth/domain/repo/auth_repo.dart';
 
 part 'sign_out_state.dart';
 

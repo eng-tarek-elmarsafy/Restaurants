@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/helper/get_it_setup.dart';
-import 'package:restaurants/core/style/app_style.dart';
-import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
-import 'package:restaurants/features/restaurant_details/domain/repo/rating_repo.dart';
-import 'package:restaurants/features/restaurant_details/presentation/manager/add_rating_cubit/add_rating_cubit.dart';
-import 'package:restaurants/features/restaurant_details/presentation/views/widgets/modal_bottom_sheet_body.dart';
+import '../../../../../constrains.dart';
+import '../../../../../core/helper/get_it_setup.dart';
+import '../../../../../core/style/app_style.dart';
+import '../../../../home/domain/entities/restaurant_entity.dart';
+import '../../../domain/repo/rating_repo.dart';
+import '../../manager/add_rating_cubit/add_rating_cubit.dart';
+import 'modal_bottom_sheet_body.dart';
 
 class AddComment extends StatelessWidget {
   const AddComment({super.key, required this.restaurant});

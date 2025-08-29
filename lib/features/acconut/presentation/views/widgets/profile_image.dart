@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/services/shared_preferences.dart';
-import 'package:restaurants/core/style/app_style.dart';
-import 'package:restaurants/core/widgets/user_avatar.dart';
-import 'package:restaurants/features/acconut/presentation/manager/update_user_data_cubit/update_user_data_cubit.dart';
+import '../../../../../constrains.dart';
+import '../../../../../core/services/shared_preferences.dart';
+import '../../../../../core/style/app_style.dart';
+import '../../../../../core/widgets/user_avatar.dart';
+import '../../manager/update_user_data_cubit/update_user_data_cubit.dart';
 
 class ProfileImage extends StatefulWidget {
   const ProfileImage({super.key});

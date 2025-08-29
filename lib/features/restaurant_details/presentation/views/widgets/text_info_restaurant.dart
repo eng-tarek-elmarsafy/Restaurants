@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/core/style/app_style.dart';
-import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
+import '../../../../../core/style/app_style.dart';
+import '../../../../home/domain/entities/restaurant_entity.dart';
 
 class TextInfoRestaurant extends StatelessWidget {
   const TextInfoRestaurant({super.key, required this.restaurant});

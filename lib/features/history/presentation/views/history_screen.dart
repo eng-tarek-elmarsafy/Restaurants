@@ -2,8 +2,8 @@ import 'dart:developer';
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:restaurants/features/history/presentation/manager/get_all_orders_cubit/get_all_orders_cubit.dart';
-import 'package:restaurants/features/history/presentation/views/widgets/history_screen_body.dart';
+import '../manager/get_all_orders_cubit/get_all_orders_cubit.dart';
+import 'widgets/history_screen_body.dart';
 
 class HistoryScreen extends StatelessWidget {
   const HistoryScreen({super.key});

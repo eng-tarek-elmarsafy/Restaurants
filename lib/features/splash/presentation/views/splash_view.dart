@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/services/shared_preferences.dart';
-import 'package:restaurants/features/auth/presentation/views/sign_in_view.dart';
-import 'package:restaurants/features/main/presentation/views/main_view.dart';
-import 'package:restaurants/features/splash/presentation/views/widgets/splash_view_body.dart';
+import '../../../../constrains.dart';
+import '../../../../core/services/shared_preferences.dart';
+import '../../../auth/presentation/views/sign_in_view.dart';
+import '../../../main/presentation/views/main_view.dart';
+import 'widgets/splash_view_body.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});

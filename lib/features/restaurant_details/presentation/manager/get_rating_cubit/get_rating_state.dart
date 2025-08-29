@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/features/restaurant_details/domain/entites/rating_entity.dart';
+import '../../../domain/entites/rating_entity.dart';
 
 @immutable
 sealed class GetRatingState {}

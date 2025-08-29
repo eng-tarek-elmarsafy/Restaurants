@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/style/app_style.dart';
+import '../../../../../constrains.dart';
+import '../../../../../core/style/app_style.dart';
 
 class ItemTabBar extends StatelessWidget {
   const ItemTabBar({super.key, required this.isActev, required this.title});

@@ -1,4 +1,4 @@
-import 'package:restaurants/features/restaurant_details/domain/entites/meun_entity.dart';
+import '../../../restaurant_details/domain/entites/meun_entity.dart';
 
 class CartItemEntity {
   CartItemEntity({required this.menu, this.quanitty = 0, this.totalPrice});

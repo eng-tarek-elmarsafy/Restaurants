@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/constrains.dart';
+import '../../constrains.dart';
 
 abstract class AppStyle {
   static const TextStyle titleStyle = TextStyle(

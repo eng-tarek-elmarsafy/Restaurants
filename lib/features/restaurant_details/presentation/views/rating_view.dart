@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
-import 'package:restaurants/features/restaurant_details/presentation/views/widgets/rating_view_bloc_consumer.dart';
+import '../../../home/domain/entities/restaurant_entity.dart';
+import 'widgets/rating_view_bloc_consumer.dart';
 
 class RatingView extends StatelessWidget {
   const RatingView({super.key, required this.restaurant});

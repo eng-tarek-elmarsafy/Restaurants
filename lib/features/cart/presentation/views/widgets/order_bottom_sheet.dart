@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:restaurants/constrains.dart';
-import 'package:restaurants/features/cart/presentation/views/widgets/order_bottom_sheet_body.dart';
+import '../../../../../constrains.dart';
+import 'order_bottom_sheet_body.dart';
 
 class OrderBottomSheet extends StatelessWidget {
   const OrderBottomSheet({super.key});

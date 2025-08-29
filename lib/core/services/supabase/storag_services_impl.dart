@@ -1,4 +1,4 @@
-import 'package:restaurants/core/services/storag_services.dart';
+import '../storag_services.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class StoragServicesImpl extends StoragServices {

@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:restaurants/core/entities/review_entity.dart';
+import 'review_entity.dart';
 
 class MenuItemEntity extends Equatable {
   const MenuItemEntity({

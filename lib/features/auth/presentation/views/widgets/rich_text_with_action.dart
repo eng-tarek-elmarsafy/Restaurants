@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/style/app_style.dart';
+import '../../../../../constrains.dart';
+import '../../../../../core/style/app_style.dart';
 
 class RichTextWithAction extends StatelessWidget {
   const RichTextWithAction({

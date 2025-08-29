@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/widgets/logo_app.dart';
+import '../../constrains.dart';
+import '../widgets/logo_app.dart';
 
 AppBar buildAppBar(BuildContext context, {bool isGoBack = true}) {
   return AppBar(

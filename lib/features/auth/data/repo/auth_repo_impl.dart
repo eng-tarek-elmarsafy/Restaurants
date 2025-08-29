@@ -1,16 +1,16 @@
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
-import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/failure/failure.dart';
-import 'package:restaurants/core/services/auth_services.dart';
-import 'package:restaurants/core/services/shared_preferences.dart';
-import 'package:restaurants/core/services/stor_services.dart';
-import 'package:restaurants/features/auth/data/models/create_user_model.dart';
-import 'package:restaurants/features/auth/data/models/user_model.dart';
-import 'package:restaurants/features/auth/domain/entities/create_user_entity.dart';
-import 'package:restaurants/features/auth/domain/entities/user_entity.dart';
-import 'package:restaurants/features/auth/domain/repo/auth_repo.dart';
+import '../../../../constrains.dart';
+import '../../../../core/failure/failure.dart';
+import '../../../../core/services/auth_services.dart';
+import '../../../../core/services/shared_preferences.dart';
+import '../../../../core/services/stor_services.dart';
+import '../models/create_user_model.dart';
+import '../models/user_model.dart';
+import '../../domain/entities/create_user_entity.dart';
+import '../../domain/entities/user_entity.dart';
+import '../../domain/repo/auth_repo.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class AuthRepoImpl extends AuthRepo {

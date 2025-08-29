@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:restaurants/core/helper/backend_endpoint.dart';
-import 'package:restaurants/features/auth/domain/entities/user_entity.dart';
-import 'package:restaurants/features/auth/domain/repo/auth_repo.dart';
+import '../../../../../core/helper/backend_endpoint.dart';
+import '../../../../auth/domain/entities/user_entity.dart';
+import '../../../../auth/domain/repo/auth_repo.dart';
 
 part 'get_user_state.dart';
 

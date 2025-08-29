@@ -1,4 +1,4 @@
-import 'package:restaurants/features/restaurant_details/domain/entites/rating_entity.dart';
+import '../../domain/entites/rating_entity.dart';
 
 class RatingModel {
   factory RatingModel.fromJson(Map<String, dynamic> data) {

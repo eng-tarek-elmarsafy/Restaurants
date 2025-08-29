@@ -1,6 +1,6 @@
-import 'package:restaurants/features/history/data/models/order_item_modile.dart';
-import 'package:restaurants/features/history/domain/entity/history_orders_entity.dart';
-import 'package:restaurants/features/history/domain/entity/order_item_entity.dart';
+import 'order_item_modile.dart';
+import '../../domain/entity/history_orders_entity.dart';
+import '../../domain/entity/order_item_entity.dart';
 
 class HistoryOrdersModile extends HistoryOrdersEntity {
   HistoryOrdersModile({

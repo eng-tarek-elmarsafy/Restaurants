@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/core/style/assets.dart';
+import '../style/assets.dart';
 
 class LogoApp extends StatelessWidget {
   const LogoApp({super.key, this.isSplash = false});

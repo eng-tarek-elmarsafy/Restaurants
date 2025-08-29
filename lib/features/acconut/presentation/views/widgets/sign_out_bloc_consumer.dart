@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import 'package:restaurants/core/style/app_style.dart';
-import 'package:restaurants/features/acconut/presentation/manager/sign_out_cubit/sign_out_cubit.dart';
-import 'package:restaurants/features/acconut/presentation/views/widgets/account_body.dart';
+import '../../../../../core/style/app_style.dart';
+import '../../manager/sign_out_cubit/sign_out_cubit.dart';
+import 'account_body.dart';
 
 class SignOutBlocConsumer extends StatelessWidget {
   const SignOutBlocConsumer({super.key});

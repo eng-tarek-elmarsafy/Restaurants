@@ -1,4 +1,4 @@
-import 'package:restaurants/features/restaurant_details/domain/entites/meun_entity.dart';
+import '../../domain/entites/meun_entity.dart';
 
 class MeunModel {
   factory MeunModel.fromJesom(Map<String, dynamic> data) {

@@ -2,9 +2,9 @@ import 'dart:developer';
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:restaurants/core/helper/restaurant_entity_demo.dart';
-import 'package:restaurants/features/home/presentation/manager/get_restaurants_cubit/get_restaurants_cubit.dart';
-import 'package:restaurants/features/home/presentation/views/widgets/home_view_body.dart';
+import '../../../../../core/helper/restaurant_entity_demo.dart';
+import '../../manager/get_restaurants_cubit/get_restaurants_cubit.dart';
+import 'home_view_body.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class HomeViewBlocBuilder extends StatelessWidget {

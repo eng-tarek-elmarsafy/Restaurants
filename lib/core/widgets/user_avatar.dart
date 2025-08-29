@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/constrains.dart';
+import '../../constrains.dart';
 
 class UserAvatar extends StatefulWidget {
   const UserAvatar({super.key, this.radius = 30, this.imageUrl});

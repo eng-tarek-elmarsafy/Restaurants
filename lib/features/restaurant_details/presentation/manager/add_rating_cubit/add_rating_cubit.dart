@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:restaurants/core/helper/backend_endpoint.dart';
-import 'package:restaurants/features/restaurant_details/domain/entites/rating_entity.dart';
-import 'package:restaurants/features/restaurant_details/domain/repo/rating_repo.dart';
+import '../../../../../core/helper/backend_endpoint.dart';
+import '../../../domain/entites/rating_entity.dart';
+import '../../../domain/repo/rating_repo.dart';
 
 part 'add_rating_state.dart';
 

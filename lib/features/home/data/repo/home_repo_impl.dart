@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:restaurants/core/failure/failure.dart';
-import 'package:restaurants/core/services/stor_services.dart';
-import 'package:restaurants/features/home/data/models/restaurant_model.dart';
-import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
-import 'package:restaurants/features/home/domain/repo/home_repo.dart';
+import '../../../../core/failure/failure.dart';
+import '../../../../core/services/stor_services.dart';
+import '../models/restaurant_model.dart';
+import '../../domain/entities/restaurant_entity.dart';
+import '../../domain/repo/home_repo.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class HomeRepoImpl implements HomeRepo {

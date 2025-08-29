@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/constrains.dart';
-import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
-import 'package:restaurants/features/home/presentation/views/widgets/restaurnt_item.dart';
+import '../../../../../constrains.dart';
+import '../../../domain/entities/restaurant_entity.dart';
+import 'restaurnt_item.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key, required this.restaurants});

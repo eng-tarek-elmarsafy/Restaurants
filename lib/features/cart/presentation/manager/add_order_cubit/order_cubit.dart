@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:restaurants/features/cart/domain/entites/ordar_entity.dart';
-import 'package:restaurants/features/cart/domain/repo/order_repo.dart';
+import '../../../domain/entites/ordar_entity.dart';
+import '../../../domain/repo/order_repo.dart';
 
 part 'order_state.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/constrains.dart';
-import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
-import 'package:restaurants/features/restaurant_details/presentation/views/widgets/show_modal_add_comment_bloc_consumer.dart';
+import '../../../../../constrains.dart';
+import '../../../../home/domain/entities/restaurant_entity.dart';
+import 'show_modal_add_comment_bloc_consumer.dart';
 
 class ModalBottomSheetBody extends StatelessWidget {
   const ModalBottomSheetBody({super.key, required this.restaurant});

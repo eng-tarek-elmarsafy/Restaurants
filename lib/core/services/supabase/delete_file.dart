@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:restaurants/core/failure/failure.dart';
-import 'package:restaurants/core/services/storag_services.dart';
+import '../../failure/failure.dart';
+import '../storag_services.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 abstract class DeleteFile {

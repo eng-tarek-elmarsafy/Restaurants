@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:restaurants/features/cart/domain/entites/car_item_entity.dart';
-import 'package:restaurants/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
-import 'package:restaurants/features/cart/presentation/manager/cart_item_cubit/cart_item_cubit.dart';
-import 'package:restaurants/features/cart/presentation/views/widgets/cart_item_proaduct.dart';
-import 'package:restaurants/features/cart/presentation/views/widgets/custom_divider.dart';
+import '../../../domain/entites/car_item_entity.dart';
+import '../../manager/cart_cubit/cart_cubit.dart';
+import '../../manager/cart_item_cubit/cart_item_cubit.dart';
+import 'cart_item_proaduct.dart';
+import 'custom_divider.dart';
 
 class CartItemProaductLisViewBlocBuilder extends StatelessWidget {
   const CartItemProaductLisViewBlocBuilder({super.key});

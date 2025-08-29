@@ -1,15 +1,15 @@
 import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
-import 'package:restaurants/constrains.dart';
+import '../../../../constrains.dart';
 
-import 'package:restaurants/core/failure/failure.dart';
-import 'package:restaurants/core/helper/backend_endpoint.dart';
-import 'package:restaurants/core/services/shared_preferences.dart';
-import 'package:restaurants/core/services/stor_services.dart';
-import 'package:restaurants/features/history/data/models/history_orders_modile.dart';
-import 'package:restaurants/features/history/domain/entity/history_orders_entity.dart';
-import 'package:restaurants/features/history/domain/repo/history_repo.dart';
+import '../../../../core/failure/failure.dart';
+import '../../../../core/helper/backend_endpoint.dart';
+import '../../../../core/services/shared_preferences.dart';
+import '../../../../core/services/stor_services.dart';
+import '../models/history_orders_modile.dart';
+import '../../domain/entity/history_orders_entity.dart';
+import '../../domain/repo/history_repo.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class HistoryRepoImpl extends HistoryRepo {

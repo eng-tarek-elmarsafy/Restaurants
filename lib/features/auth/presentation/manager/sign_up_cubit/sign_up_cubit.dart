@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:restaurants/core/helper/backend_endpoint.dart';
-import 'package:restaurants/features/auth/domain/entities/create_user_entity.dart';
-import 'package:restaurants/features/auth/domain/entities/user_entity.dart';
-import 'package:restaurants/features/auth/domain/repo/auth_repo.dart';
+import '../../../../../core/helper/backend_endpoint.dart';
+import '../../../domain/entities/create_user_entity.dart';
+import '../../../domain/entities/user_entity.dart';
+import '../../../domain/repo/auth_repo.dart';
 
 part 'sign_up_state.dart';
 

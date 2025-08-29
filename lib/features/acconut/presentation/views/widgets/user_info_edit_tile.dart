@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/function/custom_edit_show_modal_bottom_sheet.dart';
+import '../../../../../constrains.dart';
+import '../../../../../core/function/custom_edit_show_modal_bottom_sheet.dart';
 
 class UserInfoEditTile extends StatelessWidget {
   const UserInfoEditTile({

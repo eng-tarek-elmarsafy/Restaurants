@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:restaurants/core/helper/backend_endpoint.dart';
-import 'package:restaurants/features/restaurant_details/domain/repo/rating_repo.dart';
-import 'package:restaurants/features/restaurant_details/presentation/manager/get_rating_cubit/get_rating_state.dart';
+import '../../../../../core/helper/backend_endpoint.dart';
+import '../../../domain/repo/rating_repo.dart';
+import 'get_rating_state.dart';
 
 class GetRatingCubit extends Cubit<GetRatingState> {
   GetRatingCubit(this.ratingRepo) : super(GetRatingInitial());

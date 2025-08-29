@@ -1,4 +1,4 @@
-import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
+import '../../features/home/domain/entities/restaurant_entity.dart';
 
 List<RestaurantEntity> restaurantEntityDemo = [
   RestaurantEntity(

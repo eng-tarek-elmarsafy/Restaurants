@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
-import 'package:restaurants/core/failure/failure.dart';
-import 'package:restaurants/core/services/supabase/upload_file.dart';
+import '../../failure/failure.dart';
+import 'upload_file.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class UploadFileImpl implements UploadFile {

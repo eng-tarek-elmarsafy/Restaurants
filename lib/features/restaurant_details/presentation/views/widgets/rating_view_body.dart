@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
-import 'package:restaurants/features/restaurant_details/domain/entites/rating_entity.dart';
-import 'package:restaurants/features/restaurant_details/presentation/views/widgets/add_comment.dart';
-import 'package:restaurants/features/restaurant_details/presentation/views/widgets/rating_item.dart';
+import '../../../../home/domain/entities/restaurant_entity.dart';
+import '../../../domain/entites/rating_entity.dart';
+import 'add_comment.dart';
+import 'rating_item.dart';
 
 class RatingViewBody extends StatelessWidget {
   const RatingViewBody({

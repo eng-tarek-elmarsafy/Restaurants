@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import 'package:restaurants/core/services/shared_preferences.dart';
-import 'package:restaurants/features/acconut/presentation/manager/update_user_data_cubit/update_user_data_cubit.dart';
-import 'package:restaurants/features/acconut/presentation/views/widgets/show_modal_bottom_sheet_edit_body.dart';
+import '../services/shared_preferences.dart';
+import '../../features/acconut/presentation/manager/update_user_data_cubit/update_user_data_cubit.dart';
+import '../../features/acconut/presentation/views/widgets/show_modal_bottom_sheet_edit_body.dart';
 
 Future<dynamic> customEditShowModalBottomSheet(
   BuildContext context, {

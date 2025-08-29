@@ -1,4 +1,4 @@
-import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
+import '../../domain/entities/restaurant_entity.dart';
 
 class RestaurantModel {
   factory RestaurantModel.formEntity(RestaurantEntity entity) {

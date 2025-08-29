@@ -1,8 +1,8 @@
-import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/services/shared_preferences.dart';
-import 'package:restaurants/features/cart/domain/entites/car_item_entity.dart';
-import 'package:restaurants/features/cart/domain/entites/ordar_entity.dart';
-import 'package:restaurants/features/restaurant_details/domain/entites/meun_entity.dart';
+import '../../../../constrains.dart';
+import '../../../../core/services/shared_preferences.dart';
+import '../../domain/entites/car_item_entity.dart';
+import '../../domain/entites/ordar_entity.dart';
+import '../../../restaurant_details/domain/entites/meun_entity.dart';
 
 class OrderModel extends OrderEntity {
   factory OrderModel.fromEntity(OrderEntity entity) {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:restaurants/core/function/get_date.dart';
-import 'package:restaurants/core/style/app_style.dart';
-import 'package:restaurants/features/restaurant_details/domain/entites/rating_entity.dart';
-import 'package:restaurants/features/restaurant_details/presentation/views/widgets/avatar_and_rating.dart';
+import '../../../../../core/function/get_date.dart';
+import '../../../../../core/style/app_style.dart';
+import '../../../domain/entites/rating_entity.dart';
+import 'avatar_and_rating.dart';
 
 class RatingInfo extends StatelessWidget {
   const RatingInfo({super.key, required this.rating});

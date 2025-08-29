@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:restaurants/core/failure/failure.dart';
-import 'package:restaurants/core/services/auth_services.dart';
-import 'package:restaurants/core/services/shared_preferences.dart';
-import 'package:restaurants/features/acconut/domain/repo/account_repo.dart';
+import '../../../../core/failure/failure.dart';
+import '../../../../core/services/auth_services.dart';
+import '../../../../core/services/shared_preferences.dart';
+import '../../domain/repo/account_repo.dart';
 
 class AccountRepoImpl extends AccountRepo {
   AccountRepoImpl({required this.authServices});
