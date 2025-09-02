@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import '../../../../../constrains.dart';
-import '../../../../../core/style/app_style.dart';
-import '../../../domain/entities/restaurant_entity.dart';
-import '../../../../restaurant_details/presentation/manager/get_meun_cubit/get_menu_cubit.dart';
-import '../../../../restaurant_details/presentation/views/restaurnt_details_view.dart';
+import 'package:restaurants/constrains.dart';
+import 'package:restaurants/core/style/app_style.dart';
+import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
+import 'package:restaurants/features/restaurant_details/presentation/manager/get_meun_cubit/get_menu_cubit.dart';
+import 'package:restaurants/features/restaurant_details/presentation/views/restaurnt_details_view.dart';
 
 class RestsurntItem extends StatelessWidget {
   const RestsurntItem({super.key, required this.restaurant});
@@ -59,15 +58,15 @@ class RestsurntItem extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 4),
-              RatingBarIndicator(
-                rating: double.parse(restaurant.rating),
-                itemBuilder:
-                    (contxt, index) =>
-                        const Icon(Icons.star, color: kSecondaryColor),
-                itemCount: 5,
-                itemSize: 15,
-                direction: Axis.horizontal,
-              ),
+              // RatingBarIndicator(
+              //   rating: double.parse(restaurant.rating),
+              //   itemBuilder:
+              //       (contxt, index) =>
+              //           const Icon(Icons.star, color: kSecondaryColor),
+              //   itemCount: 5,
+              //   itemSize: 15,
+              //   direction: Axis.horizontal,
+              // ),
             ],
           ),
           const Spacer(),

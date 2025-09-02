@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import '../../../../core/function/build_app_bar.dart';
-import '../../../acconut/presentation/views/account_view.dart';
-import '../../../cart/presentation/views/cart_view.dart';
-import '../../../history/presentation/views/history_screen.dart';
-import '../../../home/presentation/views/home_view.dart';
-import '../../../home/presentation/views/widgets/navigation_nav_bar.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:restaurants/core/cubit/cart_icon_cubit.dart';
+import 'package:restaurants/core/function/build_app_bar.dart';
+import 'package:restaurants/features/acconut/presentation/views/account_view.dart';
+import 'package:restaurants/features/cart/presentation/views/cart_view.dart';
+import 'package:restaurants/features/history/presentation/views/history_screen.dart';
+import 'package:restaurants/features/home/presentation/views/home_view.dart';
+import 'package:restaurants/features/home/presentation/views/widgets/navigation_nav_bar.dart';
 
 class MainView extends StatefulWidget {
   const MainView({super.key});
@@ -16,6 +18,18 @@ class MainView extends StatefulWidget {
 
 class _MainViewState extends State<MainView> {
   int _selectedIndex = 0;
+  @override
+  void initState() {
+    super.initState();
+    context.read<CartIconCubit>().stream.listen((event) {
+      if (event is CartIconRefresh) {
+        setState(() {
+          _selectedIndex = 1;
+        });
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

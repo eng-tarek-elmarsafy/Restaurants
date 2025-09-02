@@ -1,8 +1,12 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import '../../../../../constrains.dart';
-import '../../../../../core/style/app_style.dart';
-import '../../../domain/entities/icon_item_entity.dart';
+import 'package:restaurants/constrains.dart';
+import 'package:restaurants/core/cubit/cart_icon_cubit.dart';
+import 'package:restaurants/core/style/app_style.dart';
+import 'package:restaurants/features/home/domain/entities/icon_item_entity.dart';
 
 class NavigationNavBar extends StatefulWidget {
   const NavigationNavBar({super.key, required this.onTabChange});
@@ -18,10 +22,24 @@ class _NavigationNavBarState extends State<NavigationNavBar> {
     IconItemEntity(icon: Icons.history_edu_outlined, title: 'الطلبات'),
     IconItemEntity(icon: Icons.account_box_rounded, title: 'الحساب'),
   ];
+  int selectedIndex = 0;
+  @override
+  void initState() {
+    super.initState();
+    context.read<CartIconCubit>().stream.listen((event) {
+      if (event is CartIconRefresh) {
+        setState(() {
+          log('CartIconRefresh');
+          selectedIndex = 1;
+        });
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return GNav(
+      selectedIndex: selectedIndex,
       onTabChange: (value) {
         widget.onTabChange(value);
       },
@@ -48,7 +66,6 @@ class _NavigationNavBarState extends State<NavigationNavBar> {
       text: iconItem.title,
       padding: const EdgeInsets.only(top: 8, bottom: 8, left: 12, right: 4),
       textStyle: AppStyle.subtitleStyle,
-      // border:
       activeBorder: Border.all(color: kNeutralColor),
       onPressed: () {},
     );

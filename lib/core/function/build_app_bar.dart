@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
-import '../../constrains.dart';
-import '../widgets/logo_app.dart';
+import 'package:restaurants/core/widgets/cart_icon.dart';
+import 'package:restaurants/constrains.dart';
+import 'package:restaurants/core/widgets/logo_app.dart';
 
-AppBar buildAppBar(BuildContext context, {bool isGoBack = true}) {
+AppBar buildAppBar(
+  BuildContext context, {
+  bool isGoBack = true,
+  bool isShowCart = false,
+}) {
   return AppBar(
     elevation: 0,
     title: const LogoApp(),
@@ -17,5 +22,6 @@ AppBar buildAppBar(BuildContext context, {bool isGoBack = true}) {
               icon: const Icon(Icons.arrow_back_ios, color: kSecondaryColor),
             )
             : null,
+    actions: isShowCart ? const [CartIcon()] : [],
   );
 }
