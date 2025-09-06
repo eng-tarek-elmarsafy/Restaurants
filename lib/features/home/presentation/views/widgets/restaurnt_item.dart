@@ -25,7 +25,6 @@ class RestsurntItem extends StatelessWidget {
           Container(
             width: 100,
             height: 70,
-
             decoration: BoxDecoration(
               color:
                   restaurant.imageUrl != null
@@ -47,7 +46,6 @@ class RestsurntItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(restaurant.name, style: AppStyle.subtitleStyle),
-
               const SizedBox(height: 4),
               SizedBox(
                 width: MediaQuery.of(context).size.width - 160,

@@ -1,22 +1,21 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../home/domain/entities/restaurant_entity.dart';
-import '../../../domain/entites/rating_entity.dart';
-import '../../manager/get_rating_cubit/get_rating_cubit.dart';
-import '../../manager/get_rating_cubit/get_rating_state.dart';
-import 'rating_view_body.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:restaurants/core/widgets/loding_indicator.dart';
+import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
+import 'package:restaurants/features/restaurant_details/presentation/manager/get_rating_cubit/get_rating_cubit.dart';
+import 'package:restaurants/features/restaurant_details/presentation/manager/get_rating_cubit/get_rating_state.dart';
+import 'package:restaurants/features/restaurant_details/presentation/views/widgets/rating_view_body.dart';
 
-class RatingViewBlocConsumer extends StatefulWidget {
-  const RatingViewBlocConsumer({super.key, required this.restaurant});
+class RatingViewBlocBuilder extends StatefulWidget {
+  const RatingViewBlocBuilder({super.key, required this.restaurant});
   final RestaurantEntity restaurant;
 
   @override
-  State<RatingViewBlocConsumer> createState() => _RatingViewBlocConsumerState();
+  State<RatingViewBlocBuilder> createState() => _RatingViewBlocBuilderState();
 }
 
-class _RatingViewBlocConsumerState extends State<RatingViewBlocConsumer> {
-  List<RatingEntity> listOfRating = [];
-
+class _RatingViewBlocBuilderState extends State<RatingViewBlocBuilder> {
   @override
   void initState() {
     context.read<GetRatingCubit>().getRating(widget.restaurant.id);
@@ -25,16 +24,23 @@ class _RatingViewBlocConsumerState extends State<RatingViewBlocConsumer> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<GetRatingCubit, GetRatingState>(
-      listener: (context, state) {
-        if (state is GetRatingSuccess) {
-          listOfRating = state.entity;
-        }
-      },
+    return BlocBuilder<GetRatingCubit, GetRatingState>(
       builder: (context, state) {
-        return RatingViewBody(
-          restaurant: widget.restaurant,
-          listOfRating: listOfRating,
+        if (state is GetRatingSuccess) {
+          return RatingViewBody(
+            restaurant: widget.restaurant,
+            listOfRating: state.entity,
+          );
+        } else if (state is GetRatingFailure) {
+          return Center(child: Text(state.err));
+        }
+        return ModalProgressHUD(
+          inAsyncCall: state is GetRatingLoading,
+          progressIndicator: const LodingIndicator(),
+          child: RatingViewBody(
+            restaurant: widget.restaurant,
+            listOfRating: const [],
+          ),
         );
       },
     );

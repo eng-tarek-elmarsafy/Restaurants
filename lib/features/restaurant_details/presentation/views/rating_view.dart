@@ -7,6 +7,6 @@ class RatingView extends StatelessWidget {
   final RestaurantEntity restaurant;
   @override
   Widget build(BuildContext context) {
-    return RatingViewBlocConsumer(restaurant: restaurant);
+    return RatingViewBlocBuilder(restaurant: restaurant);
   }
 }

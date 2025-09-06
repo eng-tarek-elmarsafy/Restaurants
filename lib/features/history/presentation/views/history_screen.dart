@@ -1,9 +1,7 @@
-import 'dart:developer';
-
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../manager/get_all_orders_cubit/get_all_orders_cubit.dart';
-import 'widgets/history_screen_body.dart';
+import 'package:restaurants/features/history/presentation/manager/get_all_orders_cubit/get_all_orders_cubit.dart';
+import 'package:restaurants/features/history/presentation/views/widgets/history_screen_body.dart';
 
 class HistoryScreen extends StatelessWidget {
   const HistoryScreen({super.key});
@@ -32,15 +30,14 @@ class _HistoryBodyState extends State<HistoryBody> {
   Widget build(BuildContext context) {
     return BlocBuilder<GetAllOrdersCubit, GetAllOrdersState>(
       builder: (context, state) {
-        log(state.runtimeType.toString());
         if (state is GetAllOrdersSuccess) {
           return HistoryScreenBody(orders: state.orders.reversed.toList());
         } else if (state is GetAllOrdersFailure) {
           return Center(child: Text(state.message));
         } else if (state is GetAllOrdersLoading) {
-          return const Center(child: Text('Loadung ...'));
+          return const Center(child: CircularProgressIndicator());
         } else {
-          return const Center(child: Text('no'));
+          return const Center(child: Text('Error'));
         }
       },
     );

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:restaurants/core/cubit/cart_icon_cubit.dart';
 import 'package:restaurants/core/function/build_app_bar.dart';
 import 'package:restaurants/features/acconut/presentation/views/account_view.dart';
 import 'package:restaurants/features/cart/presentation/views/cart_view.dart';
@@ -18,17 +16,6 @@ class MainView extends StatefulWidget {
 
 class _MainViewState extends State<MainView> {
   int _selectedIndex = 0;
-  @override
-  void initState() {
-    super.initState();
-    context.read<CartIconCubit>().stream.listen((event) {
-      if (event is CartIconRefresh) {
-        setState(() {
-          _selectedIndex = 1;
-        });
-      }
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +25,7 @@ class _MainViewState extends State<MainView> {
         index: _selectedIndex,
         children: const [
           HomeView(),
-          CartView(),
+          CartViewWidget(),
           HistoryScreen(),
           AccountView(),
         ],

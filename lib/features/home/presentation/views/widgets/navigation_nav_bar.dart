@@ -1,10 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:restaurants/constrains.dart';
-import 'package:restaurants/core/cubit/cart_icon_cubit.dart';
 import 'package:restaurants/core/style/app_style.dart';
 import 'package:restaurants/features/home/domain/entities/icon_item_entity.dart';
 
@@ -24,18 +20,6 @@ class _NavigationNavBarState extends State<NavigationNavBar> {
   ];
   int selectedIndex = 0;
   @override
-  void initState() {
-    super.initState();
-    context.read<CartIconCubit>().stream.listen((event) {
-      if (event is CartIconRefresh) {
-        setState(() {
-          log('CartIconRefresh');
-          selectedIndex = 1;
-        });
-      }
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return GNav(

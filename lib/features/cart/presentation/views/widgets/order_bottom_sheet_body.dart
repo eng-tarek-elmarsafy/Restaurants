@@ -1,14 +1,14 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../../constrains.dart';
-import '../../../../../core/services/shared_preferences.dart';
-import '../../../../../core/widgets/custom_text_field.dart';
-import '../../../../../core/widgets/custom_text_form_field.dart';
-import '../../../../../core/widgets/logo_app.dart';
-import '../../../domain/entites/ordar_entity.dart';
-import '../../manager/cart_cubit/cart_cubit.dart';
-import '../../manager/add_order_cubit/order_cubit.dart';
-import 'order_actions.dart';
+import 'package:restaurants/constrains.dart';
+import 'package:restaurants/core/services/shared_preferences.dart';
+import 'package:restaurants/core/widgets/custom_text_field.dart';
+import 'package:restaurants/core/widgets/custom_text_form_field.dart';
+import 'package:restaurants/core/widgets/logo_app.dart';
+import 'package:restaurants/features/cart/domain/entites/ordar_entity.dart';
+import 'package:restaurants/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
+import 'package:restaurants/features/cart/presentation/manager/add_order_cubit/order_cubit.dart';
+import 'package:restaurants/features/cart/presentation/views/widgets/order_actions.dart';
 
 class OrderBottomSheetBody extends StatefulWidget {
   const OrderBottomSheetBody({super.key});
@@ -70,7 +70,7 @@ class _OrderBottomSheetBodyState extends State<OrderBottomSheetBody> {
             textInputType: TextInputType.streetAddress,
             autovalidateMode: _autovalidateMode,
             validator: (value) {
-              if (value!.isEmpty && Prefs.getString(kAddress)!.isEmpty) {
+              if (value!.isEmpty && Prefs.getString(kAddress) == null) {
                 return 'الرجاء ادخال العنوان';
               }
               return null;

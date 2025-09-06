@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:restaurants/core/widgets/loding_indicator.dart';
 import '../../../../../constrains.dart';
 import '../../../../../core/style/app_style.dart';
 import '../../manager/cart_cubit/cart_cubit.dart';
@@ -41,6 +42,7 @@ class CartViewBody extends StatelessWidget {
         builder: (context, state) {
           return ModalProgressHUD(
             inAsyncCall: state is AddOrderLoading,
+            progressIndicator: const LodingIndicator(),
             child: Stack(
               children: [
                 CustomScrollView(

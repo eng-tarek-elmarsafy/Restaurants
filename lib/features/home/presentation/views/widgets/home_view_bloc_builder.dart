@@ -2,10 +2,10 @@ import 'dart:developer';
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../../core/helper/restaurant_entity_demo.dart';
-import '../../manager/get_restaurants_cubit/get_restaurants_cubit.dart';
-import 'home_view_body.dart';
-import 'package:skeletonizer/skeletonizer.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:restaurants/core/widgets/loding_indicator.dart';
+import 'package:restaurants/features/home/presentation/manager/get_restaurants_cubit/get_restaurants_cubit.dart';
+import 'package:restaurants/features/home/presentation/views/widgets/home_view_body.dart';
 
 class HomeViewBlocBuilder extends StatelessWidget {
   const HomeViewBlocBuilder({super.key});
@@ -20,8 +20,10 @@ class HomeViewBlocBuilder extends StatelessWidget {
           log(state.err);
           return Center(child: Text(state.err));
         } else {
-          return Skeletonizer(
-            child: HomeViewBody(restaurants: restaurantEntityDemo),
+          return ModalProgressHUD(
+            inAsyncCall: state is GetRestaurantsLoading,
+            progressIndicator: const LodingIndicator(),
+            child: const HomeViewBody(restaurants: []),
           );
         }
       },

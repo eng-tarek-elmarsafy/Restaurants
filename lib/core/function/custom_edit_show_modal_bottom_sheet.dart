@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:restaurants/core/widgets/loding_indicator.dart';
 import '../services/shared_preferences.dart';
 import '../../features/acconut/presentation/manager/update_user_data_cubit/update_user_data_cubit.dart';
 import '../../features/acconut/presentation/views/widgets/show_modal_bottom_sheet_edit_body.dart';
@@ -35,6 +36,7 @@ Future<dynamic> customEditShowModalBottomSheet(
                 height: MediaQuery.of(context).size.height / 3,
                 child: ModalProgressHUD(
                   inAsyncCall: state is UpdateUserDataLoading,
+                  progressIndicator: const LodingIndicator(),
                   child: SingleChildScrollView(
                     child: ShowModalBottomSheetEditBody(
                       title: title,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:restaurants/core/widgets/loding_indicator.dart';
 import '../../../../../core/style/app_style.dart';
 import '../../manager/sign_up_cubit/sign_up_cubit.dart';
 import 'sign_up_view_body.dart';
@@ -31,6 +32,7 @@ class SignUpBlocConsumer extends StatelessWidget {
         }
         return ModalProgressHUD(
           inAsyncCall: state is SignUpLoading,
+          progressIndicator: const LodingIndicator(),
           child: const SignUpViewBody(),
         );
       },

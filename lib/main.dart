@@ -30,7 +30,6 @@ import 'package:restaurants/generated/l10n.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   await SupabaseInitializing.initializing();
   await Prefs.inti();
   setup();
@@ -39,7 +38,6 @@ void main() async {
 
 class Restaurants extends StatelessWidget {
   const Restaurants({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -53,7 +51,6 @@ class Restaurants extends StatelessWidget {
         BlocProvider(
           create: (context) => GetRatingCubit(getIt.get<RatingRepo>()),
         ),
-
         BlocProvider(create: (context) => CartCubit()),
         BlocProvider(
           create:

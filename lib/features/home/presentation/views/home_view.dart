@@ -14,7 +14,6 @@ class _HomeViewState extends State<HomeView> {
   @override
   void initState() {
     BlocProvider.of<GetRestaurantsCubit>(context).getRestaurants();
-
     super.initState();
   }
 

@@ -2,8 +2,10 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../manager/get_meun_cubit/get_menu_cubit.dart';
-import 'menu_restaurant.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:restaurants/core/widgets/loding_indicator.dart';
+import 'package:restaurants/features/restaurant_details/presentation/manager/get_meun_cubit/get_menu_cubit.dart';
+import 'package:restaurants/features/restaurant_details/presentation/views/widgets/menu_restaurant.dart';
 
 class MeunBlocBuilder extends StatelessWidget {
   const MeunBlocBuilder({super.key});
@@ -18,7 +20,11 @@ class MeunBlocBuilder extends StatelessWidget {
           log(state.err);
           return Center(child: Text(state.err));
         }
-        return const Text('Loading');
+        return ModalProgressHUD(
+          inAsyncCall: state is GetMenuLoading,
+          progressIndicator: const LodingIndicator(),
+          child: const MenuRestaurant(meuns: []),
+        );
       },
     );
   }

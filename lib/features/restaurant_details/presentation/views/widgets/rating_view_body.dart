@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../../../home/domain/entities/restaurant_entity.dart';
-import '../../../domain/entites/rating_entity.dart';
-import 'add_comment.dart';
-import 'rating_item.dart';
+import 'package:restaurants/core/widgets/message_start.dart';
+import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
+import 'package:restaurants/features/restaurant_details/domain/entites/rating_entity.dart';
+import 'package:restaurants/features/restaurant_details/presentation/views/widgets/add_comment.dart';
+import 'package:restaurants/features/restaurant_details/presentation/views/widgets/rating_item.dart';
 
 class RatingViewBody extends StatelessWidget {
   const RatingViewBody({
@@ -18,22 +19,28 @@ class RatingViewBody extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: ListView.separated(
-            itemCount: listOfRating.length,
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: EdgeInsets.only(
-                  bottom: index == listOfRating.length - 1 ? 90 : 0,
-                ),
-                child: RatingItem(
-                  rating: listOfRating.reversed.toList()[index],
-                ),
-              );
-            },
-            separatorBuilder: (BuildContext context, int index) {
-              return const SizedBox(height: 20);
-            },
-          ),
+          child:
+              listOfRating.isEmpty
+                  ? const MessageStart(
+                    message:
+                        'التقييمات لسه فاضية… إنت ممكن تكون أول واحد يكتب تقييم.',
+                  )
+                  : ListView.separated(
+                    itemCount: listOfRating.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: EdgeInsets.only(
+                          bottom: index == listOfRating.length - 1 ? 90 : 0,
+                        ),
+                        child: RatingItem(
+                          rating: listOfRating.reversed.toList()[index],
+                        ),
+                      );
+                    },
+                    separatorBuilder: (BuildContext context, int index) {
+                      return const SizedBox(height: 20);
+                    },
+                  ),
         ),
 
         Positioned(

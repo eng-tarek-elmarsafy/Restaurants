@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import '../../features/auth/presentation/views/sign_in_view.dart';
-import '../../features/auth/presentation/views/sign_up_view.dart';
-import '../../features/home/domain/entities/restaurant_entity.dart';
-import '../../features/main/presentation/views/main_view.dart';
-import '../../features/restaurant_details/presentation/views/restaurnt_details_view.dart';
-import '../../features/splash/presentation/views/splash_view.dart';
+import 'package:restaurants/features/cart/presentation/views/cart_view.dart';
+import 'package:restaurants/features/auth/presentation/views/sign_in_view.dart';
+import 'package:restaurants/features/auth/presentation/views/sign_up_view.dart';
+import 'package:restaurants/features/home/domain/entities/restaurant_entity.dart';
+import 'package:restaurants/features/main/presentation/views/main_view.dart';
+import 'package:restaurants/features/restaurant_details/presentation/views/restaurnt_details_view.dart';
+import 'package:restaurants/features/splash/presentation/views/splash_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings setting) {
   switch (setting.name) {
@@ -23,6 +24,9 @@ Route<dynamic> onGenerateRoute(RouteSettings setting) {
               restaurant: setting.arguments as RestaurantEntity,
             ),
       );
+
+    case CartView.id:
+      return MaterialPageRoute(builder: (context) => const CartView());
 
     default:
       return MaterialPageRoute(

@@ -4,7 +4,7 @@ import 'package:restaurants/constrains.dart';
 import 'package:restaurants/core/cubit/cart_icon_cubit.dart';
 import 'package:restaurants/core/style/app_style.dart';
 import 'package:restaurants/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
-import 'package:restaurants/features/main/presentation/views/main_view.dart';
+import 'package:restaurants/features/cart/presentation/views/cart_view.dart';
 
 class CartIcon extends StatelessWidget {
   const CartIcon({super.key});
@@ -17,7 +17,7 @@ class CartIcon extends StatelessWidget {
       children: [
         IconButton(
           onPressed: () {
-            Navigator.pushNamed(context, MainView.id);
+            Navigator.pushNamed(context, CartView.id);
             context.read<CartIconCubit>().refresh();
           },
           icon: const Icon(Icons.shopping_cart, color: kSecondaryColor),

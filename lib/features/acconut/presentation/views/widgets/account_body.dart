@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../../constrains.dart';
-import '../../../../../core/services/shared_preferences.dart';
-import '../../../../../core/style/app_style.dart';
-import '../../manager/sign_out_cubit/sign_out_cubit.dart';
-import '../../manager/update_user_data_cubit/update_user_data_cubit.dart';
-import 'profile_image.dart';
-import 'user_info_edit_tile.dart';
+import 'package:restaurants/constrains.dart';
+import 'package:restaurants/core/services/shared_preferences.dart';
+import 'package:restaurants/core/style/app_style.dart';
+import 'package:restaurants/features/acconut/presentation/manager/sign_out_cubit/sign_out_cubit.dart';
+import 'package:restaurants/features/acconut/presentation/manager/update_user_data_cubit/update_user_data_cubit.dart';
+import 'package:restaurants/features/acconut/presentation/views/widgets/profile_image.dart';
+import 'package:restaurants/features/acconut/presentation/views/widgets/user_info_edit_tile.dart';
 
 class AccountBody extends StatefulWidget {
   const AccountBody({super.key});
@@ -57,7 +57,14 @@ class _AccountBodyState extends State<AccountBody> {
           onPressed: () {
             context.read<SignOutCubit>().signOut();
           },
-          child: const Text('تسجيل الخروج', style: AppStyle.buttonTextStyle),
+          child: const Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.logout, color: kSecondaryColor),
+              SizedBox(width: 10),
+              Text('تسجيل الخروج', style: AppStyle.buttonTextStyle),
+            ],
+          ),
         ),
       ],
     );
