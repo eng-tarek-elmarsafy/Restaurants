@@ -30,9 +30,16 @@ class SureOrderButton extends StatelessWidget {
           );
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
+            SnackBar(
               backgroundColor: kSecondaryColor,
-              content: Text('لا يوجد منتجات في سله التسوق'),
+              content: Center(
+                child: Text(
+                  'لا يوجد منتجات في سله التسوق',
+                  style: AppStyle.buttonTextStyle.copyWith(
+                    color: kPrimaryColor,
+                  ),
+                ),
+              ),
             ),
           );
         }
@@ -45,4 +52,3 @@ class SureOrderButton extends StatelessWidget {
   }
 }
 
-//${context.watch<CartCubit>().cartEntity.calculateTotalPrice()}

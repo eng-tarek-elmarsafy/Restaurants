@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../../constrains.dart';
-import '../../../../../core/style/app_style.dart';
-import '../../../../cart/presentation/manager/cart_cubit/cart_cubit.dart';
-import '../../../domain/entites/meun_entity.dart';
+import 'package:restaurants/constrains.dart';
+import 'package:restaurants/core/style/app_style.dart';
+import 'package:restaurants/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
+import 'package:restaurants/features/restaurant_details/domain/entites/meun_entity.dart';
 
 class FoodItem extends StatelessWidget {
   const FoodItem({super.key, required this.menu});
@@ -76,6 +76,19 @@ class FoodItem extends StatelessWidget {
                       child: GestureDetector(
                         onTap: () {
                           context.read<CartCubit>().addProduct(menu);
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              backgroundColor: kSecondaryColor,
+                              content: Center(
+                                child: Text(
+                                  'تم اضافة المنتج لسله التسوق',
+                                  style: AppStyle.buttonTextStyle.copyWith(
+                                    color: kPrimaryColor,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          );
                         },
                         child: const Center(
                           child: Padding(

@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:restaurants/core/widgets/loding_indicator.dart';
-import '../../../../../constrains.dart';
-import '../../../../../core/style/app_style.dart';
-import '../../manager/cart_cubit/cart_cubit.dart';
-import '../../manager/add_order_cubit/order_cubit.dart';
-import 'cart_item_proaduct_list_view.dart';
-import 'custom_divider.dart';
-import 'sure_order_button.dart';
-import 'total_price.dart';
-import '../../../../history/presentation/manager/get_all_orders_cubit/get_all_orders_cubit.dart';
+import 'package:restaurants/constrains.dart';
+import 'package:restaurants/core/style/app_style.dart';
+import 'package:restaurants/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
+import 'package:restaurants/features/cart/presentation/manager/add_order_cubit/order_cubit.dart';
+import 'package:restaurants/features/cart/presentation/views/widgets/cart_item_proaduct_list_view.dart';
+import 'package:restaurants/features/cart/presentation/views/widgets/custom_divider.dart';
+import 'package:restaurants/features/cart/presentation/views/widgets/sure_order_button.dart';
+import 'package:restaurants/features/cart/presentation/views/widgets/total_price.dart';
+import 'package:restaurants/features/history/presentation/manager/get_all_orders_cubit/get_all_orders_cubit.dart';
 
 class CartViewBody extends StatelessWidget {
   const CartViewBody({super.key});
@@ -24,9 +24,16 @@ class CartViewBody extends StatelessWidget {
             context.read<CartCubit>().clearCart();
             context.read<GetAllOrdersCubit>().getAllOrders();
             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
+              SnackBar(
                 backgroundColor: kSecondaryColor,
-                content: Text('تم ارسال الطلب بنجاح'),
+                content: Center(
+                  child: Text(
+                    'تم ارسال الطلب بنجاح',
+                    style: AppStyle.buttonTextStyle.copyWith(
+                      color: kPrimaryColor,
+                    ),
+                  ),
+                ),
               ),
             );
           }
