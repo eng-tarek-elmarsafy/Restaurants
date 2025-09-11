@@ -78,6 +78,7 @@ class FoodItem extends StatelessWidget {
                           context.read<CartCubit>().addProduct(menu);
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
+                              duration: const Duration(seconds: 1),
                               backgroundColor: kSecondaryColor,
                               content: Center(
                                 child: Text(
